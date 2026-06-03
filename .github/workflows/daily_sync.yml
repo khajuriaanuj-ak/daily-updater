@@ -2,8 +2,8 @@ name: Daily Release Intelligence Aggregator
 
 on:
   schedule:
-    # Run at 9:00 AM UTC (5:00 AM EDT) every morning
-    - cron: '0 9 * * *'
+    # Run at 13:00 UTC (9:00 AM Eastern Daylight Time / 8:00 AM Eastern Standard Time) every morning
+    - cron: '0 13 * * *'
   workflow_dispatch: # Allows manual runs from the Actions tab in GitHub
 
 permissions:
