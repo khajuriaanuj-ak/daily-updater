@@ -768,77 +768,82 @@ function renderProductivityTools(categoryFilter = 'all') {
 
 // Initialise Dashboard Controls
 function initControls() {
-    // Platform filter buttons click handler
-    const filterButtons = document.querySelectorAll('#provider-filters-container .filter-btn');
-    filterButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            e.target.classList.add('active');
-            activeProviderFilter = e.target.getAttribute('data-provider');
+    // Platform select dropdown change handler
+    const platformSelect = document.getElementById('platform-select');
+    if (platformSelect) {
+        platformSelect.addEventListener('change', (e) => {
+            activeProviderFilter = e.target.value;
             releasesLimit = 50;
             renderReleases();
         });
-    });
+    }
     
-    // Date range filter buttons click handler
-    const datePresetButtons = document.querySelectorAll('#date-presets-container .filter-btn');
+    // Date select dropdown change handler
+    const dateSelect = document.getElementById('date-select');
     const customDatePickerContainer = document.getElementById('custom-date-picker-container');
-    
-    datePresetButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            datePresetButtons.forEach(btn => btn.classList.remove('active'));
-            e.target.classList.add('active');
-            activeDateFilter = e.target.getAttribute('data-date-range');
-            
+    if (dateSelect) {
+        dateSelect.addEventListener('change', (e) => {
+            activeDateFilter = e.target.value;
             if (activeDateFilter === 'custom') {
                 customDatePickerContainer.style.display = 'flex';
+                customDatePickerContainer.style.alignItems = 'center';
             } else {
                 customDatePickerContainer.style.display = 'none';
             }
             releasesLimit = 50;
             renderReleases();
         });
-    });
+    }
     
     // Custom date picker change handlers
     const startDateInput = document.getElementById('start-date');
     const endDateInput = document.getElementById('end-date');
     
-    startDateInput.addEventListener('change', (e) => {
-        customStartDate = e.target.value;
-        releasesLimit = 50;
-        renderReleases();
-    });
+    if (startDateInput) {
+        startDateInput.addEventListener('change', (e) => {
+            customStartDate = e.target.value;
+            releasesLimit = 50;
+            renderReleases();
+        });
+    }
     
-    endDateInput.addEventListener('change', (e) => {
-        customEndDate = e.target.value;
-        releasesLimit = 50;
-        renderReleases();
-    });
+    if (endDateInput) {
+        endDateInput.addEventListener('change', (e) => {
+            customEndDate = e.target.value;
+            releasesLimit = 50;
+            renderReleases();
+        });
+    }
     
     // Search bar event listeners
     const searchInput = document.getElementById('search-input');
     const searchClearBtn = document.getElementById('search-clear-btn');
     
-    searchInput.addEventListener('input', (e) => {
-        searchQuery = e.target.value;
-        if (searchQuery.trim().length > 0) {
-            searchClearBtn.style.display = 'block';
-        } else {
-            searchClearBtn.style.display = 'none';
-        }
-        releasesLimit = 50;
-        renderReleases();
-    });
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            if (searchClearBtn) {
+                if (searchQuery.trim().length > 0) {
+                    searchClearBtn.style.display = 'block';
+                } else {
+                    searchClearBtn.style.display = 'none';
+                }
+            }
+            releasesLimit = 50;
+            renderReleases();
+        });
+    }
     
-    searchClearBtn.addEventListener('click', () => {
-        searchInput.value = '';
-        searchQuery = '';
-        searchClearBtn.style.display = 'none';
-        searchInput.focus();
-        releasesLimit = 50;
-        renderReleases();
-    });
+    if (searchClearBtn && searchInput) {
+        searchClearBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            searchQuery = '';
+            searchClearBtn.style.display = 'none';
+            searchInput.focus();
+            releasesLimit = 50;
+            renderReleases();
+        });
+    }
 
     // Tools filter buttons click handler
     const toolFilterButtons = document.querySelectorAll('#tools-filters-container .tool-filter-btn');
@@ -851,17 +856,15 @@ function initControls() {
         });
     });
 
-    // Nature type filter buttons click handler
-    const natureFilterButtons = document.querySelectorAll('#nature-presets-container .filter-btn');
-    natureFilterButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            natureFilterButtons.forEach(btn => btn.classList.remove('active'));
-            e.currentTarget.classList.add('active');
-            activeNatureFilter = e.currentTarget.getAttribute('data-nature');
+    // Nature type select dropdown change handler
+    const natureSelect = document.getElementById('nature-select');
+    if (natureSelect) {
+        natureSelect.addEventListener('change', (e) => {
+            activeNatureFilter = e.target.value;
             releasesLimit = 50;
             renderReleases();
         });
-    });
+    }
 
     // Chat Assistant Widget Event Listeners
     const chatInput = document.getElementById('chat-input');

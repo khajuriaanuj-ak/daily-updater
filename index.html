@@ -79,57 +79,50 @@
         </section>
 
         <!-- Filters & Search Toolbar -->
-        <section class="toolbar">
-            <div class="search-wrapper">
+        <section class="toolbar" style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; padding: 12px; background: rgba(18, 25, 41, 0.4); border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 20px;">
+            <div class="search-wrapper" style="flex-grow: 1; min-width: 280px; margin-bottom: 0;">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="search-input" placeholder="Search releases by keyword, technology, model or detail...">
+                <input type="text" id="search-input" placeholder="Search releases by keyword, technology, model or details..." style="width: 100%;">
                 <button id="search-clear-btn" class="clear-btn">&times;</button>
             </div>
             
-            <div class="filter-group">
-                <span class="filter-label">Filter by Platform:</span>
-                <div class="provider-filters" id="provider-filters-container">
-                    <button class="filter-btn active" data-provider="all">All Platforms</button>
-                    <button class="filter-btn" data-provider="AWS">AWS</button>
-                    <button class="filter-btn" data-provider="Google Cloud">Google Cloud</button>
-                    <button class="filter-btn" data-provider="Azure">Azure</button>
-                    <button class="filter-btn" data-provider="Databricks">Databricks</button>
-                    <button class="filter-btn" data-provider="Snowflake">Snowflake</button>
-                    <button class="filter-btn" data-provider="OpenAI">OpenAI</button>
-                    <button class="filter-btn" data-provider="Anthropic">Anthropic</button>
-                    <button class="filter-btn" data-provider="Google Antigravity">Google Antigravity</button>
-                </div>
-            </div>
-            
-            <div class="filter-group date-filters-group" style="margin-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 12px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; width: 100%;">
-                <span class="filter-label">Filter by Date:</span>
-                <div class="provider-filters" id="date-presets-container">
-                    <button class="filter-btn active" data-date-range="all">All Time</button>
-                    <button class="filter-btn" data-date-range="today">Today</button>
-                    <button class="filter-btn" data-date-range="yesterday">Yesterday</button>
-                    <button class="filter-btn" data-date-range="7days">Last 7 Days</button>
-                    <button class="filter-btn" data-date-range="30days">Last 30 Days</button>
-                    <button class="filter-btn" data-date-range="custom">Custom Range</button>
-                </div>
+            <div class="dropdown-filters" style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                <select id="platform-select" class="sleek-select" title="Filter by Platform">
+                    <option value="all">All Platforms</option>
+                    <option value="AWS">AWS</option>
+                    <option value="Google Cloud">Google Cloud</option>
+                    <option value="Azure">Azure</option>
+                    <option value="Databricks">Databricks</option>
+                    <option value="Snowflake">Snowflake</option>
+                    <option value="OpenAI">OpenAI</option>
+                    <option value="Anthropic">Anthropic</option>
+                    <option value="Google Antigravity">Google Antigravity</option>
+                </select>
                 
-                <div class="custom-date-picker" id="custom-date-picker-container" style="display: none; align-items: center; gap: 8px; margin-left: auto;">
-                    <label for="start-date" style="font-size: 11px; color: var(--text-secondary); font-weight: 500;">From:</label>
-                    <input type="date" id="start-date" class="date-input">
-                    <label for="end-date" style="font-size: 11px; color: var(--text-secondary); font-weight: 500;">To:</label>
-                    <input type="date" id="end-date" class="date-input">
-                </div>
+                <select id="date-select" class="sleek-select" title="Filter by Date">
+                    <option value="all">All Time</option>
+                    <option value="today">Today</option>
+                    <option value="yesterday">Yesterday</option>
+                    <option value="7days">Last 7 Days</option>
+                    <option value="30days">Last 30 Days</option>
+                    <option value="custom">Custom Range...</option>
+                </select>
+
+                <select id="nature-select" class="sleek-select" title="Filter by Type">
+                    <option value="all">All Types</option>
+                    <option value="model">🧠 Model & Concept</option>
+                    <option value="software">💻 Software & SDK</option>
+                    <option value="protocol">🔌 Protocol & Spec</option>
+                    <option value="hardware">⚙️ Hardware & Infra</option>
+                    <option value="feature">⚡ Feature & Service</option>
+                </select>
             </div>
             
-            <div class="filter-group nature-filters-group" style="margin-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 12px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; width: 100%;">
-                <span class="filter-label">Filter by Type:</span>
-                <div class="provider-filters" id="nature-presets-container">
-                    <button class="filter-btn active" data-nature="all">All Types</button>
-                    <button class="filter-btn" data-nature="model">🧠 Model & Concept</button>
-                    <button class="filter-btn" data-nature="software">💻 Software & SDK</button>
-                    <button class="filter-btn" data-nature="protocol">🔌 Protocol & Spec</button>
-                    <button class="filter-btn" data-nature="hardware">⚙️ Hardware & Infra</button>
-                    <button class="filter-btn" data-nature="feature">⚡ Feature & Service</button>
-                </div>
+            <!-- Custom Date Inputs (hidden unless "custom" is selected) -->
+            <div class="custom-date-picker" id="custom-date-picker-container" style="display: none; align-items: center; gap: 8px;">
+                <input type="date" id="start-date" class="date-input" style="padding: 6px; font-size: 11px;">
+                <span style="font-size: 11px; opacity: 0.6;">to</span>
+                <input type="date" id="end-date" class="date-input" style="padding: 6px; font-size: 11px;">
             </div>
         </section>
 
