@@ -1579,15 +1579,18 @@ function renderStockRecommendations() {
     const hasValuations = Object.keys(appData.valuations || {}).length > 0;
     const firstTicker = Object.values(appData.valuations || {})[0];
     const fetchedAt = firstTicker?.fetchedAt || 'N/A';
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     html += `
         <div style="display: flex; align-items: center; justify-content: space-between; padding: 4px 6px; margin-bottom: 6px; background: rgba(255,255,255,0.02); border-radius: 6px; border: 1px solid rgba(255,255,255,0.04);">
             <div style="display: flex; align-items: center; gap: 4px;">
                 <span style="width: 5px; height: 5px; border-radius: 50%; background: ${hasValuations ? '#10b981' : '#ef4444'}; display: inline-block;"></span>
                 <span style="font-size: 8px; color: var(--text-muted); font-family: monospace;">Valuations: ${hasValuations ? fetchedAt : 'Unavailable'}</span>
             </div>
+            ${isLocal ? `
             <button id="refresh-valuations-btn" onclick="refreshValuations()" style="font-size: 8px; color: #60a5fa; background: none; border: 1px solid rgba(96,165,250,0.2); padding: 1px 6px; border-radius: 4px; cursor: pointer; font-family: monospace;" onmouseover="this.style.background='rgba(96,165,250,0.1)'" onmouseout="this.style.background='none'">
                 ⟳ Refresh
             </button>
+            ` : ''}
         </div>
     `;
     
