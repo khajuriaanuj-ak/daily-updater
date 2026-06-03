@@ -508,7 +508,7 @@ def main():
     
     # Save dashboard data JS to bypass CORS restrictions when opening locally
     dashboard_data = {
-        "last_updated": datetime.now().strftime("%Y-%m-%d %I:%M %p"),
+        "last_updated": datetime.now(timezone.utc).isoformat(),
         "updates": sorted(history, key=lambda x: x.get("timestamp", ""), reverse=True),
         "trends": news_trends,
         "sentiments": sentiments,

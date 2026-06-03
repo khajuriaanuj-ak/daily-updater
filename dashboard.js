@@ -246,7 +246,39 @@ function calculateStats() {
     document.getElementById('stat-total-news').innerText = appData.trends.length;
     
     // 5. Update Synced Time
-    document.getElementById('last-updated-time').innerText = appData.last_updated || "Just Now";
+    // 5. Update Synced Time
+    if (appData.last_updated) {
+        try {
+            const date = new Date(appData.last_updated);
+            if (!isNaN(date.getTime())) {
+                const yyyy = date.getFullYear();
+                const mm = String(date.getMonth() + 1).padStart(2, '0');
+                const dd = String(date.getDate()).padStart(2, '0');
+                let hours = date.getHours();
+                const minutes = String(date.getMinutes()).padStart(2, '0');
+                const ampm = hours >= 12 ? 'PM' : 'AM';
+                hours = hours % 12;
+                hours = hours ? hours : 12; // the hour '0' should be '12'
+                const strTime = String(hours).padStart(2, '0') + ':' + minutes + ' ' + ampm;
+                
+                // Get short timezone name (e.g. EDT, GMT) dynamically
+                let tzName = '';
+                try {
+                    const parts = new Intl.DateTimeFormat('en-US', { timeZoneName: 'short' }).formatToParts(date);
+                    const tzPart = parts.find(p => p.type === 'timeZoneName');
+                    if (tzPart) tzName = ' ' + tzPart.value;
+                } catch (e) {}
+                
+                document.getElementById('last-updated-time').innerText = `${yyyy}-${mm}-${dd} ${strTime}${tzName}`;
+            } else {
+                document.getElementById('last-updated-time').innerText = appData.last_updated;
+            }
+        } catch (e) {
+            document.getElementById('last-updated-time').innerText = appData.last_updated;
+        }
+    } else {
+        document.getElementById('last-updated-time').innerText = "Just Now";
+    }
 }
 
 // Rendering Functions

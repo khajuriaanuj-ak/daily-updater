@@ -1,5 +1,5 @@
 const DASHBOARD_DATA = {
-  "last_updated": "2026-06-03 02:39 PM",
+  "last_updated": "2026-06-03T15:17:38.418645+00:00",
   "updates": [
     {
       "title": "Scaling Enterprise Conversational Intelligence: Cross-industry Technology and Functional Solutions Powered by Databricks Genie",
@@ -14,6 +14,13 @@ const DASHBOARD_DATA = {
       "description": "We are excited to announce the General Availability of Simple log alerts in Azure Monitor, available starting today. This feature is designed to provide a simplified and more intuitive experience for monitoring and alerting, enhancing your ability to...",
       "provider": "Azure",
       "timestamp": "2026-06-03T02:00:57+00:00"
+    },
+    {
+      "title": "June 03, 2026",
+      "link": "https://docs.cloud.google.com/release-notes#June_03_2026",
+      "description": "Compute Engine\nFeature\nGenerally available: You can gradually create Flex-start VMs in a\nmanaged instance group (MIG) as capacity becomes available. Unlike resize\nrequests for MIGs that wait for full capacity before creating VMs, this method\nmight cr...",
+      "provider": "Google Cloud",
+      "timestamp": "2026-06-03T00:00:00-07:00"
     },
     {
       "title": "[In preview] Public Preview: Code-first observability for Foundry Agents in VS Code",
@@ -10273,6 +10280,22 @@ const DASHBOARD_DATA = {
   ],
   "trends": [
     {
+      "title": "These two founders left Goldman and Meta to build voice AI for markets everyone else overlooked",
+      "link": "https://techcrunch.com/2026/06/03/these-two-founders-left-goldman-and-meta-to-build-voice-ai-for-markets-everyone-else-overlooked/",
+      "description": "The startup's own stack for Africa and Middle East is now handling more than 17,000 calls per day.",
+      "date": "Jun 03, 2026",
+      "source": "TechCrunch AI",
+      "trend": "General AI"
+    },
+    {
+      "title": "Publishers will be able to opt out of AI Search, thanks to new regulation",
+      "link": "https://techcrunch.com/2026/06/03/publishers-will-be-able-to-opt-out-of-ai-search-thanks-to-new-regulation/",
+      "description": "U.K. regulators are requiring Google offer a tool allowing website publishers to opt-out of generative AI search features. The option will be tested in the UK then rolled out globally.",
+      "date": "Jun 03, 2026",
+      "source": "TechCrunch AI",
+      "trend": "Regulatory"
+    },
+    {
       "title": "Meta’s AI agent for WhatsApp Business is now available globally",
       "link": "https://techcrunch.com/2026/06/03/metas-ai-agent-for-whatsapp-business-is-now-available-globally/",
       "description": "WhatsApp will charge businesses for using its AI agent based on token usage",
@@ -10300,22 +10323,6 @@ const DASHBOARD_DATA = {
       "title": "Uber caps employee AI spending after blowing through budget in 4 months",
       "link": "https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending-after-blowing-through-budget-in-four-months/",
       "description": "Uber's cutback has occurred after the company had reportedly encouraged staff to use AI as much as possible.",
-      "date": "Jun 02, 2026",
-      "source": "TechCrunch AI",
-      "trend": "General AI"
-    },
-    {
-      "title": "New Microsoft tool lets devs spin up AI behavior tests using text descriptions",
-      "link": "https://techcrunch.com/2026/06/02/new-microsoft-tool-lets-devs-spin-up-ai-behavior-tests-using-text-descriptions/",
-      "description": "Microsoft on Tuesday took the wraps off Adaptive Spec-driven Scoring for Evaluation and Regression Testing, an open source framework for spinning up AI evaluations.",
-      "date": "Jun 02, 2026",
-      "source": "TechCrunch AI",
-      "trend": "Investment & Startup"
-    },
-    {
-      "title": "Martin Scorsese becomes the latest — and most unlikely — Hollywood voice for AI",
-      "link": "https://techcrunch.com/2026/06/02/martin-scorsese-becomes-the-latest-and-most-unlikely-hollywood-voice-for-ai/",
-      "description": "The caveat is that one of the world's most famous living directors is using the tech solely for storyboarding.",
       "date": "Jun 02, 2026",
       "source": "TechCrunch AI",
       "trend": "General AI"
@@ -10375,24 +10382,24 @@ const DASHBOARD_DATA = {
       "score": 80,
       "status": "Mixed",
       "change": "▬ Stable",
-      "reason": "Consistent solid market indexing",
-      "mentions": 0
+      "reason": "Publishers will be able to opt out of AI Search, thanks to n...",
+      "mentions": 1
     },
     {
       "company": "Meta",
       "score": 79,
       "status": "Mixed",
       "change": "▲ +1",
-      "reason": "Meta’s AI agent for WhatsApp Business is now available globa...",
-      "mentions": 1
+      "reason": "These two founders left Goldman and Meta to build voice AI f...",
+      "mentions": 2
     },
     {
       "company": "Microsoft",
       "score": 78,
       "status": "Mixed",
       "change": "▬ Stable",
-      "reason": "New Microsoft tool lets devs spin up AI behavior tests using...",
-      "mentions": 1
+      "reason": "Consistent solid market indexing",
+      "mentions": 0
     },
     {
       "company": "Apple",
@@ -10406,157 +10413,157 @@ const DASHBOARD_DATA = {
   "valuations": {
     "NVDA": {
       "name": "NVIDIA Corporation",
-      "price": 215.56,
-      "forwardPE": 17.07,
-      "trailingPE": 33.01,
-      "marketCap": 5221078532096,
+      "price": 216.6,
+      "forwardPE": 17.15,
+      "trailingPE": 33.17,
+      "marketCap": 5246268473344,
       "psRatio": null,
-      "dayChange": -3.26,
-      "rangePosition": 0.785,
-      "fetchedAt": "2026-06-03 02:39 PM"
+      "dayChange": -2.79,
+      "rangePosition": 0.796,
+      "fetchedAt": "2026-06-03 11:17 AM"
     },
     "GOOGL": {
       "name": "Alphabet Inc.",
-      "price": 363.23,
-      "forwardPE": 25.06,
-      "trailingPE": 27.73,
-      "marketCap": 4400692592640,
+      "price": 359.0,
+      "forwardPE": 24.77,
+      "trailingPE": 27.4,
+      "marketCap": 4349444227072,
       "psRatio": null,
-      "dayChange": 0.38,
-      "rangePosition": 0.816,
-      "fetchedAt": "2026-06-03 02:39 PM"
+      "dayChange": -0.79,
+      "rangePosition": 0.799,
+      "fetchedAt": "2026-06-03 11:17 AM"
     },
     "MSFT": {
       "name": "Microsoft Corporation",
-      "price": 428.78,
-      "forwardPE": 22.17,
-      "trailingPE": 25.57,
-      "marketCap": 3185164419072,
+      "price": 426.93,
+      "forwardPE": 22.07,
+      "trailingPE": 25.46,
+      "marketCap": 3171421782016,
       "psRatio": null,
-      "dayChange": -2.84,
-      "rangePosition": 0.364,
-      "fetchedAt": "2026-06-03 02:39 PM"
+      "dayChange": -3.26,
+      "rangePosition": 0.355,
+      "fetchedAt": "2026-06-03 11:17 AM"
     },
     "AMZN": {
       "name": "Amazon.com, Inc.",
-      "price": 252.84,
-      "forwardPE": 25.63,
-      "trailingPE": 31.18,
-      "marketCap": 2719827623936,
+      "price": 250.53,
+      "forwardPE": 25.4,
+      "trailingPE": 30.89,
+      "marketCap": 2694978732032,
       "psRatio": null,
-      "dayChange": -1.43,
-      "rangePosition": 0.688,
-      "fetchedAt": "2026-06-03 02:39 PM"
+      "dayChange": -2.34,
+      "rangePosition": 0.66,
+      "fetchedAt": "2026-06-03 11:17 AM"
     },
     "SNOW": {
       "name": "Snowflake Inc.",
-      "price": 246.43,
-      "forwardPE": 94.35,
+      "price": 247.76,
+      "forwardPE": 94.86,
       "trailingPE": null,
-      "marketCap": 85412634624,
+      "marketCap": 85873614848,
       "psRatio": null,
-      "dayChange": -5.63,
-      "rangePosition": 0.769,
-      "fetchedAt": "2026-06-03 02:39 PM"
+      "dayChange": -5.12,
+      "rangePosition": 0.777,
+      "fetchedAt": "2026-06-03 11:17 AM"
     },
     "TSM": {
       "name": "Taiwan Semiconductor Manufactur",
-      "price": 440.49,
-      "forwardPE": 22.57,
-      "trailingPE": 37.65,
-      "marketCap": 2284589940736,
+      "price": 441.67,
+      "forwardPE": 22.63,
+      "trailingPE": 37.75,
+      "marketCap": 2290709954560,
       "psRatio": null,
-      "dayChange": -1.39,
-      "rangePosition": 0.961,
-      "fetchedAt": "2026-06-03 02:39 PM"
+      "dayChange": -1.12,
+      "rangePosition": 0.966,
+      "fetchedAt": "2026-06-03 11:17 AM"
     },
     "AVGO": {
       "name": "Broadcom Inc.",
-      "price": 485.55,
-      "forwardPE": 26.25,
-      "trailingPE": 94.28,
-      "marketCap": 2298918207488,
+      "price": 488.75,
+      "forwardPE": 26.42,
+      "trailingPE": 94.9,
+      "marketCap": 2314069082112,
       "psRatio": null,
-      "dayChange": 0.83,
-      "rangePosition": 0.963,
-      "fetchedAt": "2026-06-03 02:39 PM"
+      "dayChange": 1.49,
+      "rangePosition": 0.975,
+      "fetchedAt": "2026-06-03 11:17 AM"
     },
     "ASML": {
       "name": "ASML Holding N.V. - New York Re",
-      "price": 1728.74,
-      "forwardPE": 35.91,
-      "trailingPE": 57.26,
-      "marketCap": 666286948352,
+      "price": 1731.34,
+      "forwardPE": 35.96,
+      "trailingPE": 57.35,
+      "marketCap": 667288993792,
       "psRatio": null,
-      "dayChange": 1.37,
-      "rangePosition": 0.997,
-      "fetchedAt": "2026-06-03 02:39 PM"
+      "dayChange": 1.52,
+      "rangePosition": 0.999,
+      "fetchedAt": "2026-06-03 11:17 AM"
     },
     "VRT": {
       "name": "Vertiv Holdings, LLC",
-      "price": 341.94,
-      "forwardPE": 38.7,
-      "trailingPE": 85.91,
-      "marketCap": 131342131200,
+      "price": 339.66,
+      "forwardPE": 38.44,
+      "trailingPE": 85.34,
+      "marketCap": 130466398208,
       "psRatio": null,
-      "dayChange": 2.23,
-      "rangePosition": 0.861,
-      "fetchedAt": "2026-06-03 02:39 PM"
+      "dayChange": 1.55,
+      "rangePosition": 0.852,
+      "fetchedAt": "2026-06-03 11:17 AM"
     },
     "ANET": {
       "name": "Arista Networks, Inc.",
-      "price": 171.87,
-      "forwardPE": 38.63,
-      "trailingPE": 59.06,
-      "marketCap": 216407162880,
+      "price": 175.6,
+      "forwardPE": 39.46,
+      "trailingPE": 60.34,
+      "marketCap": 221110157312,
       "psRatio": null,
-      "dayChange": -1.98,
-      "rangePosition": 0.916,
-      "fetchedAt": "2026-06-03 02:39 PM"
+      "dayChange": 0.15,
+      "rangePosition": 0.955,
+      "fetchedAt": "2026-06-03 11:17 AM"
     },
     "INTC": {
       "name": "Intel Corporation",
-      "price": 113.32,
-      "forwardPE": 73.34,
+      "price": 112.89,
+      "forwardPE": 73.06,
       "trailingPE": null,
-      "marketCap": 569546309632,
+      "marketCap": 567385128960,
       "psRatio": null,
-      "dayChange": 4.99,
-      "rangePosition": 0.829,
-      "fetchedAt": "2026-06-03 02:39 PM"
+      "dayChange": 4.6,
+      "rangePosition": 0.825,
+      "fetchedAt": "2026-06-03 11:17 AM"
     },
     "DELL": {
       "name": "Dell Technologies Inc.",
-      "price": 418.44,
-      "forwardPE": 19.61,
-      "trailingPE": 48.32,
-      "marketCap": 271802089472,
+      "price": 421.16,
+      "forwardPE": 19.74,
+      "trailingPE": 48.63,
+      "marketCap": 273572167680,
       "psRatio": null,
-      "dayChange": -3.88,
-      "rangePosition": 0.858,
-      "fetchedAt": "2026-06-03 02:39 PM"
+      "dayChange": -3.25,
+      "rangePosition": 0.866,
+      "fetchedAt": "2026-06-03 11:17 AM"
     },
     "HPE": {
       "name": "Hewlett Packard Enterprise Comp",
-      "price": 54.44,
-      "forwardPE": 13.46,
-      "trailingPE": 50.88,
-      "marketCap": 72089640960,
+      "price": 55.27,
+      "forwardPE": 13.67,
+      "trailingPE": 51.65,
+      "marketCap": 73188728832,
       "psRatio": null,
-      "dayChange": -3.04,
-      "rangePosition": 0.79,
-      "fetchedAt": "2026-06-03 02:39 PM"
+      "dayChange": -1.57,
+      "rangePosition": 0.808,
+      "fetchedAt": "2026-06-03 11:17 AM"
     },
     "META": {
       "name": "Meta Platforms, Inc.",
-      "price": 615.1,
-      "forwardPE": 17.01,
-      "trailingPE": 22.38,
-      "marketCap": 1561384058880,
+      "price": 617.84,
+      "forwardPE": 17.09,
+      "trailingPE": 22.47,
+      "marketCap": 1568326811648,
       "psRatio": null,
-      "dayChange": 2.92,
-      "rangePosition": 0.344,
-      "fetchedAt": "2026-06-03 02:39 PM"
+      "dayChange": 3.38,
+      "rangePosition": 0.354,
+      "fetchedAt": "2026-06-03 11:17 AM"
     }
   },
   "stocks_universe": [

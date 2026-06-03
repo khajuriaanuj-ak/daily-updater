@@ -10267,5 +10267,12 @@
     "description": "As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up?In a new report, we seek to answer that question. We examine 832 accounts that were banned for malicious ...",
     "provider": "Anthropic",
     "timestamp": "2026-06-02T16:00:00+00:00"
+  },
+  {
+    "title": "June 03, 2026",
+    "link": "https://docs.cloud.google.com/release-notes#June_03_2026",
+    "description": "Compute Engine\nFeature\nGenerally available: You can gradually create Flex-start VMs in a\nmanaged instance group (MIG) as capacity becomes available. Unlike resize\nrequests for MIGs that wait for full capacity before creating VMs, this method\nmight cr...",
+    "provider": "Google Cloud",
+    "timestamp": "2026-06-03T00:00:00-07:00"
   }
 ]
