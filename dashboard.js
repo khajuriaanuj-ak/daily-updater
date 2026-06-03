@@ -1064,7 +1064,7 @@ function appendAssistantMessage(htmlContent) {
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-function callGeminiDirect(query, apiKey) {
+function callGeminiDirect(query, apiKey, modelName = 'gemini-2.5-flash') {
     // Search related items using keywords
     const keywords = query.toLowerCase().split(/\s+/).filter(w => w.length > 2);
     let relatedReleases = [];
@@ -1089,11 +1089,11 @@ function callGeminiDirect(query, apiKey) {
 Here is the context of relevant releases we tracked:
 ${contextStr}
 
-User Question: {query}
+User Question: ${query}
 
 Provide a comprehensive, clear, and technically rich explanation. Summarize what the feature accomplishes, why it is important (the 'so what'), and how they can get started. Use clean bullet points and concise paragraphs. If a link is provided in the context, refer to it so they can read more. Convert any code snippets to pre/code tags.`;
 
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
     const payload = {
         contents: [{
             parts: [{
@@ -1112,7 +1112,15 @@ Provide a comprehensive, clear, and technically rich explanation. Summarize what
     .then(res => {
         if (!res.ok) {
             return res.json().then(errData => {
-                throw new Error(errData.error?.message || 'API request failed');
+                const status = res.status;
+                const errorMsg = errData.error?.message || '';
+                
+                // Fallback from 2.5-flash to 1.5-flash if 503 or capacity issue occurs
+                if (modelName === 'gemini-2.5-flash' && (status === 503 || errorMsg.toLowerCase().includes('demand') || errorMsg.toLowerCase().includes('overloaded') || errorMsg.toLowerCase().includes('capacity') || errorMsg.toLowerCase().includes('temporary'))) {
+                    console.warn("gemini-2.5-flash is experiencing high demand. Falling back to gemini-1.5-flash...");
+                    return callGeminiDirect(query, apiKey, 'gemini-1.5-flash');
+                }
+                throw new Error(errorMsg || 'API request failed');
             });
         }
         return res.json();

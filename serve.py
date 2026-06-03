@@ -77,8 +77,17 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 import urllib.request
                 import ssl
                 
-                url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
-                prompt = f"""You are the Antigravity AI Release Intelligence Assistant. Your goal is to help the user understand new cloud features, tech releases, and product announcements in depth.
+                # Call Gemini API with automatic fallback from 2.5-flash to 1.5-flash
+                import urllib.request
+                import ssl
+                import re
+                
+                reply_text = None
+                model_name = "gemini-2.5-flash"
+                
+                for attempt in range(2):
+                    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"
+                    prompt = f"""You are the Antigravity AI Release Intelligence Assistant. Your goal is to help the user understand new cloud features, tech releases, and product announcements in depth.
 
 Here is the context of relevant releases we tracked:
 {context_str}
@@ -87,43 +96,64 @@ User Question: {query}
 
 Provide a comprehensive, clear, and technically rich explanation. Summarize what the feature accomplishes, why it is important (the 'so what'), and how they can get started. Use clean bullet points and concise paragraphs. If a link is provided in the context, refer to it so they can read more. Convert any code snippets to pre/code tags."""
 
-                payload = {
-                    "contents": [{
-                        "parts": [{
-                            "text": prompt
+                    payload = {
+                        "contents": [{
+                            "parts": [{
+                                "text": prompt
+                            }]
                         }]
-                    }]
-                }
-                
-                headers = {'Content-Type': 'application/json'}
-                req = urllib.request.Request(
-                    url,
-                    data=json.dumps(payload).encode('utf-8'),
-                    headers=headers,
-                    method='POST'
-                )
-                
-                context = ssl._create_unverified_context()
-                with urllib.request.urlopen(req, timeout=20, context=context) as response:
-                    res_content = response.read().decode('utf-8')
-                    res_json = json.loads(res_content)
+                    }
                     
+                    headers = {'Content-Type': 'application/json'}
+                    req = urllib.request.Request(
+                        url,
+                        data=json.dumps(payload).encode('utf-8'),
+                        headers=headers,
+                        method='POST'
+                    )
+                    
+                    context = ssl._create_unverified_context()
                     try:
-                        reply_text = res_json['candidates'][0]['content']['parts'][0]['text']
-                        # Convert simple markdown formatting to HTML tags
-                        reply_html = reply_text.replace('\n', '<br>')
-                        import re
-                        reply_html = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', reply_html)
-                        reply_html = re.sub(r'\*(.*?)\*', r'<em>\1</em>', reply_html)
-                        reply_html = re.sub(r'```(.*?)```', r'<pre style="background:rgba(0,0,0,0.25); padding:8px; border-radius:6px; font-family:monospace; font-size:11px; margin:8px 0; overflow-x:auto;">\1</pre>', reply_html)
+                        with urllib.request.urlopen(req, timeout=20, context=context) as response:
+                            res_content = response.read().decode('utf-8')
+                            res_json = json.loads(res_content)
+                            reply_text = res_json['candidates'][0]['content']['parts'][0]['text']
+                            break
+                    except urllib.error.HTTPError as he:
+                        status_code = he.code
+                        try:
+                            error_data = json.loads(he.read().decode('utf-8'))
+                            error_msg = error_data.get('error', {}).get('message', '')
+                        except Exception:
+                            error_msg = str(he)
+                            
+                        # If 2.5-flash fails with 503 or demand issues, fall back to 1.5-flash
+                        if model_name == "gemini-2.5-flash" and (status_code == 503 or any(k in error_msg.lower() for k in ["demand", "overloaded", "capacity", "temporary"])):
+                            print("[*] Backend: gemini-2.5-flash experiencing high demand, falling back to gemini-1.5-flash...")
+                            model_name = "gemini-1.5-flash"
+                            continue
+                        raise Exception(error_msg or f"HTTP Error {status_code}")
                     except Exception as e:
-                        reply_html = f"Error parsing API response: {e}"
+                        if model_name == "gemini-2.5-flash":
+                            print(f"[*] Backend: gemini-2.5-flash call failed ({e}), falling back to gemini-1.5-flash...")
+                            model_name = "gemini-1.5-flash"
+                            continue
+                        raise e
                         
-                    response_body = {"reply": reply_html}
-                    self.send_response(200)
-                    self.send_header('Content-Type', 'application/json')
-                    self.end_headers()
-                    self.wfile.write(json.dumps(response_body).encode('utf-8'))
+                if not reply_text:
+                    raise Exception("Failed to get response from Gemini API models.")
+                
+                # Convert simple markdown formatting to HTML tags
+                reply_html = reply_text.replace('\n', '<br>')
+                reply_html = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', reply_html)
+                reply_html = re.sub(r'\*(.*?)\*', r'<em>\1</em>', reply_html)
+                reply_html = re.sub(r'```(.*?)```', r'<pre style="background:rgba(0,0,0,0.25); padding:8px; border-radius:6px; font-family:monospace; font-size:11px; margin:8px 0; overflow-x:auto;">\1</pre>', reply_html)
+                
+                response_body = {"reply": reply_html}
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json')
+                self.end_headers()
+                self.wfile.write(json.dumps(response_body).encode('utf-8'))
                     
             except Exception as e:
                 self.send_response(500)
