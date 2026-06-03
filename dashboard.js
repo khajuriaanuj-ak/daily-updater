@@ -1362,63 +1362,168 @@ function renderStockRecommendations() {
     });
 
     const stocks = [
-        // Direct Plays
-        { name: "NVIDIA", ticker: "NVDA", category: "direct", baseReason: "Dominating AI hardware standard (Blackwell B200) with sustained datacenter demand." },
-        { name: "Google Cloud", ticker: "GOOGL", category: "direct", baseReason: "Accelerating enterprise custom software speed via Vertex AI & MCP tooling." },
-        { name: "Microsoft (Azure)", ticker: "MSFT", category: "direct", baseReason: "Strong enterprise model monetization via Copilot integrations and OpenAI backing." },
-        { name: "Amazon (AWS)", ticker: "AMZN", category: "direct", baseReason: "Massive scale. Amazon Bedrock custom imports are expanding developer workloads." },
-        { name: "Databricks", ticker: "IPO Target", category: "direct", baseReason: "High-velocity data intelligence provider leading Mosaic AI custom training." },
-        { name: "Snowflake", ticker: "SNOW", category: "direct", baseReason: "Cortex AI Guardrails and search engines stabilizing enterprise data governance." },
+        // Direct AI / Hardware & Compute Moat
+        { 
+            name: "NVIDIA", 
+            ticker: "NVDA", 
+            category: "direct", 
+            subCategory: "AI Compute Systems",
+            moatScore: 10.0,
+            tailwindScore: 10.0,
+            baseReason: "Dominating AI hardware standard (Blackwell B200) with CUDA lock-in.",
+            expertStrategy: "NVIDIA remains the ultimate compute layer. Leverage CUDA software developer ecosystem."
+        },
+        { 
+            name: "Google Cloud", 
+            ticker: "GOOGL", 
+            category: "direct", 
+            subCategory: "Enterprise AI Platforms",
+            moatScore: 9.0,
+            tailwindScore: 8.5,
+            baseReason: "Accelerating developer speed via Vertex AI & Google-managed MCP tooling.",
+            expertStrategy: "Vertical integration play: custom TPUs, Android distribution channels, and Gemini API scaling."
+        },
+        { 
+            name: "Microsoft (Azure)", 
+            ticker: "MSFT", 
+            category: "direct", 
+            subCategory: "Enterprise AI SaaS",
+            moatScore: 9.0,
+            tailwindScore: 9.0,
+            baseReason: "Strong enterprise model monetization via Copilot and strategic OpenAI backing.",
+            expertStrategy: "Capturing enterprise budgets through Office 365 Copilot upgrades and Azure cloud infra scale."
+        },
+        { 
+            name: "Amazon (AWS)", 
+            ticker: "AMZN", 
+            category: "direct", 
+            subCategory: "Cloud Scale & Models",
+            moatScore: 8.5,
+            tailwindScore: 8.0,
+            baseReason: "Massive scale. Bedrock custom imports are expanding enterprise data workloads.",
+            expertStrategy: "Positioned well as a neutral aggregator of open-source models; high margin data storage play."
+        },
+        { 
+            name: "Databricks", 
+            ticker: "IPO Target", 
+            category: "direct", 
+            subCategory: "Enterprise Data Fabric",
+            moatScore: 8.5,
+            tailwindScore: 8.5,
+            baseReason: "High-velocity data intelligence provider leading Mosaic AI custom training.",
+            expertStrategy: "Essential data prep layer. Direct beneficiary of custom fine-tuning and RAG architectures."
+        },
+        { 
+            name: "Snowflake", 
+            ticker: "SNOW", 
+            category: "direct", 
+            subCategory: "Enterprise Data Cloud",
+            moatScore: 8.0,
+            tailwindScore: 7.5,
+            baseReason: "Cortex AI Guardrails and search engines stabilizing enterprise data governance.",
+            expertStrategy: "Core data lake position is highly sticky, but faces pressure from open table formats."
+        },
 
         // Indirect / Infrastructure Plays
-        { name: "TSMC", ticker: "TSM", category: "infra", baseReason: "Exclusive foundry fabricating leading-edge Blackwell GPUs and custom TPUs." },
-        { name: "Broadcom", ticker: "AVGO", category: "infra", baseReason: "Dominating custom ASIC design for TPUs and PCIe/Ethernet switching silicon." },
-        { name: "ASML", ticker: "ASML", category: "infra", baseReason: "Monopolist of Extreme Ultraviolet lithography, bottleneck for sub-3nm nodes." },
-        { name: "Vertiv", ticker: "VRT", category: "infra", baseReason: "Critical liquid cooling loops and power distribution units for AI power density." },
-        { name: "Arista Networks", ticker: "ANET", category: "infra", baseReason: "Deploying high-speed ethernet backbones required to scale massive GPU clusters." }
+        { 
+            name: "TSMC", 
+            ticker: "TSM", 
+            category: "infra", 
+            subCategory: "Advanced Fabrication",
+            moatScore: 10.0,
+            tailwindScore: 10.0,
+            baseReason: "Exclusive foundry fabricating leading Blackwell GPUs and custom TPUs.",
+            expertStrategy: "The ultimate bottleneck of AI hardware. Enjoys absolute pricing power at sub-3nm nodes."
+        },
+        { 
+            name: "Broadcom", 
+            ticker: "AVGO", 
+            category: "infra", 
+            subCategory: "AI Custom ASICs & Net",
+            moatScore: 9.5,
+            tailwindScore: 9.5,
+            baseReason: "Dominating custom ASIC design for TPUs and PCIe/Ethernet switching silicon.",
+            expertStrategy: "Leading the non-GPU custom chip wave. Custom TPUs (Google/Meta) and switches yield high margins."
+        },
+        { 
+            name: "ASML", 
+            ticker: "ASML", 
+            category: "infra", 
+            subCategory: "Lithography Monopoly",
+            moatScore: 10.0,
+            tailwindScore: 9.0,
+            baseReason: "Monopolist of Extreme Ultraviolet lithography, bottleneck for sub-3nm nodes.",
+            expertStrategy: "No advanced chips can be manufactured without ASML's EUV systems. High entry barriers protect moat."
+        },
+        { 
+            name: "Vertiv", 
+            ticker: "VRT", 
+            category: "infra", 
+            subCategory: "Data Center Liquid Cool",
+            moatScore: 9.0,
+            tailwindScore: 10.0,
+            baseReason: "Critical liquid cooling loops and power distribution units for AI power density.",
+            expertStrategy: "High-density GPU clusters run too hot for air. Vertiv's liquid-to-air technologies are in high demand."
+        },
+        { 
+            name: "Arista Networks", 
+            ticker: "ANET", 
+            category: "infra", 
+            subCategory: "Data Center Net Fabrics",
+            moatScore: 8.5,
+            tailwindScore: 9.5,
+            baseReason: "Deploying high-speed ethernet backbones required to scale massive GPU clusters.",
+            expertStrategy: "AI cluster backplane scaling requires ethernet switching. Arista is taking legacy market share."
+        }
     ];
 
-    // Compute signals and filter out 'HOLD' targets to keep only 'BUY' or 'STRONG BUY'
+    // Compute signals based on strategic advisor scorecard
     const curatedStocks = stocks.map(stock => {
         let count = 0;
-        let signal = "HOLD";
-        let signalColor = "#eab308"; // Amber
+        let velocityScore = 8.0;
         
         if (stock.category === "direct") {
             const provName = stock.name === "Microsoft (Azure)" ? "Azure" : (stock.name === "Amazon (AWS)" ? "AWS" : stock.name);
             count = releaseCounts30d[provName] || 0;
             
-            if (stock.name === "NVIDIA" || stock.name === "Google Cloud" || stock.name === "Microsoft (Azure)" || stock.name === "Databricks") {
-                if (count > 0) {
-                    signal = "STRONG BUY";
-                    signalColor = "#10b981"; // Emerald
-                } else {
-                    signal = "BUY";
-                    signalColor = "#3b82f6"; // Blue
-                }
+            if (count > 3) {
+                velocityScore = 10.0;
+            } else if (count > 0) {
+                velocityScore = 8.5;
             } else {
-                if (count > 0) {
-                    signal = "BUY";
-                    signalColor = "#3b82f6";
-                } else {
-                    signal = "HOLD";
-                    signalColor = "#eab308";
-                }
+                velocityScore = 7.0;
             }
         } else {
             // Indirect / Infrastructure plays track general ecosystem momentum
             count = totalReleases30d;
-            if (totalReleases30d > 8) {
-                signal = "STRONG BUY";
-                signalColor = "#10b981"; // Emerald
+            if (totalReleases30d > 15) {
+                velocityScore = 10.0;
+            } else if (totalReleases30d > 8) {
+                velocityScore = 9.0;
             } else {
-                signal = "BUY";
-                signalColor = "#3b82f6"; // Blue
+                velocityScore = 8.0;
             }
         }
         
-        return { ...stock, signal, signalColor, count };
-    }).filter(s => s.signal !== "HOLD"); // Only show Buy or Strong Buy targets!
+        // Advisor weighted scorecard: Moat (40%), Industry Tailwind (30%), Product Velocity (30%)
+        const score = (stock.moatScore * 0.4) + (stock.tailwindScore * 0.3) + (velocityScore * 0.3);
+        
+        let signal = "HOLD";
+        let signalColor = "#eab308"; // Amber
+        
+        if (score >= 9.0) {
+            signal = "STRONG BUY";
+            signalColor = "#10b981"; // Emerald
+        } else if (score >= 8.0) {
+            signal = "BUY";
+            signalColor = "#3b82f6"; // Blue
+        } else {
+            signal = "HOLD";
+            signalColor = "#eab308";
+        }
+        
+        return { ...stock, signal, signalColor, count, score };
+    }).filter(s => s.signal !== "HOLD"); // Filter out HOLDs to keep ONLY Strong Buy and Buy
 
     if (curatedStocks.length === 0) {
         container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; font-size: 11px; opacity: 0.6; padding: 10px;">Market signals stable. No active buy alerts triggered.</div>`;
@@ -1482,14 +1587,17 @@ function renderMiniStockCard(stock, accentColor) {
             <div style="display: flex; align-items: center; justify-content: space-between;">
                 <div>
                     <span style="font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 700; color: var(--text-primary);">${escapeHtml(stock.name)}</span>
-                    <span style="font-size: 8px; color: var(--text-muted); font-family: monospace; margin-left: 2px;">${escapeHtml(stock.ticker)} • ${stock.category === 'direct' ? 'DIRECT' : 'INFRA'}</span>
+                    <span style="font-size: 8px; color: var(--text-muted); font-family: monospace; margin-left: 2px;">${escapeHtml(stock.ticker)} • ${escapeHtml(stock.subCategory)}</span>
                 </div>
-                <span style="font-size: 8px; font-family: monospace; color: ${accentColor}; background: rgba(255, 255, 255, 0.03); padding: 1px 4px; border-radius: 3px;">
-                    ${trackerLabel}
+                <span style="font-size: 8px; font-family: monospace; color: ${accentColor}; background: rgba(255, 255, 255, 0.03); padding: 1px 4px; border-radius: 3px; font-weight: 700;">
+                    Score: ${stock.score.toFixed(1)}/10
                 </span>
             </div>
             <p style="margin: 0; font-size: 9px; color: var(--text-secondary); line-height: 1.25;">
-                ${escapeHtml(stock.baseReason)}
+                <strong>Strategic Moat:</strong> ${escapeHtml(stock.baseReason)}
+            </p>
+            <p style="margin: 0; font-size: 8.5px; color: var(--text-muted); line-height: 1.2; font-style: italic;">
+                <strong>Advisor Outlook:</strong> ${escapeHtml(stock.expertStrategy)}
             </p>
         </div>
     `;

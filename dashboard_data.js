@@ -1,5 +1,5 @@
 const DASHBOARD_DATA = {
-  "last_updated": "2026-06-03 09:37 AM",
+  "last_updated": "2026-06-03 09:43 AM",
   "updates": [
     {
       "title": "Scaling Enterprise Conversational Intelligence: Cross-industry Technology and Functional Solutions Powered by Databricks Genie",
@@ -10273,6 +10273,14 @@ const DASHBOARD_DATA = {
   ],
   "trends": [
     {
+      "title": "Meta’s AI agent for WhatsApp Business is now available globally",
+      "link": "https://techcrunch.com/2026/06/03/metas-ai-agent-for-whatsapp-business-is-now-available-globally/",
+      "description": "WhatsApp will charge businesses for using its AI agent based on token usage",
+      "date": "Jun 03, 2026",
+      "source": "TechCrunch AI",
+      "trend": "AI Agents"
+    },
+    {
       "title": "Coralogix raises $200M on bet that someone needs to watch the AI agents",
       "link": "https://techcrunch.com/2026/06/03/coralogix-raises-200m-in-race-to-build-the-monitoring-layer-for-ai-agents/",
       "description": "The Series F round values Coralogix at $1.6 billion and comes less than a year after its previous raise.",
@@ -10311,28 +10319,20 @@ const DASHBOARD_DATA = {
       "date": "Jun 02, 2026",
       "source": "TechCrunch AI",
       "trend": "General AI"
-    },
-    {
-      "title": "Microsoft launches Scout, an OpenClaw-inspired personal assistant",
-      "link": "https://techcrunch.com/2026/06/02/microsoft-launches-scout-an-openclaw-inspired-personal-assistant/",
-      "description": "Launched at Build, Microsoft Scout is a new AI assistant meant to bring the power and flexibility of OpenClaw into the Microsoft 365 system.",
-      "date": "Jun 02, 2026",
-      "source": "TechCrunch AI",
-      "trend": "Regulatory"
     }
   ],
   "sentiments": [
     {
-      "company": "Anthropic",
-      "score": 91,
-      "status": "Bullish",
-      "change": "▼ -2",
-      "reason": "Introducing the Services Track and Partner Hub of the Claude...",
-      "mentions": 2
-    },
-    {
       "company": "NVIDIA",
       "score": 91,
+      "status": "Bullish",
+      "change": "▬ Stable",
+      "reason": "Consistent solid market indexing",
+      "mentions": 0
+    },
+    {
+      "company": "Anthropic",
+      "score": 88,
       "status": "Bullish",
       "change": "▬ Stable",
       "reason": "Consistent solid market indexing",
@@ -10350,9 +10350,9 @@ const DASHBOARD_DATA = {
       "company": "Databricks",
       "score": 84,
       "status": "Mixed",
-      "change": "▲ +2",
-      "reason": "Scaling Enterprise Conversational Intelligence: Cross-indust...",
-      "mentions": 1
+      "change": "▬ Stable",
+      "reason": "Consistent solid market indexing",
+      "mentions": 0
     },
     {
       "company": "OpenAI",
@@ -10361,14 +10361,6 @@ const DASHBOARD_DATA = {
       "change": "▬ Stable",
       "reason": "Consistent solid market indexing",
       "mentions": 0
-    },
-    {
-      "company": "Microsoft",
-      "score": 81,
-      "status": "Mixed",
-      "change": "▼ -2",
-      "reason": "New Microsoft tool lets devs spin up AI behavior tests using...",
-      "mentions": 2
     },
     {
       "company": "Snowflake",
@@ -10390,17 +10382,25 @@ const DASHBOARD_DATA = {
       "company": "Meta",
       "score": 79,
       "status": "Mixed",
+      "change": "▲ +1",
+      "reason": "Meta’s AI agent for WhatsApp Business is now available globa...",
+      "mentions": 1
+    },
+    {
+      "company": "Microsoft",
+      "score": 78,
+      "status": "Mixed",
       "change": "▬ Stable",
-      "reason": "Consistent solid market indexing",
-      "mentions": 0
+      "reason": "New Microsoft tool lets devs spin up AI behavior tests using...",
+      "mentions": 1
     },
     {
       "company": "Apple",
       "score": 76,
       "status": "Mixed",
-      "change": "▼ -1",
-      "reason": "Scaling Enterprise Conversational Intelligence: Cross-indust...",
-      "mentions": 1
+      "change": "▬ Stable",
+      "reason": "Consistent solid market indexing",
+      "mentions": 0
     }
   ]
 };
