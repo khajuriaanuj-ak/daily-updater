@@ -1,6 +1,13 @@
 const DASHBOARD_DATA = {
-  "last_updated": "2026-06-02 11:25 PM",
+  "last_updated": "2026-06-03 09:37 AM",
   "updates": [
+    {
+      "title": "Scaling Enterprise Conversational Intelligence: Cross-industry Technology and Functional Solutions Powered by Databricks Genie",
+      "link": "https://www.databricks.com/blog/cross-industry-technology-and-functional-genie-partner-solutions",
+      "description": "As we explored in our first blog, Databricks Genie is redefining industry-specific...",
+      "provider": "Databricks",
+      "timestamp": "2026-06-03T11:45:00+00:00"
+    },
     {
       "title": "[Launched] Generally Available: Simple log alerts in Azure Monitor",
       "link": "https://azure.microsoft.com/updates?id=561978",
@@ -882,6 +889,20 @@ const DASHBOARD_DATA = {
       "description": "Amazon SageMaker Studio quick setup now completes in under twenty seconds, reduced from over two minutes. Whether you are building ML pipelines, exploring data, developing with notebooks, or fine-tuning foundation models, you can go from sign-in to a...",
       "provider": "AWS",
       "timestamp": "2026-06-02T16:23:00+00:00"
+    },
+    {
+      "title": "Introducing the Services Track and Partner Hub of the Claude Partner Network",
+      "link": "https://www.anthropic.com/news/services-track-partner-hub",
+      "description": "Almost every large enterprise is moving AI into production, and many have discovered something important: a successful pilot is not the same as a system a business can run on. The real work—and the real opportunity—is in the integration, the evaluati...",
+      "provider": "Anthropic",
+      "timestamp": "2026-06-02T16:00:00+00:00"
+    },
+    {
+      "title": "What we learned mapping a year’s worth of AI-enabled cyber threats",
+      "link": "https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack",
+      "description": "As AI transforms the nature of and methods behind cyberattacks, how well do the techniques and frameworks used by the security community hold up?In a new report, we seek to answer that question. We examine 832 accounts that were banned for malicious ...",
+      "provider": "Anthropic",
+      "timestamp": "2026-06-02T16:00:00+00:00"
     },
     {
       "title": "[In preview] Public Preview: Snapshot backup for SQL Server in Azure VMs",
@@ -10252,6 +10273,14 @@ const DASHBOARD_DATA = {
   ],
   "trends": [
     {
+      "title": "Coralogix raises $200M on bet that someone needs to watch the AI agents",
+      "link": "https://techcrunch.com/2026/06/03/coralogix-raises-200m-in-race-to-build-the-monitoring-layer-for-ai-agents/",
+      "description": "The Series F round values Coralogix at $1.6 billion and comes less than a year after its previous raise.",
+      "date": "Jun 03, 2026",
+      "source": "TechCrunch AI",
+      "trend": "AI Agents"
+    },
+    {
       "title": "Cyera eyes $12B valuation at 80x ARR multiple despite operating losses",
       "link": "https://techcrunch.com/2026/06/02/cyera-eyes-12b-valuation-at-80x-arr-multiple-despite-operating-losses/",
       "description": "The cybersecurity company is nearing a $300 million round led by Evolution Equity Partners.",
@@ -10290,48 +10319,24 @@ const DASHBOARD_DATA = {
       "date": "Jun 02, 2026",
       "source": "TechCrunch AI",
       "trend": "Regulatory"
-    },
-    {
-      "title": "Google rolls out fake call detection to protect against AI deepfake impersonation scams",
-      "link": "https://techcrunch.com/2026/06/02/google-rolls-out-fake-call-detection-to-protect-against-ai-deepfake-impersonation-scams/",
-      "description": "As people increasingly refuse to answer calls from unknown numbers, scammers are shifting their tactics by spoofing trusted phone numbers and using AI deepfake technology to sound like authority figures, family members, or employers.",
-      "date": "Jun 02, 2026",
-      "source": "TechCrunch AI",
-      "trend": "General AI"
     }
   ],
   "sentiments": [
     {
-      "company": "Microsoft",
-      "score": 98,
-      "status": "Bullish",
-      "change": "▬ Stable",
-      "reason": "Amazon RDS for SQL Server supports Bring Your Own Media",
-      "mentions": 126
-    },
-    {
       "company": "Anthropic",
-      "score": 94,
+      "score": 91,
       "status": "Bullish",
-      "change": "▲ +1",
-      "reason": "AWS Weekly Roundup: Claude Opus 4.8 on AWS, Aurora MySQL wit...",
-      "mentions": 6
+      "change": "▼ -2",
+      "reason": "Introducing the Services Track and Partner Hub of the Claude...",
+      "mentions": 2
     },
     {
       "company": "NVIDIA",
-      "score": 94,
+      "score": 91,
       "status": "Bullish",
-      "change": "▼ -2",
-      "reason": "AWS PCS now provides a production-ready Deep Learning AMI",
-      "mentions": 1
-    },
-    {
-      "company": "Google Cloud",
-      "score": 89,
-      "status": "Bullish",
-      "change": "▼ -1",
-      "reason": "June 02, 2026",
-      "mentions": 8
+      "change": "▬ Stable",
+      "reason": "Consistent solid market indexing",
+      "mentions": 0
     },
     {
       "company": "Groq",
@@ -10342,20 +10347,28 @@ const DASHBOARD_DATA = {
       "mentions": 0
     },
     {
-      "company": "Apple",
-      "score": 85,
-      "status": "Bullish",
-      "change": "▼ -2",
-      "reason": "[Launched] Generally Available: Improved PDF batch document ...",
-      "mentions": 2
-    },
-    {
       "company": "Databricks",
       "score": 84,
       "status": "Mixed",
       "change": "▲ +2",
-      "reason": "[In preview] Public Preview: Azure Databricks workspace-wide...",
-      "mentions": 8
+      "reason": "Scaling Enterprise Conversational Intelligence: Cross-indust...",
+      "mentions": 1
+    },
+    {
+      "company": "OpenAI",
+      "score": 82,
+      "status": "Mixed",
+      "change": "▬ Stable",
+      "reason": "Consistent solid market indexing",
+      "mentions": 0
+    },
+    {
+      "company": "Microsoft",
+      "score": 81,
+      "status": "Mixed",
+      "change": "▼ -2",
+      "reason": "New Microsoft tool lets devs spin up AI behavior tests using...",
+      "mentions": 2
     },
     {
       "company": "Snowflake",
@@ -10366,20 +10379,28 @@ const DASHBOARD_DATA = {
       "mentions": 0
     },
     {
+      "company": "Google Cloud",
+      "score": 80,
+      "status": "Mixed",
+      "change": "▬ Stable",
+      "reason": "Consistent solid market indexing",
+      "mentions": 0
+    },
+    {
       "company": "Meta",
       "score": 79,
       "status": "Mixed",
-      "change": "▲ +1",
-      "reason": "[In preview] Public Preview: Advanced filtering for DiskANN ...",
-      "mentions": 1
+      "change": "▬ Stable",
+      "reason": "Consistent solid market indexing",
+      "mentions": 0
     },
     {
-      "company": "OpenAI",
+      "company": "Apple",
       "score": 76,
       "status": "Mixed",
-      "change": "▬ Stable",
-      "reason": "Get started with OpenAI GPT-5.5, GPT-5.4 models, and Codex o...",
-      "mentions": 10
+      "change": "▼ -1",
+      "reason": "Scaling Enterprise Conversational Intelligence: Cross-indust...",
+      "mentions": 1
     }
   ]
 };
