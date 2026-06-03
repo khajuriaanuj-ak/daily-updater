@@ -1303,48 +1303,71 @@ function renderStockRecommendations() {
     // Calculate statistics per provider in the last 30 days
     const thirtyDaysAgo = Date.now() - (30 * 24 * 60 * 60 * 1000);
     const releaseCounts30d = {};
+    let totalReleases30d = 0;
     appData.updates.forEach(item => {
         const prov = item.provider;
         if (!releaseCounts30d[prov]) releaseCounts30d[prov] = 0;
         try {
             if (new Date(item.timestamp).getTime() > thirtyDaysAgo) {
                 releaseCounts30d[prov]++;
+                totalReleases30d++;
             }
         } catch (e) {}
     });
 
     const stocks = [
-        { name: "NVIDIA", ticker: "NVDA", exchange: "NASDAQ", baseReason: "Dominating AI chip deliveries (Blackwell B200) with sustained high demand." },
-        { name: "Google Cloud", ticker: "GOOGL", exchange: "NASDAQ", baseReason: "Accelerating developer speed via Vertex AI & AlloyDB remote MCP tools." },
-        { name: "Microsoft (Azure)", ticker: "MSFT", exchange: "NASDAQ", baseReason: "Strong enterprise AI adoption via Azure Copilot and strategic OpenAI backing." },
-        { name: "Amazon (AWS)", ticker: "AMZN", exchange: "NASDAQ", baseReason: "Enterprise scale. Expanded Bedrock model imports are saving clients inference costs." },
-        { name: "Databricks", ticker: "IPO Target", exchange: "Private", baseReason: "High-velocity private data intelligence provider with strong Mosaic AI gains." },
-        { name: "Snowflake", ticker: "SNOW", exchange: "NYSE", baseReason: "Cortex AI Guardrails GA is stabilizing enterprise security confidence." }
+        // Direct Plays
+        { name: "NVIDIA", ticker: "NVDA", category: "direct", baseReason: "Dominating AI hardware standard (Blackwell B200) with sustained datacenter demand." },
+        { name: "Google Cloud", ticker: "GOOGL", category: "direct", baseReason: "Accelerating enterprise custom software speed via Vertex AI & MCP tooling." },
+        { name: "Microsoft (Azure)", ticker: "MSFT", category: "direct", baseReason: "Strong enterprise model monetization via Copilot integrations and OpenAI backing." },
+        { name: "Amazon (AWS)", ticker: "AMZN", category: "direct", baseReason: "Massive scale. Amazon Bedrock custom imports are expanding developer workloads." },
+        { name: "Databricks", ticker: "IPO Target", category: "direct", baseReason: "High-velocity data intelligence provider leading Mosaic AI custom training." },
+        { name: "Snowflake", ticker: "SNOW", category: "direct", baseReason: "Cortex AI Guardrails and search engines stabilizing enterprise data governance." },
+
+        // Indirect / Infrastructure Plays
+        { name: "TSMC", ticker: "TSM", category: "infra", baseReason: "Exclusive foundry fabricating leading-edge Blackwell GPUs and custom TPUs." },
+        { name: "Broadcom", ticker: "AVGO", category: "infra", baseReason: "Dominating custom ASIC design for TPUs and PCIe/Ethernet switching silicon." },
+        { name: "ASML", ticker: "ASML", category: "infra", baseReason: "Monopolist of Extreme Ultraviolet lithography, bottleneck for sub-3nm nodes." },
+        { name: "Vertiv", ticker: "VRT", category: "infra", baseReason: "Critical liquid cooling loops and power distribution units for AI power density." },
+        { name: "Arista Networks", ticker: "ANET", category: "infra", baseReason: "Deploying high-speed ethernet backbones required to scale massive GPU clusters." }
     ];
 
     // Compute signals and filter out 'HOLD' targets to keep only 'BUY' or 'STRONG BUY'
     const curatedStocks = stocks.map(stock => {
-        const provName = stock.name === "Microsoft (Azure)" ? "Azure" : (stock.name === "Amazon (AWS)" ? "AWS" : stock.name);
-        const count = releaseCounts30d[provName] || 0;
-        
+        let count = 0;
         let signal = "HOLD";
         let signalColor = "#eab308"; // Amber
         
-        if (stock.name === "NVIDIA" || stock.name === "Google Cloud" || stock.name === "Microsoft (Azure)" || stock.name === "Databricks") {
-            if (count > 0) {
+        if (stock.category === "direct") {
+            const provName = stock.name === "Microsoft (Azure)" ? "Azure" : (stock.name === "Amazon (AWS)" ? "AWS" : stock.name);
+            count = releaseCounts30d[provName] || 0;
+            
+            if (stock.name === "NVIDIA" || stock.name === "Google Cloud" || stock.name === "Microsoft (Azure)" || stock.name === "Databricks") {
+                if (count > 0) {
+                    signal = "STRONG BUY";
+                    signalColor = "#10b981"; // Emerald
+                } else {
+                    signal = "BUY";
+                    signalColor = "#3b82f6"; // Blue
+                }
+            } else {
+                if (count > 0) {
+                    signal = "BUY";
+                    signalColor = "#3b82f6";
+                } else {
+                    signal = "HOLD";
+                    signalColor = "#eab308";
+                }
+            }
+        } else {
+            // Indirect / Infrastructure plays track general ecosystem momentum
+            count = totalReleases30d;
+            if (totalReleases30d > 8) {
                 signal = "STRONG BUY";
                 signalColor = "#10b981"; // Emerald
             } else {
                 signal = "BUY";
                 signalColor = "#3b82f6"; // Blue
-            }
-        } else {
-            if (count > 0) {
-                signal = "BUY";
-                signalColor = "#3b82f6"; // Blue
-            } else {
-                signal = "HOLD";
-                signalColor = "#eab308";
             }
         }
         
@@ -1401,13 +1424,19 @@ function renderStockRecommendations() {
 }
 
 function renderMiniStockCard(stock, accentColor) {
-    const trackerLabel = stock.count > 0 ? `${stock.count} launches` : "Stable momentum";
+    let trackerLabel = '';
+    if (stock.category === 'direct') {
+        trackerLabel = stock.count > 0 ? `${stock.count} launches` : "Stable momentum";
+    } else {
+        trackerLabel = `Eco-Velocity: ${stock.count} runs`;
+    }
+
     return `
         <div class="stock-mini-card" style="background: rgba(255,255,255,0.015); border: 1px solid rgba(255,255,255,0.04); border-radius: 6px; padding: 6px 8px; display: flex; flex-direction: column; gap: 2px; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);" onmouseover="this.style.background='rgba(255,255,255,0.03)'; this.style.borderColor='${accentColor}55'; this.style.transform='translateY(-1px)';" onmouseout="this.style.background='rgba(255,255,255,0.015)'; this.style.borderColor='rgba(255,255,255,0.04)'; this.style.transform='translateY(0)';">
             <div style="display: flex; align-items: center; justify-content: space-between;">
                 <div>
                     <span style="font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 700; color: var(--text-primary);">${escapeHtml(stock.name)}</span>
-                    <span style="font-size: 8px; color: var(--text-muted); font-family: monospace; margin-left: 2px;">${escapeHtml(stock.ticker)}</span>
+                    <span style="font-size: 8px; color: var(--text-muted); font-family: monospace; margin-left: 2px;">${escapeHtml(stock.ticker)} • ${stock.category === 'direct' ? 'DIRECT' : 'INFRA'}</span>
                 </div>
                 <span style="font-size: 8px; font-family: monospace; color: ${accentColor}; background: rgba(255, 255, 255, 0.03); padding: 1px 4px; border-radius: 3px;">
                     ${trackerLabel}
