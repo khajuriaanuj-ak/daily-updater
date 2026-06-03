@@ -967,6 +967,10 @@ function initControls() {
     const saveGithubBtn = document.getElementById('save-github-btn');
     const clearGithubBtn = document.getElementById('clear-github-btn');
 
+    const visitorNameInput = document.getElementById('visitor-name-input');
+    const saveVisitorBtn = document.getElementById('save-visitor-btn');
+    const clearVisitorBtn = document.getElementById('clear-visitor-btn');
+
     if (chatSettingsBtn && settingsModal && clientApiKeyInput) {
         // Load saved key on boot safely
         const savedKey = safeStorage.getItem('gemini_api_key') || '';
@@ -974,6 +978,10 @@ function initControls() {
 
         if (githubPatInput) {
             githubPatInput.value = safeStorage.getItem('github_pat') || '';
+        }
+
+        if (visitorNameInput) {
+            visitorNameInput.value = safeStorage.getItem('visitor_name') || '';
         }
 
         // If local storage is disabled (e.g. browser file:// restriction), show warning
@@ -992,6 +1000,9 @@ function initControls() {
             if (githubPatInput) githubPatInput.disabled = true;
             if (saveGithubBtn) saveGithubBtn.disabled = true;
             if (clearGithubBtn) clearGithubBtn.disabled = true;
+            if (visitorNameInput) visitorNameInput.disabled = true;
+            if (saveVisitorBtn) saveVisitorBtn.disabled = true;
+            if (clearVisitorBtn) clearVisitorBtn.disabled = true;
         }
 
         const openModal = () => {
@@ -1061,6 +1072,30 @@ function initControls() {
                 if (githubPatInput) githubPatInput.value = '';
                 closeModal();
                 alert('GitHub credentials cleared from browser storage.');
+            });
+        }
+
+        if (saveVisitorBtn && safeStorage.isAvailable) {
+            saveVisitorBtn.addEventListener('click', () => {
+                const name = visitorNameInput.value.trim();
+                if (name) {
+                    safeStorage.setItem('visitor_name', name);
+                    closeModal();
+                    handleVisitorPersonalization();
+                    alert('Visitor name saved successfully!');
+                } else {
+                    alert('Please enter your name first.');
+                }
+            });
+        }
+
+        if (clearVisitorBtn && safeStorage.isAvailable) {
+            clearVisitorBtn.addEventListener('click', () => {
+                safeStorage.removeItem('visitor_name');
+                if (visitorNameInput) visitorNameInput.value = '';
+                closeModal();
+                handleVisitorPersonalization();
+                alert('Visitor name personalization cleared.');
             });
         }
     }
@@ -1895,43 +1930,112 @@ window.addEventListener('DOMContentLoaded', () => {
     handleVisitorPersonalization();
 });
 
-// Personalize based on URL query parameters (e.g. ?visitor=JD or ?name=John+Doe)
+// Personalize based on stored visitor_name, URL parameter, or HTTP Referrer (e.g. linkedin.com)
 function handleVisitorPersonalization() {
     try {
+        const headerControls = document.querySelector('.header-controls');
+        if (!headerControls) return;
+
+        // Clean up old welcome badge if any exists to prevent duplicates
+        const oldWelcome = document.getElementById('welcome-visitor-badge');
+        if (oldWelcome) oldWelcome.remove();
+
         const urlParams = new URLSearchParams(window.location.search);
-        const visitor = urlParams.get('visitor') || urlParams.get('name') || urlParams.get('u');
-        if (visitor) {
-            let initials = visitor.trim();
+        
+        // 1. Priority 1: Stored name in localStorage
+        const storedName = safeStorage.getItem('visitor_name');
+        
+        // 2. Priority 2: URL parameter (?visitor=..., ?name=..., ?u=...)
+        const urlVisitor = urlParams.get('visitor') || urlParams.get('name') || urlParams.get('u');
+        
+        // 3. Priority 3: Referrer detection (linkedin, x/twitter, github, etc.)
+        const referrer = document.referrer ? document.referrer.toLowerCase() : '';
+        
+        let label = '';
+        let icon = '👋';
+        let badgeBg = 'rgba(16, 185, 129, 0.12)';
+        let badgeBorder = 'rgba(16, 185, 129, 0.25)';
+        let badgeColor = '#a7f3d0';
+
+        if (storedName) {
+            let initials = storedName.trim();
             if (initials.includes(' ')) {
                 const parts = initials.split(/\s+/);
                 initials = (parts[0][0] + (parts[parts.length - 1][0] || '')).toUpperCase();
             } else {
                 initials = initials.substring(0, 2).toUpperCase();
             }
+            label = `Welcome, ${initials}`;
+        } else if (urlVisitor) {
+            let initials = urlVisitor.trim();
+            if (initials.includes(' ')) {
+                const parts = initials.split(/\s+/);
+                initials = (parts[0][0] + (parts[parts.length - 1][0] || '')).toUpperCase();
+            } else {
+                initials = initials.substring(0, 2).toUpperCase();
+            }
+            label = `Welcome, ${initials}`;
+            // Also store it for future page reloads since they clicked a personalized link
+            safeStorage.setItem('visitor_name', urlVisitor);
+        } else if (referrer.includes('linkedin.com')) {
+            label = 'LinkedIn Connection';
+            icon = '🔗';
+            badgeBg = 'rgba(10, 102, 194, 0.15)'; // LinkedIn Brand blue
+            badgeBorder = 'rgba(10, 102, 194, 0.3)';
+            badgeColor = '#93c5fd';
+        } else if (referrer.includes('t.co') || referrer.includes('twitter.com') || referrer.includes('x.com')) {
+            label = 'X / Twitter Visitor';
+            icon = '🐦';
+            badgeBg = 'rgba(255, 255, 255, 0.08)';
+            badgeBorder = 'rgba(255, 255, 255, 0.15)';
+            badgeColor = '#cbd5e1';
+        } else if (referrer.includes('github.com')) {
+            label = 'GitHub Peer';
+            icon = '💻';
+            badgeBg = 'rgba(139, 92, 246, 0.12)';
+            badgeBorder = 'rgba(139, 92, 246, 0.25)';
+            badgeColor = '#c7d2fe';
+        } else {
+            // No custom param, no social referrer. Just show a premium welcome or skip it.
+            // Let's show a subtle general guest welcoming
+            label = 'Guest Visitor';
+            icon = '✨';
+            badgeBg = 'rgba(255, 255, 255, 0.03)';
+            badgeBorder = 'rgba(255, 255, 255, 0.07)';
+            badgeColor = '#94a3b8';
+        }
+
+        if (label) {
+            const welcomeEl = document.createElement('div');
+            welcomeEl.id = 'welcome-visitor-badge';
+            welcomeEl.className = 'curator-badge'; // Reuse class styling
+            welcomeEl.style.background = badgeBg;
+            welcomeEl.style.color = badgeColor;
+            welcomeEl.style.border = `1px solid ${badgeBorder}`;
+            welcomeEl.style.borderRadius = '8px';
+            welcomeEl.style.padding = '6px 12px';
+            welcomeEl.style.fontSize = '11px';
+            welcomeEl.style.fontFamily = "'Outfit', sans-serif";
+            welcomeEl.style.display = 'flex';
+            welcomeEl.style.alignItems = 'center';
+            welcomeEl.style.gap = '6px';
+            welcomeEl.style.fontWeight = '600';
+            welcomeEl.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+            welcomeEl.style.cursor = 'pointer';
+            welcomeEl.title = 'Click to customize your greeting name';
+            welcomeEl.innerHTML = `<span>${icon}</span><span>${escapeHtml(label)}</span>`;
             
-            const headerControls = document.querySelector('.header-controls');
-            if (headerControls) {
-                const welcomeEl = document.createElement('div');
-                welcomeEl.style.background = 'rgba(16, 185, 129, 0.12)';
-                welcomeEl.style.color = '#a7f3d0';
-                welcomeEl.style.border = '1px solid rgba(16, 185, 129, 0.25)';
-                welcomeEl.style.borderRadius = '8px';
-                welcomeEl.style.padding = '6px 12px';
-                welcomeEl.style.fontSize = '11px';
-                welcomeEl.style.fontFamily = "'Outfit', sans-serif";
-                welcomeEl.style.display = 'flex';
-                welcomeEl.style.alignItems = 'center';
-                welcomeEl.style.gap = '6px';
-                welcomeEl.style.fontWeight = '600';
-                welcomeEl.style.boxShadow = '0 2px 10px rgba(16,185,129,0.05)';
-                welcomeEl.innerHTML = `<span>👋</span><span>Welcome, ${escapeHtml(initials)}</span>`;
-                
-                const firstBadge = headerControls.firstElementChild;
-                if (firstBadge) {
-                    headerControls.insertBefore(welcomeEl, firstBadge);
-                } else {
-                    headerControls.appendChild(welcomeEl);
-                }
+            // Clicking the welcome badge opens settings so they can personalize it!
+            welcomeEl.addEventListener('click', () => {
+                const settingsBtn = document.getElementById('chat-settings-btn');
+                if (settingsBtn) settingsBtn.click();
+            });
+
+            const firstBadge = headerControls.firstElementChild;
+            if (firstBadge) {
+                headerControls.insertBefore(welcomeEl, firstBadge);
+            } else {
+                headerControls.appendChild(welcomeEl);
             }
         }
     } catch (e) {

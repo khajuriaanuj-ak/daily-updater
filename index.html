@@ -303,6 +303,19 @@
                         Required only if you want the "Sync Now" button to trigger the scraping run in the cloud when hosting on GitHub Pages. The repository name is hidden and managed automatically in the background.
                     </p>
                 </div>
+                
+                <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 16px;">
+                    <!-- Visitor Personalization Section -->
+                    <label style="display: block; font-weight: 600; color: #a5b4fc; margin-bottom: 6px; font-size: 12px;">Visitor Personalization (Optional)</label>
+                    <div style="display: flex; gap: 8px;">
+                        <input type="text" id="visitor-name-input" placeholder="Enter your name or initials..." style="flex-grow: 1; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-primary); padding: 8px 12px; font-size: 12px; outline: none; transition: border-color 0.3s;">
+                        <button id="save-visitor-btn" style="background: #6366f1; color: white; border: none; border-radius: 6px; padding: 0 16px; cursor: pointer; font-weight: 600; font-size: 12px; transition: background 0.2s;" onmouseover="this.style.background='#4f46e5'" onmouseout="this.style.background='#6366f1'">Save</button>
+                        <button id="clear-visitor-btn" style="background: rgba(220,38,38,0.2); color: #f87171; border: 1px solid rgba(220,38,38,0.4); border-radius: 6px; padding: 0 16px; cursor: pointer; font-size: 12px; transition: all 0.2s;" onmouseover="this.style.background='rgba(220,38,38,0.3)'" onmouseout="this.style.background='rgba(220,38,38,0.2)'">Clear</button>
+                    </div>
+                    <p style="margin: 8px 0 0 0; color: var(--text-muted); font-size: 11px; line-height: 1.4;">
+                        Type your name or initials to personalize the greeting on the dashboard. Stored locally in your browser.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
