@@ -30,7 +30,7 @@ def load_json(filepath, default):
     return default
 
 def generate_markdown_report(new_updates, report_date):
-    md = f"# Cloud & AI Releases Report - {report_date}\n\n"
+    md = f"# Release Radar - {report_date}\n\n"
     md += "Here are the latest AI-focused feature, concept, and tool updates from major cloud and AI providers.\n\n"
     
     # Group by provider

@@ -66,7 +66,7 @@ def generate_no_updates_email(news_trends, report_date):
     <html>
     <head>
         <meta charset="utf-8">
-        <title>Daily Cloud & AI Intelligence - All Quiet</title>
+        <title>Release Radar - All Quiet</title>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     </head>
     <body style="margin: 0; padding: 0; background-color: #f7fafc; font-family: 'Inter', sans-serif;">
@@ -77,7 +77,7 @@ def generate_no_updates_email(news_trends, report_date):
                         <!-- Header -->
                         <tr>
                             <td style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 40px 30px; text-align: center;">
-                                <h1 style="margin: 0; font-size: 24px; color: #ffffff; font-weight: 700; letter-spacing: -0.5px;">Cloud & AI Release Intelligence</h1>
+                                <h1 style="margin: 0; font-size: 24px; color: #ffffff; font-weight: 700; letter-spacing: -0.5px;">Release Radar</h1>
                                 <p style="margin: 8px 0 0 0; font-size: 14px; color: #94a3b8;">Daily Digest &bull; {report_date}</p>
                             </td>
                         </tr>
@@ -152,7 +152,7 @@ def generate_html_email(new_updates, report_date, news_trends=[]):
     <html>
     <head>
         <meta charset="utf-8">
-        <title>Daily Cloud & AI Intelligence</title>
+        <title>Release Radar</title>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     </head>
     <body style="margin: 0; padding: 0; background-color: #f7fafc; font-family: 'Inter', sans-serif;">
@@ -163,7 +163,7 @@ def generate_html_email(new_updates, report_date, news_trends=[]):
                         <!-- Header -->
                         <tr>
                             <td style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); padding: 40px 30px; text-align: center;">
-                                <h1 style="margin: 0; font-size: 24px; color: #ffffff; font-weight: 700; letter-spacing: -0.5px;">Cloud & AI Release Intelligence</h1>
+                                <h1 style="margin: 0; font-size: 24px; color: #ffffff; font-weight: 700; letter-spacing: -0.5px;">Release Radar</h1>
                                 <p style="margin: 8px 0 0 0; font-size: 14px; color: #bfdbfe;">AI-Focused Releases &bull; {report_date}</p>
                             </td>
                         </tr>
@@ -239,7 +239,7 @@ def send_email(config, email_html, report_date):
         print("Email notification is disabled in config.json")
         return False
         
-    subject = f"Cloud & AI Release Intelligence - {report_date}"
+    subject = f"Release Radar - {report_date}"
     
     # 1. Try Google Apps Script Web App (Passwordless Option)
     script_url = config.get("google_script_url")
