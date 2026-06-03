@@ -92,6 +92,45 @@ if (typeof DASHBOARD_DATA !== 'undefined' && DASHBOARD_DATA) {
 }
 
 // Helpers
+const safeStorage = {
+    isAvailable: (() => {
+        try {
+            const key = '__storage_test__';
+            localStorage.setItem(key, key);
+            localStorage.removeItem(key);
+            return true;
+        } catch (e) {
+            return false;
+        }
+    })(),
+    getItem(key) {
+        if (!this.isAvailable) return null;
+        try {
+            return localStorage.getItem(key);
+        } catch (e) {
+            return null;
+        }
+    },
+    setItem(key, value) {
+        if (!this.isAvailable) return false;
+        try {
+            localStorage.setItem(key, value);
+            return true;
+        } catch (e) {
+            return false;
+        }
+    },
+    removeItem(key) {
+        if (!this.isAvailable) return false;
+        try {
+            localStorage.removeItem(key);
+            return true;
+        } catch (e) {
+            return false;
+        }
+    }
+};
+
 function escapeHtml(text) {
     if (!text) return "";
     return text
@@ -886,24 +925,40 @@ function initControls() {
     const clearKeyBtn = document.getElementById('clear-key-btn');
 
     if (chatSettingsBtn && chatSettingsPanel && clientApiKeyInput) {
-        // Load saved key on boot
-        const savedKey = localStorage.getItem('gemini_api_key') || '';
+        // Load saved key on boot safely
+        const savedKey = safeStorage.getItem('gemini_api_key') || '';
         clientApiKeyInput.value = savedKey;
+
+        // If local storage is disabled (e.g. browser file:// restriction), show warning
+        if (!safeStorage.isAvailable) {
+            const warningEl = document.createElement('div');
+            warningEl.style.color = '#f87171';
+            warningEl.style.fontSize = '10px';
+            warningEl.style.marginTop = '8px';
+            warningEl.style.lineHeight = '1.3';
+            warningEl.innerHTML = '⚠️ <strong>Browser Security Block:</strong> Browsers restrict saving keys under the <code>file://</code> protocol. Please start your local server by running <code>python serve.py</code> and use <code>http://localhost:8000</code>.';
+            chatSettingsPanel.appendChild(warningEl);
+            clientApiKeyInput.disabled = true;
+            if (saveKeyBtn) saveKeyBtn.disabled = true;
+            if (clearKeyBtn) clearKeyBtn.disabled = true;
+        }
 
         chatSettingsBtn.addEventListener('click', () => {
             if (chatSettingsPanel.style.display === 'none' || !chatSettingsPanel.style.display) {
                 chatSettingsPanel.style.display = 'block';
-                clientApiKeyInput.focus();
+                if (safeStorage.isAvailable) {
+                    clientApiKeyInput.focus();
+                }
             } else {
                 chatSettingsPanel.style.display = 'none';
             }
         });
 
-        if (saveKeyBtn) {
+        if (saveKeyBtn && safeStorage.isAvailable) {
             saveKeyBtn.addEventListener('click', () => {
                 const key = clientApiKeyInput.value.trim();
                 if (key) {
-                    localStorage.setItem('gemini_api_key', key);
+                    safeStorage.setItem('gemini_api_key', key);
                     chatSettingsPanel.style.display = 'none';
                     alert('Gemini API Key saved securely to your browser storage!');
                 } else {
@@ -912,9 +967,9 @@ function initControls() {
             });
         }
 
-        if (clearKeyBtn) {
+        if (clearKeyBtn && safeStorage.isAvailable) {
             clearKeyBtn.addEventListener('click', () => {
-                localStorage.removeItem('gemini_api_key');
+                safeStorage.removeItem('gemini_api_key');
                 clientApiKeyInput.value = '';
                 chatSettingsPanel.style.display = 'none';
                 alert('Gemini API Key removed from browser storage.');
@@ -966,7 +1021,7 @@ function handleChatSend() {
         console.log("Local server chat offline, trying direct browser-to-Gemini connection...", error);
         
         // 2. Local server failed. Try direct client-side API Key.
-        const apiKey = localStorage.getItem('gemini_api_key');
+        const apiKey = safeStorage.getItem('gemini_api_key');
         if (apiKey && apiKey.trim()) {
             callGeminiDirect(query, apiKey)
             .then(replyHtml => {
@@ -983,10 +1038,15 @@ function handleChatSend() {
             chatMessages.removeChild(thinking);
             
             const localReply = generateAiReply(query);
+            let noticeText = `To enable advanced reasoning explanations on GitHub Pages, click the settings gear icon (⚙️) above and paste your free <strong>Gemini API Key</strong>.`;
+            if (!safeStorage.isAvailable) {
+                noticeText = `Your browser blocks settings storage when loading via the <code>file://</code> protocol. To use the AI Assistant, run <code>python serve.py</code> in the terminal and open <code>http://localhost:8000</code> in your browser.`;
+            }
+            
             const promptSetupMsg = `
                 <div style="margin-bottom:12px; padding:10px; border-radius:6px; border:1px solid rgba(96,165,250,0.3); background:rgba(96,165,250,0.05); font-size:11px;">
-                    ℹ️ <strong>Static Cloud Mode Active:</strong> The local Python backend is offline. 
-                    To enable advanced reasoning explanations on GitHub Pages, click the settings gear icon (⚙️) above and paste your free <strong>Gemini API Key</strong>.
+                    ℹ️ <strong>Static Cloud Mode Active:</strong> The local Python backend is offline.<br><br>
+                    ${noticeText}
                 </div>
                 ${localReply}
             `;
