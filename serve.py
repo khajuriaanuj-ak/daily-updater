@@ -19,7 +19,45 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         super().end_headers()
         
     def do_POST(self):
-        if self.path == '/api/chat':
+        if self.path == '/api/sync':
+            try:
+                import subprocess
+                import sys
+                import json
+                import re
+                
+                # Run main.py as a subprocess
+                process = subprocess.run([sys.executable, os.path.join(DIRECTORY, 'main.py')], capture_output=True, text=True, encoding='utf-8')
+                
+                if process.returncode == 0:
+                    output = process.stdout
+                    new_releases = 0
+                    match = re.search(r'Found (\d+) new updates', output)
+                    if match:
+                        new_releases = int(match.group(1))
+                    
+                    response_body = {
+                        "success": True,
+                        "new_releases": new_releases,
+                        "log": output
+                    }
+                    self.send_response(200)
+                else:
+                    response_body = {
+                        "success": False,
+                        "error": process.stderr or process.stdout or "Scraper exited with non-zero status"
+                    }
+                    self.send_response(500)
+                    
+                self.send_header('Content-Type', 'application/json')
+                self.end_headers()
+                self.wfile.write(json.dumps(response_body).encode('utf-8'))
+            except Exception as e:
+                self.send_response(500)
+                self.send_header('Content-Type', 'application/json')
+                self.end_headers()
+                self.wfile.write(json.dumps({"success": False, "error": str(e)}).encode('utf-8'))
+        elif self.path == '/api/chat':
             content_length = int(self.headers['Content-Length'])
             post_data = self.rfile.read(content_length)
             

@@ -905,6 +905,12 @@ function initControls() {
         });
     }
 
+    // Sync Button Click Handler
+    const syncNowBtn = document.getElementById('sync-now-btn');
+    if (syncNowBtn) {
+        syncNowBtn.addEventListener('click', () => triggerSync());
+    }
+
     // Chat Assistant Widget Event Listeners
     const chatInput = document.getElementById('chat-input');
     const chatSendBtn = document.getElementById('chat-send-btn');
@@ -924,10 +930,20 @@ function initControls() {
     const saveKeyBtn = document.getElementById('save-key-btn');
     const clearKeyBtn = document.getElementById('clear-key-btn');
 
+    const githubRepoInput = document.getElementById('github-repo-input');
+    const githubPatInput = document.getElementById('github-pat-input');
+    const saveGithubBtn = document.getElementById('save-github-btn');
+    const clearGithubBtn = document.getElementById('clear-github-btn');
+
     if (chatSettingsBtn && chatSettingsPanel && clientApiKeyInput) {
         // Load saved key on boot safely
         const savedKey = safeStorage.getItem('gemini_api_key') || '';
         clientApiKeyInput.value = savedKey;
+
+        if (githubRepoInput && githubPatInput) {
+            githubRepoInput.value = safeStorage.getItem('github_repo') || 'khajuriaanuj-ak/daily-updater';
+            githubPatInput.value = safeStorage.getItem('github_pat') || '';
+        }
 
         // If local storage is disabled (e.g. browser file:// restriction), show warning
         if (!safeStorage.isAvailable) {
@@ -941,6 +957,10 @@ function initControls() {
             clientApiKeyInput.disabled = true;
             if (saveKeyBtn) saveKeyBtn.disabled = true;
             if (clearKeyBtn) clearKeyBtn.disabled = true;
+            if (githubRepoInput) githubRepoInput.disabled = true;
+            if (githubPatInput) githubPatInput.disabled = true;
+            if (saveGithubBtn) saveGithubBtn.disabled = true;
+            if (clearGithubBtn) clearGithubBtn.disabled = true;
         }
 
         chatSettingsBtn.addEventListener('click', () => {
@@ -973,6 +993,32 @@ function initControls() {
                 clientApiKeyInput.value = '';
                 chatSettingsPanel.style.display = 'none';
                 alert('Gemini API Key removed from browser storage.');
+            });
+        }
+
+        if (saveGithubBtn && safeStorage.isAvailable) {
+            saveGithubBtn.addEventListener('click', () => {
+                const repo = githubRepoInput.value.trim();
+                const pat = githubPatInput.value.trim();
+                if (repo && pat) {
+                    safeStorage.setItem('github_repo', repo);
+                    safeStorage.setItem('github_pat', pat);
+                    chatSettingsPanel.style.display = 'none';
+                    alert('GitHub credentials saved securely to your browser storage!');
+                } else {
+                    alert('Please enter both Repository Path and PAT Token.');
+                }
+            });
+        }
+
+        if (clearGithubBtn && safeStorage.isAvailable) {
+            clearGithubBtn.addEventListener('click', () => {
+                safeStorage.removeItem('github_repo');
+                safeStorage.removeItem('github_pat');
+                if (githubRepoInput) githubRepoInput.value = 'khajuriaanuj-ak/daily-updater';
+                if (githubPatInput) githubPatInput.value = '';
+                chatSettingsPanel.style.display = 'none';
+                alert('GitHub credentials cleared from browser storage.');
             });
         }
     }
@@ -1447,6 +1493,137 @@ function renderMiniStockCard(stock, accentColor) {
             </p>
         </div>
     `;
+}
+
+async function triggerSync() {
+    const syncBtn = document.getElementById('sync-now-btn');
+    const syncIcon = document.getElementById('sync-icon');
+    const syncText = document.getElementById('sync-text');
+    if (!syncBtn) return;
+
+    if (syncBtn.disabled) return;
+
+    syncBtn.disabled = true;
+    syncText.textContent = "Syncing...";
+    
+    let rotation = 0;
+    const spinInterval = setInterval(() => {
+        rotation += 20;
+        syncIcon.style.transform = `rotate(${rotation}deg)`;
+    }, 40);
+
+    const isLocalServer = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+    if (isLocalServer) {
+        try {
+            const response = await fetch('/api/sync', {
+                method: 'POST'
+            });
+            const result = await response.json();
+            
+            clearInterval(spinInterval);
+            syncIcon.style.transform = 'rotate(0deg)';
+
+            if (response.ok && result.success) {
+                syncText.textContent = "Success!";
+                syncBtn.style.background = 'rgba(16, 185, 129, 0.2)';
+                syncBtn.style.borderColor = '#10b981';
+                
+                appendAssistantMessage(`🔄 <strong>Local Sync Complete!</strong> Fetching updates succeeded. Captured ${result.new_releases} new announcements. Reloading dashboard data...`);
+                
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
+            } else {
+                throw new Error(result.error || 'Server error occurred during sync.');
+            }
+        } catch (err) {
+            clearInterval(spinInterval);
+            syncIcon.style.transform = 'rotate(0deg)';
+            syncText.textContent = "Failed";
+            syncBtn.style.background = 'rgba(220, 38, 38, 0.2)';
+            syncBtn.style.borderColor = '#dc2626';
+            syncBtn.disabled = false;
+            
+            appendAssistantMessage(`❌ <strong>Sync Failed:</strong> ${escapeHtml(err.message)}`);
+            setTimeout(() => {
+                syncText.textContent = "Sync Now";
+                syncBtn.style.background = '';
+                syncBtn.style.borderColor = '';
+            }, 5000);
+        }
+    } else {
+        const pat = safeStorage.getItem('github_pat') || '';
+        const repo = safeStorage.getItem('github_repo') || 'khajuriaanuj-ak/daily-updater';
+        
+        if (!pat) {
+            clearInterval(spinInterval);
+            syncIcon.style.transform = 'rotate(0deg)';
+            syncText.textContent = "PAT Required";
+            syncBtn.style.background = 'rgba(245, 158, 11, 0.2)';
+            syncBtn.style.borderColor = '#f59e0b';
+            syncBtn.disabled = false;
+            
+            appendAssistantMessage(`⚠️ <strong>Manual Sync on GitHub Pages:</strong> To trigger a sync from the cloud, you must configure a <strong>GitHub Personal Access Token (PAT)</strong> in the settings panel (⚙️ gear icon in the chat widget header).<br><br>Otherwise, you can trigger it manually in your GitHub Repository under the <strong>Actions</strong> tab by running the <strong>daily_sync.yml</strong> workflow.`);
+            
+            setTimeout(() => {
+                syncText.textContent = "Sync Now";
+                syncBtn.style.background = '';
+                syncBtn.style.borderColor = '';
+            }, 6000);
+            return;
+        }
+
+        try {
+            const url = `https://api.github.com/repos/${repo}/actions/workflows/daily_sync.yml/dispatches`;
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${pat}`,
+                    'Accept': 'application/vnd.github+json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    ref: 'main'
+                })
+            });
+
+            clearInterval(spinInterval);
+            syncIcon.style.transform = 'rotate(0deg)';
+
+            if (response.status === 204) {
+                syncText.textContent = "Workflow Triggered!";
+                syncBtn.style.background = 'rgba(16, 185, 129, 0.2)';
+                syncBtn.style.borderColor = '#10b981';
+                
+                appendAssistantMessage(`🚀 <strong>GitHub Sync Triggered!</strong> The GitHub Actions workflow is starting to scrape new releases. It will compile and push changes to your repository. This process takes 1–2 minutes, after which your live page will automatically show the updated data!`);
+                
+                setTimeout(() => {
+                    syncText.textContent = "Sync Now";
+                    syncBtn.style.background = '';
+                    syncBtn.style.borderColor = '';
+                    syncBtn.disabled = false;
+                }, 8000);
+            } else {
+                const errData = await response.json().catch(() => ({}));
+                throw new Error(errData.message || `GitHub API returned HTTP ${response.status}`);
+            }
+        } catch (err) {
+            clearInterval(spinInterval);
+            syncIcon.style.transform = 'rotate(0deg)';
+            syncText.textContent = "Failed";
+            syncBtn.style.background = 'rgba(220, 38, 38, 0.2)';
+            syncBtn.style.borderColor = '#dc2626';
+            syncBtn.disabled = false;
+            
+            appendAssistantMessage(`❌ <strong>GitHub Dispatch Sync Failed:</strong> ${escapeHtml(err.message)}. Please verify your GitHub PAT and Repository name in the settings panel.`);
+            setTimeout(() => {
+                syncText.textContent = "Sync Now";
+                syncBtn.style.background = '';
+                syncBtn.style.borderColor = '';
+            }, 6000);
+        }
+    }
 }
 
 // Bootstrapping
