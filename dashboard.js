@@ -143,6 +143,31 @@ function getTrendTagClass(trend) {
     return tr;
 }
 
+function getReleaseNature(title, description) {
+    const text = `${title || ""} ${description || ""}`.toLowerCase();
+    
+    // 1. Protocol & Spec
+    if (text.includes("protocol") || text.includes("mcp") || text.includes("spec") || text.includes("tunnel") || text.includes("standard") || text.includes("connector") || text.includes("specifications")) {
+        return { type: "Protocol & Spec", icon: "🔌", class: "nature-protocol" };
+    }
+    // 2. Hardware & Infrastructure
+    if (text.includes("gpu") || text.includes("tpu") || text.includes("blackwell") || text.includes("nvidia") || text.includes("h100") || text.includes("b200") || text.includes("chip") || text.includes("hardware") || text.includes("cluster") || text.includes("serverless") || text.includes("compute") || text.includes("storage") || text.includes("instance") || text.includes("infrastructure")) {
+        return { type: "Hardware & Infra", icon: "⚙️", class: "nature-hardware" };
+    }
+    // 3. Model & Concept
+    if (text.includes("model") || text.includes("reasoning") || text.includes("thinking") || text.includes("gemini") || text.includes("claude") || text.includes("gpt") || text.includes("llama") || text.includes("embedding") || text.includes("llm") || text.includes("slm") || text.includes("weights") || text.includes("fine-tune") || text.includes("deep learning") || text.includes("neural")) {
+        return { type: "Model & Concept", icon: "🧠", class: "nature-model" };
+    }
+    // 4. Software & SDK
+    if (text.includes("sdk") || text.includes("library") || text.includes("python") || text.includes("client") || text.includes("driver") || text.includes("api") || text.includes("package") || text.includes("framework") || text.includes("cli") || text.includes("toolkit") || text.match(/v\d+\.\d+/) || text.includes("github") || text.includes("code") || text.includes("software") || text.includes("developer")) {
+        return { type: "Software & SDK", icon: "💻", class: "nature-software" };
+    }
+    
+    // 5. Default: Feature & Service
+    return { type: "Feature & Service", icon: "⚡", class: "nature-feature" };
+}
+
+
 // Stats Calculation
 function calculateStats() {
     // 1. Total releases count
@@ -260,13 +285,17 @@ function renderReleases() {
     
     let htmlContent = updatesToRender.map(item => {
         const provClass = getProviderTagClass(item.provider);
+        const nature = getReleaseNature(item.title, item.description);
         if (!item.title || !item.description) {
             fetch('/log-error?msg=' + encodeURIComponent('DIAGNOSTIC: keys=' + Object.keys(item).join(',') + '; provider=' + item.provider + '; timestamp=' + item.timestamp));
         }
         return `
             <div class="release-card ${provClass}-border">
                 <div class="card-header">
-                    <span class="provider-tag ${provClass}">${escapeHtml(item.provider)}</span>
+                    <div style="display: flex; gap: 6px; align-items: center;">
+                        <span class="provider-tag ${provClass}">${escapeHtml(item.provider)}</span>
+                        <span class="nature-tag ${nature.class}">${nature.icon} ${nature.type}</span>
+                    </div>
                     <span class="card-date">${formatDate(item.timestamp)}</span>
                 </div>
                 <h3><a href="${item.link}" target="_blank">${escapeHtml(item.title)}</a></h3>
