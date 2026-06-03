@@ -169,7 +169,8 @@ def main():
         "Azure": "https://www.microsoft.com/releasecommunications/api/v2/azure/rss",
         "Databricks": "https://databricks.com/feed",
         "OpenAI": "https://openai.com/blog/rss.xml",
-        "Anthropic": "https://rsshub.bestblogs.dev/anthropic/news"
+        "Anthropic": "https://rsshub.bestblogs.dev/anthropic/news",
+        "Google Antigravity": "https://github.com/google-antigravity/antigravity-sdk-python/releases.atom"
     }
     
     new_updates = []

@@ -1142,7 +1142,8 @@ function renderPlatformActivityVisualizer(filteredUpdates = null) {
         "Databricks": 0,
         "Snowflake": 0,
         "OpenAI": 0,
-        "Anthropic": 0
+        "Anthropic": 0,
+        "Google Antigravity": 0
     };
     
     itemsToCount.forEach(item => {

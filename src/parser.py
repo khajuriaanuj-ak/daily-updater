@@ -19,7 +19,7 @@ AI_KEYWORDS = [
 
 def is_ai_related(title, description, provider):
     # Core AI & Data platforms are 100% relevant, always keep
-    if provider in ["OpenAI", "Anthropic", "Databricks", "Snowflake"]:
+    if provider in ["OpenAI", "Anthropic", "Databricks", "Snowflake", "Google Antigravity"]:
         return True
     
     text = f"{title} {description}".lower()
@@ -123,46 +123,87 @@ def parse_rss_feed(provider, url, state_manager):
         except UnicodeDecodeError:
             content_str = raw_content.decode('latin-1')
             
-            root = ET.fromstring(content_str)
+        root = ET.fromstring(content_str)
+        
+        # Check for Atom feed first
+        is_atom = False
+        entries = root.findall('{http://www.w3.org/2005/Atom}entry')
+        if not entries:
+            entries = root.findall('.//{http://www.w3.org/2005/Atom}entry')
+        if entries:
+            is_atom = True
             
-            # Check for Atom feed first
-            is_atom = False
-            entries = root.findall('{http://www.w3.org/2005/Atom}entry')
-            if not entries:
-                entries = root.findall('.//{http://www.w3.org/2005/Atom}entry')
-            if entries:
-                is_atom = True
+        if is_atom:
+            for entry in entries:
+                title_elem = entry.find('{http://www.w3.org/2005/Atom}title')
+                link_elem = entry.find('{http://www.w3.org/2005/Atom}link')
+                summary_elem = entry.find('{http://www.w3.org/2005/Atom}summary')
+                if summary_elem is None:
+                    summary_elem = entry.find('{http://www.w3.org/2005/Atom}content')
                 
-            if is_atom:
-                for entry in entries:
-                    title_elem = entry.find('{http://www.w3.org/2005/Atom}title')
-                    link_elem = entry.find('{http://www.w3.org/2005/Atom}link')
-                    summary_elem = entry.find('{http://www.w3.org/2005/Atom}summary')
-                    if summary_elem is None:
-                        summary_elem = entry.find('{http://www.w3.org/2005/Atom}content')
+                title = title_elem.text.strip() if title_elem is not None and title_elem.text else "No Title"
+                
+                if link_elem is not None:
+                    link = link_elem.attrib.get('href')
+                    if not link:
+                        link = link_elem.text
+                else:
+                    link = None
+                    
+                if not link:
+                    continue
+                    
+                if not state_manager.is_new(link):
+                    continue
+                    
+                desc = clean_html_tags(summary_elem.text.strip() if summary_elem is not None and summary_elem.text else "")
+                desc = desc[:250] + "..." if len(desc) > 250 else desc
+                
+                # Extract Atom publication date
+                pub_elem = entry.find('{http://www.w3.org/2005/Atom}published')
+                if pub_elem is None:
+                    pub_elem = entry.find('{http://www.w3.org/2005/Atom}updated')
+                pub_date_str = pub_elem.text if pub_elem is not None and pub_elem.text else ""
+                timestamp = parse_pub_date(pub_date_str)
+                
+                if is_ai_related(title, desc, provider):
+                    updates.append({
+                        "title": title,
+                        "link": link,
+                        "description": desc,
+                        "provider": provider,
+                        "timestamp": timestamp
+                    })
+        else:
+            # Standard RSS
+            channel = root.find('channel')
+            if channel is None:
+                channel = root.find('.//channel')
+            if channel is not None:
+                items = channel.findall('item')
+                for item in items:
+                    title_elem = item.find('title')
+                    link_elem = item.find('link')
+                    desc_elem = item.find('description')
                     
                     title = title_elem.text.strip() if title_elem is not None and title_elem.text else "No Title"
+                    link = link_elem.text.strip() if link_elem is not None and link_elem.text else None
                     
-                    if link_elem is not None:
-                        link = link_elem.attrib.get('href')
-                        if not link:
-                            link = link_elem.text
-                    else:
-                        link = None
-                        
                     if not link:
                         continue
                         
                     if not state_manager.is_new(link):
                         continue
                         
-                    desc = clean_html_tags(summary_elem.text.strip() if summary_elem is not None and summary_elem.text else "")
+                    desc_text = desc_elem.text.strip() if desc_elem is not None and desc_elem.text else ""
+                    if desc_text.startswith("<![CDATA[") and desc_text.endswith("]]>"):
+                        desc_text = desc_text[9:-3]
+                        
+                    desc = clean_html_tags(desc_text)
                     desc = desc[:250] + "..." if len(desc) > 250 else desc
                     
-                    # Extract Atom publication date
-                    pub_elem = entry.find('{http://www.w3.org/2005/Atom}published')
-                    if pub_elem is None:
-                        pub_elem = entry.find('{http://www.w3.org/2005/Atom}updated')
+                    # Extract RSS publication date
+                    pub_elem = item.find('pubDate')
                     pub_date_str = pub_elem.text if pub_elem is not None and pub_elem.text else ""
                     timestamp = parse_pub_date(pub_date_str)
                     
@@ -170,51 +211,10 @@ def parse_rss_feed(provider, url, state_manager):
                         updates.append({
                             "title": title,
                             "link": link,
-                            "description": desc,
+                            "description": desc.strip(),
                             "provider": provider,
                             "timestamp": timestamp
                         })
-            else:
-                # Standard RSS
-                channel = root.find('channel')
-                if channel is None:
-                    channel = root.find('.//channel')
-                if channel is not None:
-                    items = channel.findall('item')
-                    for item in items:
-                        title_elem = item.find('title')
-                        link_elem = item.find('link')
-                        desc_elem = item.find('description')
-                        
-                        title = title_elem.text.strip() if title_elem is not None and title_elem.text else "No Title"
-                        link = link_elem.text.strip() if link_elem is not None and link_elem.text else None
-                        
-                        if not link:
-                            continue
-                            
-                        if not state_manager.is_new(link):
-                            continue
-                            
-                        desc_text = desc_elem.text.strip() if desc_elem is not None and desc_elem.text else ""
-                        if desc_text.startswith("<![CDATA[") and desc_text.endswith("]]>"):
-                            desc_text = desc_text[9:-3]
-                            
-                        desc = clean_html_tags(desc_text)
-                        desc = desc[:250] + "..." if len(desc) > 250 else desc
-                        
-                        # Extract RSS publication date
-                        pub_elem = item.find('pubDate')
-                        pub_date_str = pub_elem.text if pub_elem is not None and pub_elem.text else ""
-                        timestamp = parse_pub_date(pub_date_str)
-                        
-                        if is_ai_related(title, desc, provider):
-                            updates.append({
-                                "title": title,
-                                "link": link,
-                                "description": desc.strip(),
-                                "provider": provider,
-                                "timestamp": timestamp
-                            })
     except Exception as e:
         print(f"Error parsing feed for {provider} ({url}): {e}")
         
