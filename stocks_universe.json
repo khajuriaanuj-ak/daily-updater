@@ -148,5 +148,15 @@
     "tailwindScore": 9.0,
     "baseReason": "Leveraging an unparalleled global user base (billions across WhatsApp, Facebook, Instagram) to deploy and monetize AI agents, backed by substantial investments in proprietary AI models and infrastructure, establishing a dominant position in the consumer and SMB AI agent market.",
     "expertStrategy": "Invest in Meta Platforms for its strategic pivot to monetize AI directly through its ubiquitous communication channels like WhatsApp Business. The company's unique advantage lies in its massive user graph and data, allowing it to develop highly personalized and effective AI agents. The token-based charging model provides a clear revenue stream from AI usage, positioning META as a key beneficiary of the enterprise and consumer adoption of AI agents for engagement and automation."
+  },
+  {
+    "name": "International Business Machines",
+    "ticker": "IBM",
+    "category": "infra",
+    "subCategory": "Hybrid Cloud AI Platform & Data Management",
+    "moatScore": 6.5,
+    "tailwindScore": 7.0,
+    "baseReason": "IBM, through its Red Hat OpenShift platform, provides a critical hybrid cloud and on-premise environment for deploying and managing enterprise AI workloads. Its Db2 database also continues to serve as foundational data infrastructure for AI initiatives, particularly in regulated industries.",
+    "expertStrategy": "IBM is strategically positioned to benefit from the pervasive enterprise adoption of AI, especially where hybrid cloud, on-premise, or stringent regulatory requirements necessitate specific deployment and data management solutions. Its strong relationships with large enterprises and its Red Hat portfolio offer a sticky advantage in enabling the secure and scalable integration of AI into complex IT environments, making it a key enabler for enterprise AI beyond hyperscaler-only solutions."
   }
 ]
