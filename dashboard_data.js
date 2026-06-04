@@ -1,6 +1,139 @@
 const DASHBOARD_DATA = {
-  "last_updated": "2026-06-03T22:18:17.465316+00:00",
+  "last_updated": "2026-06-04T20:35:43.695568+00:00",
   "updates": [
+    {
+      "title": "[In preview] Public Preview: AI pipelines in Azure HorizonDB",
+      "link": "https://azure.microsoft.com/updates?id=565182",
+      "description": "AI pipelines for Azure HorizonDB is now\navailable in public preview. AI pipelines let you describe an AI data ingestion\nworkflow, chunking, embedding, extraction, generation, and ranking,\ndeclaratively in SQL, and run it as a fault-tolerant pipeline ...",
+      "provider": "Azure",
+      "timestamp": "2026-06-04T19:45:40+00:00"
+    },
+    {
+      "title": "[Launched] Generally Available: Ingest OTLP signals into Azure Monitor with the OpenTelemetry Collector",
+      "link": "https://azure.microsoft.com/updates?id=565090",
+      "description": "Azure Monitor's support for native ingestion of OpenTelemetry Protocol (OTLP) signals is now generally available. This enables you to send telemetry data directly from OpenTelemetry-instrumented applications and platforms to Azure Monitor. You can co...",
+      "provider": "Azure",
+      "timestamp": "2026-06-04T19:45:40+00:00"
+    },
+    {
+      "title": "[In preview] Public Preview: Tool search in Microsoft Foundry toolboxes",
+      "link": "https://azure.microsoft.com/updates?id=563506",
+      "description": "Microsoft Foundry adds tool search to Foundry toolboxes in public preview, giving developers and admins a fast way to find the right tool inside large, multi-team catalogs. As your toolbox grows, sending every tool definition on every turn gets expen...",
+      "provider": "Azure",
+      "timestamp": "2026-06-04T19:30:58+00:00"
+    },
+    {
+      "title": "[In preview] Public Preview: APIM Support for Foundry Models in Azure AI Search",
+      "link": "https://azure.microsoft.com/updates?id=563451",
+      "description": "Microsoft Foundry brings Azure API Management support to all Foundry model integrations in Azure AI Search, now in public preview. Enterprise platform engineers and AI solution teams running large-scale RAG pipelines can place Foundry and Azure OpenA...",
+      "provider": "Azure",
+      "timestamp": "2026-06-04T19:30:58+00:00"
+    },
+    {
+      "title": "[In preview] Public Preview: Azure SQL as a knowledge source in Foundry IQ",
+      "link": "https://azure.microsoft.com/updates?id=563446",
+      "description": "Microsoft Foundry adds Azure SQL Database as a first-class Knowledge Source in Azure AI Search, available in public preview. Enterprise developers and solution architects building Copilot, RAG, and agentic experiences can now expose authoritative tab...",
+      "provider": "Azure",
+      "timestamp": "2026-06-04T19:30:58+00:00"
+    },
+    {
+      "title": "[Launched] Generally Available: Microsoft Discovery",
+      "link": "https://azure.microsoft.com/updates?id=562733",
+      "description": "Microsoft Discovery is now generally available, providing research and development organizations an enterprise\nplatform for building and governing agentic AI workflows across scientific and\nengineering disciplines. Also available in preview is the Mi...",
+      "provider": "Azure",
+      "timestamp": "2026-06-04T19:30:58+00:00"
+    },
+    {
+      "title": "[Launched] Generally Available: Private Connectivity for Azure AI Search and Foundry Knowledge Bases",
+      "link": "https://azure.microsoft.com/updates?id=563516",
+      "description": "Azure AI Search and Foundry Knowledge Bases now support private, end-to-end network connectivity between search resources and Foundry services. Customers can route ingestion, enrichment, retrieval, and agent traffic over Shared Private Link or Networ...",
+      "provider": "Azure",
+      "timestamp": "2026-06-04T19:15:11+00:00"
+    },
+    {
+      "title": "[In preview] Public Preview: Fabric IQ Ontology Knowledge Source in Microsoft Foundry IQ",
+      "link": "https://azure.microsoft.com/updates?id=563416",
+      "description": "Microsoft Foundry IQ now treats a Microsoft Fabric Ontology as a federated knowledge source in public preview, giving agents a way to query the semantic layer customers already curate in Fabric. Foundry IQ translates natural language questions into o...",
+      "provider": "Azure",
+      "timestamp": "2026-06-04T19:15:11+00:00"
+    },
+    {
+      "title": "[Launched] Generally Available: Microsoft Foundry IQ",
+      "link": "https://azure.microsoft.com/updates?id=563222",
+      "description": "Microsoft Foundry IQ reaches general availability, giving developers a managed knowledge layer that grounds agents in enterprise data without rebuilding retrieval pipelines for each project. Teams connect SharePoint, OneLake, Azure Blob, and other so...",
+      "provider": "Azure",
+      "timestamp": "2026-06-04T19:15:11+00:00"
+    },
+    {
+      "title": "[In preview] Public Preview: Content Understanding chunking and image verbalization in Azure AI Search",
+      "link": "https://azure.microsoft.com/updates?id=563661",
+      "description": "Azure AI Search now supports Content Understanding chunking and image verbalization in public preview, expanding the built-in skill that parses rich documents during indexing. Indexers can split documents into semantically meaningful chunks and gener...",
+      "provider": "Azure",
+      "timestamp": "2026-06-04T19:00:34+00:00"
+    },
+    {
+      "title": "Amazon Cognito now supports multi-Region replication",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-cognito-multi-region/",
+      "description": "Amazon Cognito now supports multi-Region replication, enabling you to synchronize user and machine identity data — including credentials, user pool configurations, and federation setups — to a secondary user pool in a standby Region you designate in ...",
+      "provider": "AWS",
+      "timestamp": "2026-06-04T17:00:00+00:00"
+    },
+    {
+      "title": "[Launched] Generally Available: Azure Monitor Service Level Indicators (SLI)",
+      "link": "https://azure.microsoft.com/updates?id=565159",
+      "description": "Azure Monitor now includes Service Level Indicators (SLIs) and Service Level Objectives (SLOs), giving teams a clearer way to measure how customers actually experience their applications. Instead of relying only on infrastructure signals like CPU or ...",
+      "provider": "Azure",
+      "timestamp": "2026-06-04T16:30:52+00:00"
+    },
+    {
+      "title": "3x Faster Search: Parallel Test-Time Scaling with Instructed-Retriever-1",
+      "link": "https://www.databricks.com/blog/3x-faster-search-parallel-test-time-scaling-instructed-retriever-1",
+      "description": "Today we’re announcing a major update that makes Agent Bricks Knowledge Assistant both faster and higher quality. ...",
+      "provider": "Databricks",
+      "timestamp": "2026-06-04T13:31:40+00:00"
+    },
+    {
+      "title": "How Endava is redesigning software delivery around AI agents",
+      "link": "https://openai.com/index/endava-frontiers",
+      "description": "Learn how Endava is using AI agents, ChatGPT Enterprise, and Codex to accelerate software delivery, automate workflows, and build an AI-native culture across the enterprise.",
+      "provider": "OpenAI",
+      "timestamp": "2026-06-04T12:00:00+00:00"
+    },
+    {
+      "title": "Dreaming: Better memory for a more helpful ChatGPT",
+      "link": "https://openai.com/index/chatgpt-memory-dreaming",
+      "description": "ChatGPT introduces a new memory system to better remember preferences, keeping context fresh and relevant across conversations.",
+      "provider": "OpenAI",
+      "timestamp": "2026-06-04T09:00:00+00:00"
+    },
+    {
+      "title": "Amazon MQ is now available in the AWS European Sovereign Cloud (Germany) Region",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-mq-eur-sov-cloud",
+      "description": "You can now deploy Amazon MQ for RabbitMQ in the AWS European Sovereign Cloud (Germany) Region. This new independent cloud for Europe is located entirely within the EU, designed to help customers in regulated industries and public sector organization...",
+      "provider": "AWS",
+      "timestamp": "2026-06-04T08:05:00+00:00"
+    },
+    {
+      "title": "[In preview] Public Preview: MAI-Voice-2 in Microsoft Foundry",
+      "link": "https://azure.microsoft.com/updates?id=563217",
+      "description": "Microsoft Foundry now offers MAI-Voice-2 in public preview, a first-party voice model from the Microsoft AI team. MAI-Voice-2 generates natural speech across more than 10 languages and supports voice cloning from a short reference sample, plus voice ...",
+      "provider": "Azure",
+      "timestamp": "2026-06-03T23:00:57+00:00"
+    },
+    {
+      "title": "Improve your application resilience with Amazon Cognito multi-Region replication",
+      "link": "https://aws.amazon.com/blogs/aws/improve-your-application-resilience-with-amazon-cognito-multi-region-replication/",
+      "description": "Amazon Cognito now offers multi-Region replication that automatically synchronizes user data, credentials, and pool configurations to a secondary AWS Region, enabling uninterrupted authentication during regional failovers without forced password rese...",
+      "provider": "AWS",
+      "timestamp": "2026-06-03T22:37:29+00:00"
+    },
+    {
+      "title": "[Launched] General Availability: Backup your ledger files for audit with Azure confidential ledger’s new tool",
+      "link": "https://azure.microsoft.com/updates?id=560810",
+      "description": "Ever wondered how to allow auditing personas (i.e. security analyst in your organization or security assessment contractor) the ability to view your ledger files and establish trust in the cryptographic\n proofs themselves? With the new localized, web...",
+      "provider": "Azure",
+      "timestamp": "2026-06-03T22:15:24+00:00"
+    },
     {
       "title": "[Launched] Generally Available: Text Analytics for Health NextGen Playground in Azure AI Language",
       "link": "https://azure.microsoft.com/updates?id=563671",
@@ -28,6 +161,13 @@ const DASHBOARD_DATA = {
       "description": "Amazon SageMaker Data Agent, available in SageMaker Unified Studio now supports conversation history, enabling data practitioners to maintain continuity across analytical sessions. Data analysts and data scientists can now seamlessly reference previo...",
       "provider": "AWS",
       "timestamp": "2026-06-03T20:26:00+00:00"
+    },
+    {
+      "title": "Apache Spark Real-Time Mode for Gaming: A Better Way to Do Real-Time Sessionization",
+      "link": "https://www.databricks.com/blog/apache-spark-real-time-mode-gaming-better-way-do-real-time-sessionization",
+      "description": "In the gaming industry, every millisecond counts. To drive in-game personalization,...",
+      "provider": "Databricks",
+      "timestamp": "2026-06-03T20:25:00+00:00"
     },
     {
       "title": "Amazon SageMaker Unified Studio now supports notebook scheduling",
@@ -182,6 +322,13 @@ const DASHBOARD_DATA = {
       "description": "GPT-Rosalind advances life sciences research with enhanced biological reasoning, medicinal chemistry expertise, genomics analysis, and experimental workflow capabilities.",
       "provider": "OpenAI",
       "timestamp": "2026-06-03T13:15:00+00:00"
+    },
+    {
+      "title": "How Wasmer used Codex to build a Node.js runtime for the edge",
+      "link": "https://openai.com/index/wasmer",
+      "description": "See how Wasmer used Codex with GPT-5.5 to build a Node.js runtime for the edge, accelerating development 10x to 20x and shipping in weeks instead of months.",
+      "provider": "OpenAI",
+      "timestamp": "2026-06-03T12:00:00+00:00"
     },
     {
       "title": "Scaling Enterprise Conversational Intelligence: Cross-industry Technology and Functional Solutions Powered by Databricks Genie",
@@ -1183,6 +1330,13 @@ const DASHBOARD_DATA = {
       "description": "AlloyDB for PostgreSQL\nFeature\nYou can now configure a cooldown period to determine when autoscaling occurs\nfor your read pool instances. For more information, see\nScale an instance.\nBigQuery\nFeature\nRemote functions now\nsupport a custom path in the ...",
       "provider": "Google Cloud",
       "timestamp": "2026-06-02T00:00:00-07:00"
+    },
+    {
+      "title": "Personalizing Genie Code with instructions, skills, memory, and MCP",
+      "link": "https://www.databricks.com/blog/personalizing-genie-code-instructions-skills-memory-and-mcp",
+      "description": "Genie Code works best when it understands how your team actually operates: your coding...",
+      "provider": "Databricks",
+      "timestamp": "2026-06-01T23:45:22+00:00"
     },
     {
       "title": "AWS HealthOmics now supports Nextflow version 26.04",
@@ -10525,52 +10679,52 @@ const DASHBOARD_DATA = {
   ],
   "trends": [
     {
-      "title": "Alphabet’s record-breaking $85B raise for Google’s AI business is a helluva good signal",
-      "link": "https://techcrunch.com/2026/06/03/alphabets-record-breaking-85b-raise-for-googles-ai-business-is-a-helluva-good-signal/",
-      "description": "If Alphabet's record-breaking $85 billion stock sale signals investor appetite for AI-related offerings, we can see that investors are ready to chow.",
-      "date": "Jun 03, 2026",
-      "source": "TechCrunch AI",
-      "trend": "Investment & Startup"
-    },
-    {
-      "title": "Google’s Dreambeans, its weirdest-named AI tool to date, will turn your life into a cartoon",
-      "link": "https://techcrunch.com/2026/06/03/googles-dreambeans-its-weirdest-named-ai-tool-to-date-will-turn-your-life-into-a-cartoon/",
-      "description": "Dreambeans is a curated list of AI-illustrated \"stories\" culled from the personal data in your Google account.",
-      "date": "Jun 03, 2026",
+      "title": "Meta steals a tactic from Tesla and builds data centers in tents",
+      "link": "https://techcrunch.com/2026/06/04/meta-steals-a-tactic-from-tesla-and-builds-data-centers-in-tents/",
+      "description": "Meta may have one found one way to slash its massive data center bill: tents.",
+      "date": "Jun 04, 2026",
       "source": "TechCrunch AI",
       "trend": "General AI"
     },
     {
-      "title": "Amazon will show AI product images when you search for some reason",
-      "link": "https://techcrunch.com/2026/06/03/amazon-will-show-ai-product-images-when-you-search-for-some-reason/",
-      "description": "Amazon will use visual search and AI to show AI-generated product images that match your search queries. The retailer says it will help guide users to products.",
-      "date": "Jun 03, 2026",
-      "source": "TechCrunch AI",
-      "trend": "General AI"
-    },
-    {
-      "title": "These two founders left Goldman and Meta to build voice AI for markets everyone else overlooked",
-      "link": "https://techcrunch.com/2026/06/03/these-two-founders-left-goldman-and-meta-to-build-voice-ai-for-markets-everyone-else-overlooked/",
-      "description": "The startup's own stack for Africa and Middle East is now handling more than 17,000 calls per day.",
-      "date": "Jun 03, 2026",
-      "source": "TechCrunch AI",
-      "trend": "General AI"
-    },
-    {
-      "title": "Publishers will be able to opt out of AI Search, thanks to new regulation",
-      "link": "https://techcrunch.com/2026/06/03/publishers-will-be-able-to-opt-out-of-ai-search-thanks-to-new-regulation/",
-      "description": "U.K. regulators are requiring Google offer a tool allowing website publishers to opt-out of generative AI search features. The option will be tested in the U.K. then rolled out globally.",
-      "date": "Jun 03, 2026",
-      "source": "TechCrunch AI",
-      "trend": "Regulatory"
-    },
-    {
-      "title": "Meta’s AI agent for WhatsApp Business is now available globally",
-      "link": "https://techcrunch.com/2026/06/03/metas-ai-agent-for-whatsapp-business-is-now-available-globally/",
-      "description": "WhatsApp will charge businesses for using its AI agent based on token usage.",
-      "date": "Jun 03, 2026",
+      "title": "Apple approves Poke as the first AI agent on its Messages for Business platform",
+      "link": "https://techcrunch.com/2026/06/04/apple-approves-poke-as-the-first-ai-agent-on-its-messages-for-business-platform/",
+      "description": "Poke, the startup that lets people use AI agents through simple text messages, has become the first AI agent approved for Apple’s Messages for Business platform.",
+      "date": "Jun 04, 2026",
       "source": "TechCrunch AI",
       "trend": "AI Agents"
+    },
+    {
+      "title": "Meta rolls out a new AI creator assistant on Facebook",
+      "link": "https://techcrunch.com/2026/06/04/meta-rolls-out-a-new-ai-creator-assistant-on-facebook/",
+      "description": "Creators often have to parse through charts and dashboards to understand their performance, but with the new AI assistant, they can get quick answers to questions like \"When should I post?\" and \"What are people saying in my comments?\"",
+      "date": "Jun 04, 2026",
+      "source": "TechCrunch AI",
+      "trend": "General AI"
+    },
+    {
+      "title": "What to expect from WWDC 2026: Siri’s highly anticipated revamp and Apple Intelligence updates",
+      "link": "https://techcrunch.com/2026/06/04/what-to-expect-from-wwdc-2026-siris-highly-anticipated-revamp-and-apple-intelligence-updates/",
+      "description": "Apple's WWDC nears: Here's what you can look forward to.",
+      "date": "Jun 04, 2026",
+      "source": "TechCrunch AI",
+      "trend": "Hardware & Chips"
+    },
+    {
+      "title": "Is Silicon Valley ready to put robots in people’s homes? Hello Robot is.",
+      "link": "https://techcrunch.com/2026/06/04/is-silicon-valley-ready-to-put-robots-in-peoples-homes-hello-robot-is/",
+      "description": "The California startup released the fourth-generation of its home assistance robot, Stretch.",
+      "date": "Jun 04, 2026",
+      "source": "TechCrunch AI",
+      "trend": "Hardware & Chips"
+    },
+    {
+      "title": "Apple touts $1.4 trillion in App Store billings and sales, 90% without a commission",
+      "link": "https://techcrunch.com/2026/06/04/apple-touts-1-4-trillion-in-app-store-billings-and-sales-90-without-a-commission/",
+      "description": "Apple's App Store generated $1.4 trillion in sales, up from $1.3 trillion last year, with $149 billion in sales for digital goods.",
+      "date": "Jun 04, 2026",
+      "source": "TechCrunch AI",
+      "trend": "Investment & Startup"
     }
   ],
   "sentiments": [
@@ -10579,8 +10733,8 @@ const DASHBOARD_DATA = {
       "score": 98,
       "status": "Bullish",
       "change": "▬ Stable",
-      "reason": "[Launched] Generally Available: Text Analytics for Health Ne...",
-      "mentions": 15
+      "reason": "[In preview] Public Preview: AI pipelines in Azure HorizonDB",
+      "mentions": 13
     },
     {
       "company": "NVIDIA",
@@ -10599,20 +10753,28 @@ const DASHBOARD_DATA = {
       "mentions": 0
     },
     {
+      "company": "Databricks",
+      "score": 87,
+      "status": "Bullish",
+      "change": "▬ Stable",
+      "reason": "3x Faster Search: Parallel Test-Time Scaling with Instructed...",
+      "mentions": 3
+    },
+    {
+      "company": "OpenAI",
+      "score": 85,
+      "status": "Bullish",
+      "change": "▼ -1",
+      "reason": "How Endava is redesigning software delivery around AI agents",
+      "mentions": 3
+    },
+    {
       "company": "Groq",
       "score": 85,
       "status": "Bullish",
       "change": "▬ Stable",
       "reason": "Consistent solid market indexing",
       "mentions": 0
-    },
-    {
-      "company": "Databricks",
-      "score": 84,
-      "status": "Mixed",
-      "change": "▲ +2",
-      "reason": "Introducing Cross-Engine ABAC",
-      "mentions": 1
     },
     {
       "company": "Snowflake",
@@ -10627,199 +10789,202 @@ const DASHBOARD_DATA = {
       "score": 80,
       "status": "Mixed",
       "change": "▬ Stable",
-      "reason": "Alphabet’s record-breaking $85B raise for Google’s AI busine...",
-      "mentions": 3
+      "reason": "Consistent solid market indexing",
+      "mentions": 0
     },
     {
       "company": "Meta",
       "score": 79,
       "status": "Mixed",
       "change": "▲ +1",
-      "reason": "AWS Glue Data Catalog Client for Apache Hive Metastore now s...",
-      "mentions": 3
+      "reason": "Meta steals a tactic from Tesla and builds data centers in t...",
+      "mentions": 2
     },
     {
       "company": "Apple",
       "score": 76,
       "status": "Mixed",
-      "change": "▬ Stable",
-      "reason": "Consistent solid market indexing",
-      "mentions": 0
-    },
-    {
-      "company": "OpenAI",
-      "score": 70,
-      "status": "Mixed",
       "change": "▼ -1",
-      "reason": "OpenAI GPT-5.4 generally available on Amazon Bedrock in AWS ...",
-      "mentions": 4
+      "reason": "Apple approves Poke as the first AI agent on its Messages fo...",
+      "mentions": 3
     }
   ],
   "valuations": {
     "NVDA": {
       "name": "NVIDIA Corporation",
-      "price": 214.75,
-      "forwardPE": 17.0,
-      "trailingPE": 32.89,
-      "marketCap": 5201459675136,
+      "price": 218.66,
+      "forwardPE": 17.28,
+      "trailingPE": 33.49,
+      "marketCap": 5296163913728,
       "psRatio": null,
-      "dayChange": -3.62,
-      "rangePosition": 0.777,
-      "fetchedAt": "2026-06-03 10:18 PM"
+      "dayChange": 1.82,
+      "rangePosition": 0.817,
+      "fetchedAt": "2026-06-04 08:35 PM"
     },
     "GOOGL": {
       "name": "Alphabet Inc.",
-      "price": 358.99,
-      "forwardPE": 24.81,
-      "trailingPE": 27.4,
-      "marketCap": 4349323116544,
+      "price": 372.19,
+      "forwardPE": 25.74,
+      "trailingPE": 28.41,
+      "marketCap": 4509246947328,
       "psRatio": null,
-      "dayChange": -0.79,
-      "rangePosition": 0.799,
-      "fetchedAt": "2026-06-03 10:18 PM"
+      "dayChange": 3.68,
+      "rangePosition": 0.852,
+      "fetchedAt": "2026-06-04 08:35 PM"
     },
     "MSFT": {
       "name": "Microsoft Corporation",
-      "price": 427.34,
-      "forwardPE": 22.09,
-      "trailingPE": 25.48,
-      "marketCap": 3174467371008,
+      "price": 428.05,
+      "forwardPE": 22.13,
+      "trailingPE": 25.49,
+      "marketCap": 3179741446144,
       "psRatio": null,
-      "dayChange": -3.17,
-      "rangePosition": 0.357,
-      "fetchedAt": "2026-06-03 10:18 PM"
+      "dayChange": 0.17,
+      "rangePosition": 0.36,
+      "fetchedAt": "2026-06-04 08:35 PM"
     },
     "AMZN": {
       "name": "Amazon.com, Inc.",
-      "price": 250.02,
-      "forwardPE": 25.35,
-      "trailingPE": 30.83,
-      "marketCap": 2689492582400,
+      "price": 253.79,
+      "forwardPE": 25.73,
+      "trailingPE": 32.13,
+      "marketCap": 2730046783488,
       "psRatio": null,
-      "dayChange": -2.53,
-      "rangePosition": 0.654,
-      "fetchedAt": "2026-06-03 10:18 PM"
+      "dayChange": 1.51,
+      "rangePosition": 0.7,
+      "fetchedAt": "2026-06-04 08:35 PM"
     },
     "SNOW": {
       "name": "Snowflake Inc.",
-      "price": 241.28,
-      "forwardPE": 92.38,
+      "price": 244.18,
+      "forwardPE": 91.7,
       "trailingPE": null,
-      "marketCap": 83627646976,
+      "marketCap": 84632788992,
       "psRatio": null,
-      "dayChange": -7.61,
-      "rangePosition": 0.738,
-      "fetchedAt": "2026-06-03 10:18 PM"
+      "dayChange": 1.2,
+      "rangePosition": 0.755,
+      "fetchedAt": "2026-06-04 08:35 PM"
     },
     "TSM": {
       "name": "Taiwan Semiconductor Manufactur",
-      "price": 436.69,
-      "forwardPE": 22.38,
-      "trailingPE": 37.32,
-      "marketCap": 2264881430528,
+      "price": 444.92,
+      "forwardPE": 22.78,
+      "trailingPE": 37.87,
+      "marketCap": 2307566075904,
       "psRatio": null,
-      "dayChange": -2.24,
-      "rangePosition": 0.946,
-      "fetchedAt": "2026-06-03 10:18 PM"
+      "dayChange": 1.88,
+      "rangePosition": 0.979,
+      "fetchedAt": "2026-06-04 08:35 PM"
     },
     "AVGO": {
       "name": "Broadcom Inc.",
-      "price": 479.23,
-      "forwardPE": 25.91,
-      "trailingPE": 93.05,
-      "marketCap": 2268995256320,
+      "price": 418.91,
+      "forwardPE": 21.97,
+      "trailingPE": 69.93,
+      "marketCap": 1983399854080,
       "psRatio": null,
-      "dayChange": -0.49,
-      "rangePosition": 0.938,
-      "fetchedAt": "2026-06-03 10:18 PM"
+      "dayChange": -12.59,
+      "rangePosition": 0.7,
+      "fetchedAt": "2026-06-04 08:35 PM"
     },
     "ASML": {
       "name": "ASML Holding N.V. - New York Re",
-      "price": 1726.36,
-      "forwardPE": 35.86,
-      "trailingPE": 57.18,
-      "marketCap": 665369640960,
+      "price": 1757.47,
+      "forwardPE": 36.48,
+      "trailingPE": 58.5,
+      "marketCap": 677359976448,
       "psRatio": null,
-      "dayChange": 1.23,
-      "rangePosition": 0.984,
-      "fetchedAt": "2026-06-03 10:18 PM"
+      "dayChange": 1.8,
+      "rangePosition": 0.98,
+      "fetchedAt": "2026-06-04 08:35 PM"
     },
     "VRT": {
       "name": "Vertiv Holdings, LLC",
-      "price": 331.44,
-      "forwardPE": 37.51,
-      "trailingPE": 83.28,
-      "marketCap": 127309021184,
+      "price": 323.92,
+      "forwardPE": 36.66,
+      "trailingPE": 81.39,
+      "marketCap": 124420530176,
       "psRatio": null,
-      "dayChange": -0.91,
-      "rangePosition": 0.822,
-      "fetchedAt": "2026-06-03 10:18 PM"
+      "dayChange": -2.27,
+      "rangePosition": 0.794,
+      "fetchedAt": "2026-06-04 08:35 PM"
     },
     "ANET": {
       "name": "Arista Networks, Inc.",
-      "price": 174.37,
-      "forwardPE": 39.19,
-      "trailingPE": 59.92,
-      "marketCap": 219561361408,
+      "price": 166.01,
+      "forwardPE": 37.31,
+      "trailingPE": 57.05,
+      "marketCap": 209034706944,
       "psRatio": null,
-      "dayChange": -0.55,
-      "rangePosition": 0.942,
-      "fetchedAt": "2026-06-03 10:18 PM"
+      "dayChange": -4.79,
+      "rangePosition": 0.854,
+      "fetchedAt": "2026-06-04 08:35 PM"
     },
     "INTC": {
       "name": "Intel Corporation",
-      "price": 112.71,
-      "forwardPE": 72.95,
+      "price": 111.78,
+      "forwardPE": 72.34,
       "trailingPE": null,
-      "marketCap": 566480470016,
+      "marketCap": 561806245888,
       "psRatio": null,
-      "dayChange": 4.43,
-      "rangePosition": 0.824,
-      "fetchedAt": "2026-06-03 10:18 PM"
+      "dayChange": -0.83,
+      "rangePosition": 0.816,
+      "fetchedAt": "2026-06-04 08:35 PM"
     },
     "DELL": {
       "name": "Dell Technologies Inc.",
-      "price": 421.08,
-      "forwardPE": 19.74,
-      "trailingPE": 48.62,
-      "marketCap": 273520197632,
+      "price": 422.05,
+      "forwardPE": 19.78,
+      "trailingPE": 48.68,
+      "marketCap": 274150277120,
       "psRatio": null,
-      "dayChange": -3.27,
-      "rangePosition": 0.866,
-      "fetchedAt": "2026-06-03 10:18 PM"
+      "dayChange": 0.23,
+      "rangePosition": 0.868,
+      "fetchedAt": "2026-06-04 08:35 PM"
     },
     "HPE": {
       "name": "Hewlett Packard Enterprise Comp",
-      "price": 55.15,
-      "forwardPE": 13.74,
-      "trailingPE": 51.54,
-      "marketCap": 73029828608,
+      "price": 53.69,
+      "forwardPE": 13.37,
+      "trailingPE": 50.18,
+      "marketCap": 71096483840,
       "psRatio": null,
-      "dayChange": -1.78,
-      "rangePosition": 0.805,
-      "fetchedAt": "2026-06-03 10:18 PM"
+      "dayChange": -2.65,
+      "rangePosition": 0.774,
+      "fetchedAt": "2026-06-04 08:35 PM"
     },
     "META": {
       "name": "Meta Platforms, Inc.",
-      "price": 622.98,
-      "forwardPE": 17.23,
-      "trailingPE": 22.66,
-      "marketCap": 1581386956800,
+      "price": 627.57,
+      "forwardPE": 17.35,
+      "trailingPE": 22.85,
+      "marketCap": 1593038340096,
       "psRatio": null,
-      "dayChange": 4.24,
-      "rangePosition": 0.372,
-      "fetchedAt": "2026-06-03 10:18 PM"
+      "dayChange": 0.74,
+      "rangePosition": 0.389,
+      "fetchedAt": "2026-06-04 08:35 PM"
     },
     "IBM": {
       "name": "International Business Machines",
-      "price": 305.63,
-      "forwardPE": 22.77,
-      "trailingPE": 27.07,
-      "marketCap": 287257165824,
+      "price": 301.77,
+      "forwardPE": 22.48,
+      "trailingPE": 26.68,
+      "marketCap": 283629191168,
       "psRatio": null,
-      "dayChange": -7.17,
-      "rangePosition": 0.777,
-      "fetchedAt": "2026-06-03 10:18 PM"
+      "dayChange": -1.26,
+      "rangePosition": 0.745,
+      "fetchedAt": "2026-06-04 08:35 PM"
+    },
+    "DAVA": {
+      "name": "Endava plc",
+      "price": 2.88,
+      "forwardPE": 3.34,
+      "trailingPE": null,
+      "marketCap": 152187024,
+      "psRatio": null,
+      "dayChange": -3.03,
+      "rangePosition": 0.002,
+      "fetchedAt": "2026-06-04 08:35 PM"
     }
   },
   "stocks_universe": [
@@ -10982,6 +11147,16 @@ const DASHBOARD_DATA = {
       "tailwindScore": 7.0,
       "baseReason": "IBM, through its Red Hat OpenShift platform, provides a critical hybrid cloud and on-premise environment for deploying and managing enterprise AI workloads. Its Db2 database also continues to serve as foundational data infrastructure for AI initiatives, particularly in regulated industries.",
       "expertStrategy": "IBM is strategically positioned to benefit from the pervasive enterprise adoption of AI, especially where hybrid cloud, on-premise, or stringent regulatory requirements necessitate specific deployment and data management solutions. Its strong relationships with large enterprises and its Red Hat portfolio offer a sticky advantage in enabling the secure and scalable integration of AI into complex IT environments, making it a key enabler for enterprise AI beyond hyperscaler-only solutions."
+    },
+    {
+      "name": "Endava plc",
+      "ticker": "DAVA",
+      "category": "direct",
+      "subCategory": "AI Consulting & Enterprise Integration",
+      "moatScore": 6.5,
+      "tailwindScore": 8.0,
+      "baseReason": "Specializes in integrating advanced AI agent technologies (like ChatGPT Enterprise) into complex enterprise software development and operational workflows, driving AI adoption and efficiency for clients.",
+      "expertStrategy": "Endava benefits from the broad enterprise adoption of AI, particularly agentic AI, by providing the crucial consulting, integration, and development services needed to deploy these technologies at scale. As enterprises seek to operationalize AI, Endava's expertise in re-architecting software delivery around AI agents makes it a key enabler for enterprise AI transformation."
     }
   ]
 };

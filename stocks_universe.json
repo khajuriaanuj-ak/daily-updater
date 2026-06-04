@@ -158,5 +158,15 @@
     "tailwindScore": 7.0,
     "baseReason": "IBM, through its Red Hat OpenShift platform, provides a critical hybrid cloud and on-premise environment for deploying and managing enterprise AI workloads. Its Db2 database also continues to serve as foundational data infrastructure for AI initiatives, particularly in regulated industries.",
     "expertStrategy": "IBM is strategically positioned to benefit from the pervasive enterprise adoption of AI, especially where hybrid cloud, on-premise, or stringent regulatory requirements necessitate specific deployment and data management solutions. Its strong relationships with large enterprises and its Red Hat portfolio offer a sticky advantage in enabling the secure and scalable integration of AI into complex IT environments, making it a key enabler for enterprise AI beyond hyperscaler-only solutions."
+  },
+  {
+    "name": "Endava plc",
+    "ticker": "DAVA",
+    "category": "direct",
+    "subCategory": "AI Consulting & Enterprise Integration",
+    "moatScore": 6.5,
+    "tailwindScore": 8.0,
+    "baseReason": "Specializes in integrating advanced AI agent technologies (like ChatGPT Enterprise) into complex enterprise software development and operational workflows, driving AI adoption and efficiency for clients.",
+    "expertStrategy": "Endava benefits from the broad enterprise adoption of AI, particularly agentic AI, by providing the crucial consulting, integration, and development services needed to deploy these technologies at scale. As enterprises seek to operationalize AI, Endava's expertise in re-architecting software delivery around AI agents makes it a key enabler for enterprise AI transformation."
   }
 ]

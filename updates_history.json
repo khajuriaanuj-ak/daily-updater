@@ -10519,5 +10519,159 @@
     "description": "OpenAI outlines its public policy agenda for AI, including safety, youth protection, workforce transition, and global standards to ensure AI benefits society.",
     "provider": "OpenAI",
     "timestamp": "2026-06-03T10:00:00+00:00"
+  },
+  {
+    "title": "Improve your application resilience with Amazon Cognito multi-Region replication",
+    "link": "https://aws.amazon.com/blogs/aws/improve-your-application-resilience-with-amazon-cognito-multi-region-replication/",
+    "description": "Amazon Cognito now offers multi-Region replication that automatically synchronizes user data, credentials, and pool configurations to a secondary AWS Region, enabling uninterrupted authentication during regional failovers without forced password rese...",
+    "provider": "AWS",
+    "timestamp": "2026-06-03T22:37:29+00:00"
+  },
+  {
+    "title": "Amazon Cognito now supports multi-Region replication",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-cognito-multi-region/",
+    "description": "Amazon Cognito now supports multi-Region replication, enabling you to synchronize user and machine identity data — including credentials, user pool configurations, and federation setups — to a secondary user pool in a standby Region you designate in ...",
+    "provider": "AWS",
+    "timestamp": "2026-06-04T17:00:00+00:00"
+  },
+  {
+    "title": "Amazon MQ is now available in the AWS European Sovereign Cloud (Germany) Region",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-mq-eur-sov-cloud",
+    "description": "You can now deploy Amazon MQ for RabbitMQ in the AWS European Sovereign Cloud (Germany) Region. This new independent cloud for Europe is located entirely within the EU, designed to help customers in regulated industries and public sector organization...",
+    "provider": "AWS",
+    "timestamp": "2026-06-04T08:05:00+00:00"
+  },
+  {
+    "title": "[In preview] Public Preview: AI pipelines in Azure HorizonDB",
+    "link": "https://azure.microsoft.com/updates?id=565182",
+    "description": "AI pipelines for Azure HorizonDB is now\navailable in public preview. AI pipelines let you describe an AI data ingestion\nworkflow, chunking, embedding, extraction, generation, and ranking,\ndeclaratively in SQL, and run it as a fault-tolerant pipeline ...",
+    "provider": "Azure",
+    "timestamp": "2026-06-04T19:45:40+00:00"
+  },
+  {
+    "title": "[Launched] Generally Available: Ingest OTLP signals into Azure Monitor with the OpenTelemetry Collector",
+    "link": "https://azure.microsoft.com/updates?id=565090",
+    "description": "Azure Monitor's support for native ingestion of OpenTelemetry Protocol (OTLP) signals is now generally available. This enables you to send telemetry data directly from OpenTelemetry-instrumented applications and platforms to Azure Monitor. You can co...",
+    "provider": "Azure",
+    "timestamp": "2026-06-04T19:45:40+00:00"
+  },
+  {
+    "title": "[In preview] Public Preview: Tool search in Microsoft Foundry toolboxes",
+    "link": "https://azure.microsoft.com/updates?id=563506",
+    "description": "Microsoft Foundry adds tool search to Foundry toolboxes in public preview, giving developers and admins a fast way to find the right tool inside large, multi-team catalogs. As your toolbox grows, sending every tool definition on every turn gets expen...",
+    "provider": "Azure",
+    "timestamp": "2026-06-04T19:30:58+00:00"
+  },
+  {
+    "title": "[In preview] Public Preview: APIM Support for Foundry Models in Azure AI Search",
+    "link": "https://azure.microsoft.com/updates?id=563451",
+    "description": "Microsoft Foundry brings Azure API Management support to all Foundry model integrations in Azure AI Search, now in public preview. Enterprise platform engineers and AI solution teams running large-scale RAG pipelines can place Foundry and Azure OpenA...",
+    "provider": "Azure",
+    "timestamp": "2026-06-04T19:30:58+00:00"
+  },
+  {
+    "title": "[In preview] Public Preview: Azure SQL as a knowledge source in Foundry IQ",
+    "link": "https://azure.microsoft.com/updates?id=563446",
+    "description": "Microsoft Foundry adds Azure SQL Database as a first-class Knowledge Source in Azure AI Search, available in public preview. Enterprise developers and solution architects building Copilot, RAG, and agentic experiences can now expose authoritative tab...",
+    "provider": "Azure",
+    "timestamp": "2026-06-04T19:30:58+00:00"
+  },
+  {
+    "title": "[Launched] Generally Available: Microsoft Discovery",
+    "link": "https://azure.microsoft.com/updates?id=562733",
+    "description": "Microsoft Discovery is now generally available, providing research and development organizations an enterprise\nplatform for building and governing agentic AI workflows across scientific and\nengineering disciplines. Also available in preview is the Mi...",
+    "provider": "Azure",
+    "timestamp": "2026-06-04T19:30:58+00:00"
+  },
+  {
+    "title": "[Launched] Generally Available: Private Connectivity for Azure AI Search and Foundry Knowledge Bases",
+    "link": "https://azure.microsoft.com/updates?id=563516",
+    "description": "Azure AI Search and Foundry Knowledge Bases now support private, end-to-end network connectivity between search resources and Foundry services. Customers can route ingestion, enrichment, retrieval, and agent traffic over Shared Private Link or Networ...",
+    "provider": "Azure",
+    "timestamp": "2026-06-04T19:15:11+00:00"
+  },
+  {
+    "title": "[In preview] Public Preview: Fabric IQ Ontology Knowledge Source in Microsoft Foundry IQ",
+    "link": "https://azure.microsoft.com/updates?id=563416",
+    "description": "Microsoft Foundry IQ now treats a Microsoft Fabric Ontology as a federated knowledge source in public preview, giving agents a way to query the semantic layer customers already curate in Fabric. Foundry IQ translates natural language questions into o...",
+    "provider": "Azure",
+    "timestamp": "2026-06-04T19:15:11+00:00"
+  },
+  {
+    "title": "[Launched] Generally Available: Microsoft Foundry IQ",
+    "link": "https://azure.microsoft.com/updates?id=563222",
+    "description": "Microsoft Foundry IQ reaches general availability, giving developers a managed knowledge layer that grounds agents in enterprise data without rebuilding retrieval pipelines for each project. Teams connect SharePoint, OneLake, Azure Blob, and other so...",
+    "provider": "Azure",
+    "timestamp": "2026-06-04T19:15:11+00:00"
+  },
+  {
+    "title": "[In preview] Public Preview: Content Understanding chunking and image verbalization in Azure AI Search",
+    "link": "https://azure.microsoft.com/updates?id=563661",
+    "description": "Azure AI Search now supports Content Understanding chunking and image verbalization in public preview, expanding the built-in skill that parses rich documents during indexing. Indexers can split documents into semantically meaningful chunks and gener...",
+    "provider": "Azure",
+    "timestamp": "2026-06-04T19:00:34+00:00"
+  },
+  {
+    "title": "[Launched] Generally Available: Azure Monitor Service Level Indicators (SLI)",
+    "link": "https://azure.microsoft.com/updates?id=565159",
+    "description": "Azure Monitor now includes Service Level Indicators (SLIs) and Service Level Objectives (SLOs), giving teams a clearer way to measure how customers actually experience their applications. Instead of relying only on infrastructure signals like CPU or ...",
+    "provider": "Azure",
+    "timestamp": "2026-06-04T16:30:52+00:00"
+  },
+  {
+    "title": "[In preview] Public Preview: MAI-Voice-2 in Microsoft Foundry",
+    "link": "https://azure.microsoft.com/updates?id=563217",
+    "description": "Microsoft Foundry now offers MAI-Voice-2 in public preview, a first-party voice model from the Microsoft AI team. MAI-Voice-2 generates natural speech across more than 10 languages and supports voice cloning from a short reference sample, plus voice ...",
+    "provider": "Azure",
+    "timestamp": "2026-06-03T23:00:57+00:00"
+  },
+  {
+    "title": "[Launched] General Availability: Backup your ledger files for audit with Azure confidential ledger’s new tool",
+    "link": "https://azure.microsoft.com/updates?id=560810",
+    "description": "Ever wondered how to allow auditing personas (i.e. security analyst in your organization or security assessment contractor) the ability to view your ledger files and establish trust in the cryptographic\n proofs themselves? With the new localized, web...",
+    "provider": "Azure",
+    "timestamp": "2026-06-03T22:15:24+00:00"
+  },
+  {
+    "title": "3x Faster Search: Parallel Test-Time Scaling with Instructed-Retriever-1",
+    "link": "https://www.databricks.com/blog/3x-faster-search-parallel-test-time-scaling-instructed-retriever-1",
+    "description": "Today we’re announcing a major update that makes Agent Bricks Knowledge Assistant both faster and higher quality. ...",
+    "provider": "Databricks",
+    "timestamp": "2026-06-04T13:31:40+00:00"
+  },
+  {
+    "title": "Apache Spark Real-Time Mode for Gaming: A Better Way to Do Real-Time Sessionization",
+    "link": "https://www.databricks.com/blog/apache-spark-real-time-mode-gaming-better-way-do-real-time-sessionization",
+    "description": "In the gaming industry, every millisecond counts. To drive in-game personalization,...",
+    "provider": "Databricks",
+    "timestamp": "2026-06-03T20:25:00+00:00"
+  },
+  {
+    "title": "Personalizing Genie Code with instructions, skills, memory, and MCP",
+    "link": "https://www.databricks.com/blog/personalizing-genie-code-instructions-skills-memory-and-mcp",
+    "description": "Genie Code works best when it understands how your team actually operates: your coding...",
+    "provider": "Databricks",
+    "timestamp": "2026-06-01T23:45:22+00:00"
+  },
+  {
+    "title": "How Endava is redesigning software delivery around AI agents",
+    "link": "https://openai.com/index/endava-frontiers",
+    "description": "Learn how Endava is using AI agents, ChatGPT Enterprise, and Codex to accelerate software delivery, automate workflows, and build an AI-native culture across the enterprise.",
+    "provider": "OpenAI",
+    "timestamp": "2026-06-04T12:00:00+00:00"
+  },
+  {
+    "title": "Dreaming: Better memory for a more helpful ChatGPT",
+    "link": "https://openai.com/index/chatgpt-memory-dreaming",
+    "description": "ChatGPT introduces a new memory system to better remember preferences, keeping context fresh and relevant across conversations.",
+    "provider": "OpenAI",
+    "timestamp": "2026-06-04T09:00:00+00:00"
+  },
+  {
+    "title": "How Wasmer used Codex to build a Node.js runtime for the edge",
+    "link": "https://openai.com/index/wasmer",
+    "description": "See how Wasmer used Codex with GPT-5.5 to build a Node.js runtime for the edge, accelerating development 10x to 20x and shipping in weeks instead of months.",
+    "provider": "OpenAI",
+    "timestamp": "2026-06-03T12:00:00+00:00"
   }
 ]
