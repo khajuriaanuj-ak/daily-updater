@@ -10673,5 +10673,96 @@
     "description": "See how Wasmer used Codex with GPT-5.5 to build a Node.js runtime for the edge, accelerating development 10x to 20x and shipping in weeks instead of months.",
     "provider": "OpenAI",
     "timestamp": "2026-06-03T12:00:00+00:00"
+  },
+  {
+    "title": "Amazon SageMaker Data Agent integrates business context into conversations",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-sagemaker-data-agent-bdc/",
+    "description": "Amazon SageMaker Data Agent now integrates with SageMaker Catalog business context and metadata, enabling data practitioners to discover datasets and generate more accurate SQL and Python code using business terminology instead of cryptic technical t...",
+    "provider": "AWS",
+    "timestamp": "2026-06-04T21:51:00+00:00"
+  },
+  {
+    "title": "AWS Databases on Vercel now available in additional AWS Regions",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-databases-vercel-aws-regions/",
+    "description": "Amazon Aurora PostgreSQL, Amazon Aurora DSQL, and Amazon DynamoDB serverless databases are now available on Vercel Marketplace and v0 by Vercel in additional AWS Regions, offering you more flexibility to build applications with Vercel and AWS databas...",
+    "provider": "AWS",
+    "timestamp": "2026-06-04T17:00:00+00:00"
+  },
+  {
+    "title": "Amazon Bedrock launches a redesigned console optimized for OpenAI- and Anthropic-compatible APIs",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-redesigned-console-optimized-openai-anthropic-compatible-apis/",
+    "description": "Amazon Bedrock is a fully managed service that provides secure, enterprise-grade access to high-performing foundation models from leading AI companies, enabling you to build and scale generative AI applications. Today, Amazon Bedrock introduces a con...",
+    "provider": "AWS",
+    "timestamp": "2026-06-04T07:00:00+00:00"
+  },
+  {
+    "title": "June 05, 2026",
+    "link": "https://docs.cloud.google.com/release-notes#June_05_2026",
+    "description": "Security Command Center\nChange\nThe following Security Command Center finding category names from AI Protection have\nnew names that clarify that AI Protection detects Gemini foundation models:\n\nVERTEX_AI_MODEL_DETECTED changes to GEMINI_MODEL_DETECTED...",
+    "provider": "Google Cloud",
+    "timestamp": "2026-06-05T00:00:00-07:00"
+  },
+  {
+    "title": "June 04, 2026",
+    "link": "https://docs.cloud.google.com/release-notes#June_04_2026",
+    "description": "Anthos Config Management\nChange\nAddressed multiple Common Vulnerabilities and Exposures (CVEs) by updating dependencies.\nCloud Trace\nFeature\nTo view the instrumentation scope or the schema associated with a span, open the\nDetails view for the span an...",
+    "provider": "Google Cloud",
+    "timestamp": "2026-06-04T00:00:00-07:00"
+  },
+  {
+    "title": "[In preview] Public Preview: Voice sync for avatar support in Voice Live API in Microsoft Foundry",
+    "link": "https://azure.microsoft.com/updates?id=564176",
+    "description": "In public preview, Microsoft Foundry now supports avatar voice sync with custom voices in the Voice Live API, allowing developers to pair branded or persona-specific text-to-speech voices with real-time avatar experiences. This update helps teams bui...",
+    "provider": "Azure",
+    "timestamp": "2026-06-04T22:15:50+00:00"
+  },
+  {
+    "title": "[Launched] Generally Available: Azure Files assessments are now available worldwide using Azure Migrate",
+    "link": "https://azure.microsoft.com/updates?id=564563",
+    "description": "We’re pleased to\nannounce that Azure Migrate now generally supports discovery and assessment\nof SMB and NFS file shares hosted on Windows and Linux servers. This gives\ncustomers a complete, data-driven view of their file share environment and a\nclear...",
+    "provider": "Azure",
+    "timestamp": "2026-06-04T21:45:11+00:00"
+  },
+  {
+    "title": "AI in Defense: How Artificial Intelligence Is Reshaping National Security",
+    "link": "https://www.databricks.com/blog/ai-in-defense-industry",
+    "description": "The integration of artificial intelligence into defense is no longer a future consideration — it is happening now, ...",
+    "provider": "Databricks",
+    "timestamp": "2026-06-02T14:52:32+00:00"
+  },
+  {
+    "title": "Data Governance Architecture: A Complete Blueprint for Modern Organizations",
+    "link": "https://www.databricks.com/blog/data-governance-architecture",
+    "description": "Organizations that invest in robust data governance achieve measurable improvements in data quality...",
+    "provider": "Databricks",
+    "timestamp": "2026-06-02T14:37:00+00:00"
+  },
+  {
+    "title": "Practical Data Warehouse Design and Architecture Guide",
+    "link": "https://www.databricks.com/blog/data-warehouse-design",
+    "description": "This guide is written for data engineers, architects, analytics engineers, and technical...",
+    "provider": "Databricks",
+    "timestamp": "2026-06-02T12:46:59+00:00"
+  },
+  {
+    "title": "AI Governance Maturity Model: Matrix, Assessment, and Roadmap",
+    "link": "https://www.databricks.com/blog/ai-governance-maturity-model",
+    "description": "What Is an AI Governance Maturity Model?An AI governance maturity model is a structured...",
+    "provider": "Databricks",
+    "timestamp": "2026-06-02T12:21:25+00:00"
+  },
+  {
+    "title": "Biodefense in the Intelligence Age",
+    "link": "https://openai.com/index/biodefense-in-the-intelligence-age",
+    "description": "An action plan for AI-powered biological resilience",
+    "provider": "OpenAI",
+    "timestamp": "2026-06-04T00:00:00+00:00"
+  },
+  {
+    "title": "v0.1.2",
+    "link": "https://github.com/google-antigravity/antigravity-sdk-python/releases/tag/v0.1.2",
+    "description": "Release v0.1.2",
+    "provider": "Google Antigravity",
+    "timestamp": "2026-06-04T21:31:55+00:00"
   }
 ]
