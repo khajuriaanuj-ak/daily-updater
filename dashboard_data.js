@@ -1,6 +1,13 @@
 const DASHBOARD_DATA = {
-  "last_updated": "2026-06-06T16:47:16.868649+00:00",
+  "last_updated": "2026-06-07T17:48:47.154862+00:00",
   "updates": [
+    {
+      "title": "June 07, 2026",
+      "link": "https://docs.cloud.google.com/release-notes#June_07_2026",
+      "description": "Google SecOps SOAR\nAnnouncement\nRelease 6.3.88 is being rolled out to the first phase of regions as listed here.\nThis release contains internal and customer bug fixes.",
+      "provider": "Google Cloud",
+      "timestamp": "2026-06-07T00:00:00-07:00"
+    },
     {
       "title": "June 06, 2026",
       "link": "https://docs.cloud.google.com/release-notes#June_06_2026",
@@ -10861,6 +10868,38 @@ const DASHBOARD_DATA = {
   ],
   "trends": [
     {
+      "title": "OpenAI is still working on that ‘super app’",
+      "link": "https://techcrunch.com/2026/06/07/openai-is-still-working-on-that-super-app/",
+      "description": "\"Chat is dead\" — at least, according to a senior OpenAI employee.",
+      "date": "Jun 07, 2026",
+      "source": "TechCrunch AI",
+      "trend": "General AI"
+    },
+    {
+      "title": "OpenAI unveils Lockdown Mode to protect sensitive data from prompt injection attacks",
+      "link": "https://techcrunch.com/2026/06/06/openai-unveils-lockdown-mode-to-protect-sensitive-data-from-prompt-injection-attacks/",
+      "description": "Even with Lockdown Mode, ChatGPT could be still vulnerable to prompt injections, but the goal is to reduce the likelihood that sensitive data gets shared in the process.",
+      "date": "Jun 06, 2026",
+      "source": "TechCrunch AI",
+      "trend": "General AI"
+    },
+    {
+      "title": "What to expect from WWDC 2026: Siri’s highly anticipated revamp and Apple Intelligence updates",
+      "link": "https://techcrunch.com/2026/06/06/what-to-expect-from-wwdc-2026-siris-highly-anticipated-revamp-and-apple-intelligence-updates/",
+      "description": "Apple's WWDC nears: Here's what you can look forward to.",
+      "date": "Jun 06, 2026",
+      "source": "TechCrunch AI",
+      "trend": "Hardware & Chips"
+    },
+    {
+      "title": "Sriram Krishnan is leaving his role as White House AI advisor",
+      "link": "https://techcrunch.com/2026/06/06/sriram-krishnan-is-leaving-his-role-as-white-house-ai-advisor/",
+      "description": "Krishnan is reportedly starting a new institution to continue shaping Trump's AI policy.",
+      "date": "Jun 06, 2026",
+      "source": "TechCrunch AI",
+      "trend": "Regulatory"
+    },
+    {
       "title": "The Trump administration might take an equity stake in OpenAI",
       "link": "https://techcrunch.com/2026/06/06/the-trump-administration-might-take-an-equity-stake-in-openai/",
       "description": "President Donald Trump said he's discussing deals \"where the American people can benefit from the success of AI.\"",
@@ -10875,38 +10914,6 @@ const DASHBOARD_DATA = {
       "date": "Jun 05, 2026",
       "source": "TechCrunch AI",
       "trend": "General AI"
-    },
-    {
-      "title": "Google will pay SpaceX $920M per month for compute",
-      "link": "https://techcrunch.com/2026/06/05/google-will-pay-spacex-920m-per-month-for-compute/",
-      "description": "In a statement, a Google representative described the deal as a result of unexpected demand for its recently launched AI products.",
-      "date": "Jun 05, 2026",
-      "source": "TechCrunch AI",
-      "trend": "General AI"
-    },
-    {
-      "title": "The most interesting startups right now want to get you off your phone",
-      "link": "https://techcrunch.com/video/the-most-interesting-startups-right-now-want-to-get-you-off-your-phone/",
-      "description": "While the AI fundraising machine&#160;keeps breaking its own records, some founders are building in the other direction.&#160; Mirror founder Brynn Putnam just raised money for&#160;Board, a startup focused on bringing people together through in-person games and social experience...",
-      "date": "Jun 05, 2026",
-      "source": "TechCrunch AI",
-      "trend": "Investment & Startup"
-    },
-    {
-      "title": "The token bill comes due: Inside the industry scramble to manage AI’s runaway costs",
-      "link": "https://techcrunch.com/2026/06/05/the-token-bill-comes-due-inside-the-industry-scramble-to-manage-ais-runaway-costs/",
-      "description": "\"The whole conversation shifted from tokenmaxxing and 'go fast' to 'we need guardrails, how do we control this?'\"",
-      "date": "Jun 05, 2026",
-      "source": "TechCrunch AI",
-      "trend": "General AI"
-    },
-    {
-      "title": "The ‘together tech’ wave might be the most intriguing startup bet of 2026",
-      "link": "https://techcrunch.com/podcast/the-together-tech-wave-might-be-the-most-intriguing-startup-bet-of-2026/",
-      "description": "While the AI fundraising machine&#160;keeps breaking its own records, some founders are building in the other direction.&#160; Mirror founder Brynn Putnam just raised money for&#160;Board, a startup focused on bringing people together through in-person games and social experience...",
-      "date": "Jun 05, 2026",
-      "source": "TechCrunch AI",
-      "trend": "Investment & Startup"
     }
   ],
   "sentiments": [
@@ -10927,20 +10934,12 @@ const DASHBOARD_DATA = {
       "mentions": 0
     },
     {
-      "company": "Google Cloud",
-      "score": 86,
-      "status": "Bullish",
-      "change": "▲ +1",
-      "reason": "June 06, 2026",
-      "mentions": 2
-    },
-    {
       "company": "OpenAI",
       "score": 85,
       "status": "Bullish",
       "change": "▼ -1",
-      "reason": "The Trump administration might take an equity stake in OpenA...",
-      "mentions": 1
+      "reason": "OpenAI is still working on that ‘super app’",
+      "mentions": 3
     },
     {
       "company": "Groq",
@@ -10954,9 +10953,9 @@ const DASHBOARD_DATA = {
       "company": "Databricks",
       "score": 84,
       "status": "Mixed",
-      "change": "▲ +2",
-      "reason": "Bring Databricks into Kiro IDE with the AI Dev Kit Power",
-      "mentions": 1
+      "change": "▬ Stable",
+      "reason": "Consistent solid market indexing",
+      "mentions": 0
     },
     {
       "company": "Snowflake",
@@ -10965,6 +10964,14 @@ const DASHBOARD_DATA = {
       "change": "▬ Stable",
       "reason": "Consistent solid market indexing",
       "mentions": 0
+    },
+    {
+      "company": "Google Cloud",
+      "score": 80,
+      "status": "Mixed",
+      "change": "▬ Stable",
+      "reason": "June 07, 2026",
+      "mentions": 1
     },
     {
       "company": "Meta",
@@ -10986,9 +10993,9 @@ const DASHBOARD_DATA = {
       "company": "Apple",
       "score": 76,
       "status": "Mixed",
-      "change": "▬ Stable",
-      "reason": "Consistent solid market indexing",
-      "mentions": 0
+      "change": "▼ -1",
+      "reason": "What to expect from WWDC 2026: Siri’s highly anticipated rev...",
+      "mentions": 1
     }
   ],
   "valuations": {
@@ -11001,7 +11008,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -6.2,
       "rangePosition": 0.678,
-      "fetchedAt": "2026-06-06 04:47 PM"
+      "fetchedAt": "2026-06-07 05:48 PM"
     },
     "GOOGL": {
       "name": "Alphabet Inc.",
@@ -11012,7 +11019,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -0.98,
       "rangePosition": 0.837,
-      "fetchedAt": "2026-06-06 04:47 PM"
+      "fetchedAt": "2026-06-07 05:48 PM"
     },
     "MSFT": {
       "name": "Microsoft Corporation",
@@ -11023,7 +11030,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -2.66,
       "rangePosition": 0.303,
-      "fetchedAt": "2026-06-06 04:47 PM"
+      "fetchedAt": "2026-06-07 05:48 PM"
     },
     "AMZN": {
       "name": "Amazon.com, Inc.",
@@ -11034,7 +11041,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -3.06,
       "rangePosition": 0.606,
-      "fetchedAt": "2026-06-06 04:47 PM"
+      "fetchedAt": "2026-06-07 05:48 PM"
     },
     "SNOW": {
       "name": "Snowflake Inc.",
@@ -11045,7 +11052,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -2.42,
       "rangePosition": 0.72,
-      "fetchedAt": "2026-06-06 04:47 PM"
+      "fetchedAt": "2026-06-07 05:48 PM"
     },
     "TSM": {
       "name": "Taiwan Semiconductor Manufactur",
@@ -11056,7 +11063,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -6.69,
       "rangePosition": 0.859,
-      "fetchedAt": "2026-06-06 04:47 PM"
+      "fetchedAt": "2026-06-07 05:48 PM"
     },
     "AVGO": {
       "name": "Broadcom Inc.",
@@ -11067,18 +11074,18 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -7.92,
       "rangePosition": 0.57,
-      "fetchedAt": "2026-06-06 04:47 PM"
+      "fetchedAt": "2026-06-07 05:48 PM"
     },
     "ASML": {
       "name": "ASML Holding N.V. - New York Re",
       "price": 1641.74,
-      "forwardPE": 34.1,
+      "forwardPE": 34.38,
       "trailingPE": 54.65,
       "marketCap": 632755585024,
       "psRatio": null,
       "dayChange": -6.59,
       "rangePosition": 0.904,
-      "fetchedAt": "2026-06-06 04:47 PM"
+      "fetchedAt": "2026-06-07 05:48 PM"
     },
     "VRT": {
       "name": "Vertiv Holdings, LLC",
@@ -11089,7 +11096,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -7.23,
       "rangePosition": 0.709,
-      "fetchedAt": "2026-06-06 04:47 PM"
+      "fetchedAt": "2026-06-07 05:48 PM"
     },
     "ANET": {
       "name": "Arista Networks, Inc.",
@@ -11100,7 +11107,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -7.07,
       "rangePosition": 0.729,
-      "fetchedAt": "2026-06-06 04:47 PM"
+      "fetchedAt": "2026-06-07 05:48 PM"
     },
     "INTC": {
       "name": "Intel Corporation",
@@ -11111,7 +11118,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -11.28,
       "rangePosition": 0.705,
-      "fetchedAt": "2026-06-06 04:47 PM"
+      "fetchedAt": "2026-06-07 05:48 PM"
     },
     "DELL": {
       "name": "Dell Technologies Inc.",
@@ -11122,7 +11129,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -6.55,
       "rangePosition": 0.792,
-      "fetchedAt": "2026-06-06 04:47 PM"
+      "fetchedAt": "2026-06-07 05:48 PM"
     },
     "HPE": {
       "name": "Hewlett Packard Enterprise Comp",
@@ -11133,7 +11140,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -8.36,
       "rangePosition": 0.678,
-      "fetchedAt": "2026-06-06 04:47 PM"
+      "fetchedAt": "2026-06-07 05:48 PM"
     },
     "META": {
       "name": "Meta Platforms, Inc.",
@@ -11144,7 +11151,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -5.51,
       "rangePosition": 0.264,
-      "fetchedAt": "2026-06-06 04:47 PM"
+      "fetchedAt": "2026-06-07 05:48 PM"
     },
     "IBM": {
       "name": "International Business Machines",
@@ -11155,7 +11162,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -5.61,
       "rangePosition": 0.604,
-      "fetchedAt": "2026-06-06 04:47 PM"
+      "fetchedAt": "2026-06-07 05:48 PM"
     },
     "DAVA": {
       "name": "Endava plc",
@@ -11166,7 +11173,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -3.13,
       "rangePosition": 0.003,
-      "fetchedAt": "2026-06-06 04:47 PM"
+      "fetchedAt": "2026-06-07 05:48 PM"
     }
   },
   "stocks_universe": [

@@ -10855,5 +10855,12 @@
     "description": "Why this mattersAI-assisted development falls apart the moment the assistant has to guess at column names, table layouts...",
     "provider": "Databricks",
     "timestamp": "2026-06-03T17:43:20+00:00"
+  },
+  {
+    "title": "June 07, 2026",
+    "link": "https://docs.cloud.google.com/release-notes#June_07_2026",
+    "description": "Google SecOps SOAR\nAnnouncement\nRelease 6.3.88 is being rolled out to the first phase of regions as listed here.\nThis release contains internal and customer bug fixes.",
+    "provider": "Google Cloud",
+    "timestamp": "2026-06-07T00:00:00-07:00"
   }
 ]
