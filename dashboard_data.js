@@ -1,6 +1,104 @@
 const DASHBOARD_DATA = {
-  "last_updated": "2026-06-07T17:48:47.154862+00:00",
+  "last_updated": "2026-06-08T21:15:54.825206+00:00",
   "updates": [
+    {
+      "title": "[Launched] Generally Available: Azure NC RTX PRO 6000 Blackwell Server Edition v6 Series Virtual Machines",
+      "link": "https://azure.microsoft.com/updates?id=565271",
+      "description": "Azure NCv6-series virtual machines (VMs) are now generally available in the Azure Southeast Asia and West US 2 regions. NCv6 VMs are powered by NVIDIA RTX PRO 6000 Blackwell Server Edition graphics processing units (GPUs) with each GPU featuring 96 G...",
+      "provider": "Azure",
+      "timestamp": "2026-06-08T18:15:14+00:00"
+    },
+    {
+      "title": "Transforming solar and wind maintenance reports with Genie and AI agents",
+      "link": "https://www.databricks.com/blog/transforming-solar-and-wind-maintenance-reports-genie-and-ai-agents",
+      "description": "From maintenance PDFs to actionable insights with AI agentsOperations and maintenance...",
+      "provider": "Databricks",
+      "timestamp": "2026-06-08T18:15:00+00:00"
+    },
+    {
+      "title": "[Launched] Generally Available: Premium SSD v2 disks now support non-zonal Azure Virtual Machines",
+      "link": "https://azure.microsoft.com/updates?id=565359",
+      "description": "Azure Premium SSD v2 disks now support non-zonal, single-instance Azure virtual machines in select Azure regions with Availability Zones (AZs). Customers can now deploy Premium SSD v2 with non-zonal virtual machines without selecting an Availability ...",
+      "provider": "Azure",
+      "timestamp": "2026-06-08T18:00:23+00:00"
+    },
+    {
+      "title": "AWS Savings Plans Purchase Analyzer now supports target coverage analysis",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-savings-plans-coverage/",
+      "description": "Today, AWS announces target coverage analysis in Savings Plans Purchase Analyzer, a capability in AWS Billing and Cost Management that helps you plan your Savings Plans purchases based on your coverage target. Savings Plans Purchase Analyzer helps yo...",
+      "provider": "AWS",
+      "timestamp": "2026-06-08T17:16:00+00:00"
+    },
+    {
+      "title": "[In preview] Public Preview: Microsoft Foundry agent security capabilities in Microsoft Defender for Cloud are transitioning to a Microsoft Agent 365 license",
+      "link": "https://azure.microsoft.com/updates?id=565171",
+      "description": "Starting July 1, 2026, Microsoft Foundry agent security capabilities previously available through Microsoft Defender for Cloud will transition to a Microsoft Agent 365 license. Agent protection in Defender will be powered by Agent 365 observability l...",
+      "provider": "Azure",
+      "timestamp": "2026-06-08T17:15:43+00:00"
+    },
+    {
+      "title": "[Launched] Generally Available: Maintenance control for Azure Database for PostgreSQL - reschedule, apply on demand, view and download",
+      "link": "https://azure.microsoft.com/updates?id=563756",
+      "description": "Enhanced maintenance control capabilities are now generally available for Azure Database for PostgreSQL Flexible Server. These new capabilities give you greater visibility and flexibility in managing platform maintenance events, helping reduce disrup...",
+      "provider": "Azure",
+      "timestamp": "2026-06-08T17:15:43+00:00"
+    },
+    {
+      "title": "AWS Application Migration Service is now AWS Transform MGN",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-transform-mgn-rebrand/",
+      "description": "AWS Application Migration Service (MGN) is now available as AWS Transform MGN. This name change reflects MGN's role as the proven replication engine powering AWS Transform, the agentic migration service.  You can choose between two rehosting experien...",
+      "provider": "AWS",
+      "timestamp": "2026-06-08T17:00:00+00:00"
+    },
+    {
+      "title": "Amazon Aurora DSQL now supports the JSONB data type with compression",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-aurora-dsql-supports-jsonb/",
+      "description": "Amazon Aurora DSQL introduces support for the PostgreSQL JSONB data type with optional compression. You can now use code and tools that depend on PostgreSQL's JSONB type with Aurora DSQL, making it easier to store semi-structured data alongside relat...",
+      "provider": "AWS",
+      "timestamp": "2026-06-08T17:00:00+00:00"
+    },
+    {
+      "title": "AWS now provides AI-powered cost investigations for cost anomalies",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-ai-powered-cost-investigations/",
+      "description": "AWS Cost Anomaly Detection now includes AI-powered cost investigation, which uses Amazon Q to analyze the root cause of detected cost anomalies. Investigating a cost change typically requires correlating cost data with AWS CloudTrail events and resou...",
+      "provider": "AWS",
+      "timestamp": "2026-06-08T16:41:00+00:00"
+    },
+    {
+      "title": "Amazon Redshift reduces manual snapshot cost for Serverless and RG instances",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-redshift-incremental-manual-snapshots/",
+      "description": "Amazon Redshift announces a new billing model for manual snapshots on Amazon Redshift Serverless and Amazon Redshift RG instances. With this enhancement, Amazon Redshift now meters manual snapshot storage based on the unique data blocks stored across...",
+      "provider": "AWS",
+      "timestamp": "2026-06-08T15:00:00+00:00"
+    },
+    {
+      "title": "Amazon RDS for SQL Server migration cost assessment capabilities now available in AWS Transform",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-rds-sql-server-cost-assessment-aws-transform/",
+      "description": "Amazon RDS for SQL Server now offers TCO assessment in AWS Transform, so you can estimate costs when migrating on-premises SQL Server databases to RDS for SQL Server. Using AI-powered agents, AWS Transform analyzes your on-premises SQL Server environ...",
+      "provider": "AWS",
+      "timestamp": "2026-06-08T07:00:00+00:00"
+    },
+    {
+      "title": "Built to benefit everyone: our plan",
+      "link": "https://openai.com/index/built-to-benefit-everyone-our-plan",
+      "description": "A vision for the future of AI, focusing on access, safety, and shared prosperity as OpenAI works to ensure AGI benefits everyone.",
+      "provider": "OpenAI",
+      "timestamp": "2026-06-08T01:30:00+00:00"
+    },
+    {
+      "title": "June 08, 2026",
+      "link": "https://docs.cloud.google.com/release-notes#June_08_2026",
+      "description": "App Hub\nFeature\nApp Hub support for resources from Memorystore is now generally available (GA).\nBigQuery\nFeature\nYou can use custom constraints with Organization Policy to provide more\ngranular control over specific fields for some BigQuery sharing\nr...",
+      "provider": "Google Cloud",
+      "timestamp": "2026-06-08T00:00:00-07:00"
+    },
+    {
+      "title": "Introducing the OpenAI Economic Research Exchange",
+      "link": "https://openai.com/index/economic-research-exchange",
+      "description": "OpenAI launches the Economic Research Exchange to study AI’s impact on jobs, productivity, and the economy. Applications are now open for selected research projects.",
+      "provider": "OpenAI",
+      "timestamp": "2026-06-08T00:00:00+00:00"
+    },
     {
       "title": "June 07, 2026",
       "link": "https://docs.cloud.google.com/release-notes#June_07_2026",
@@ -175,6 +273,13 @@ const DASHBOARD_DATA = {
       "description": "Azure AI Search now supports Content Understanding chunking and image verbalization in public preview, expanding the built-in skill that parses rich documents during indexing. Indexers can split documents into semantically meaningful chunks and gener...",
       "provider": "Azure",
       "timestamp": "2026-06-04T19:00:34+00:00"
+    },
+    {
+      "title": "Your guide to the Telecommunications Industry Experience at Data and AI Summit 2026",
+      "link": "https://www.databricks.com/blog/your-guide-telecommunications-industry-experience-data-and-ai-summit-2026",
+      "description": "Telecommunications operators are facing a structural shift. You can see it on the...",
+      "provider": "Databricks",
+      "timestamp": "2026-06-04T18:28:39+00:00"
     },
     {
       "title": "Amazon Cognito now supports multi-Region replication",
@@ -10868,50 +10973,50 @@ const DASHBOARD_DATA = {
   ],
   "trends": [
     {
-      "title": "OpenAI is still working on that ‘super app’",
-      "link": "https://techcrunch.com/2026/06/07/openai-is-still-working-on-that-super-app/",
-      "description": "\"Chat is dead\" — at least, according to a senior OpenAI employee.",
-      "date": "Jun 07, 2026",
+      "title": "Apple bets cheaper AI will woo small developers",
+      "link": "https://techcrunch.com/2026/06/08/apple-bets-cheaper-ai-will-woo-small-developers/",
+      "description": "As AI experimentation grows more expensive, Apple is waiving cloud API costs for developers with fewer than 2 million first-time App Store downloads.",
+      "date": "Jun 08, 2026",
       "source": "TechCrunch AI",
       "trend": "General AI"
     },
     {
-      "title": "OpenAI unveils Lockdown Mode to protect sensitive data from prompt injection attacks",
-      "link": "https://techcrunch.com/2026/06/06/openai-unveils-lockdown-mode-to-protect-sensitive-data-from-prompt-injection-attacks/",
-      "description": "Even with Lockdown Mode, ChatGPT could be still vulnerable to prompt injections, but the goal is to reduce the likelihood that sensitive data gets shared in the process.",
-      "date": "Jun 06, 2026",
-      "source": "TechCrunch AI",
-      "trend": "General AI"
-    },
-    {
-      "title": "What to expect from WWDC 2026: Siri’s highly anticipated revamp and Apple Intelligence updates",
-      "link": "https://techcrunch.com/2026/06/06/what-to-expect-from-wwdc-2026-siris-highly-anticipated-revamp-and-apple-intelligence-updates/",
-      "description": "Apple's WWDC nears: Here's what you can look forward to.",
-      "date": "Jun 06, 2026",
+      "title": "WWDC 2026: Everything announced on Siri AI, iOS 27, Apple Intelligence and more",
+      "link": "https://techcrunch.com/2026/06/08/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence-and-more/",
+      "description": "Apple primarily made the case for an improved experience with its longstanding Siri assistant, which like most other announcements had a hefty helping of AI.",
+      "date": "Jun 08, 2026",
       "source": "TechCrunch AI",
       "trend": "Hardware & Chips"
     },
     {
-      "title": "Sriram Krishnan is leaving his role as White House AI advisor",
-      "link": "https://techcrunch.com/2026/06/06/sriram-krishnan-is-leaving-his-role-as-white-house-ai-advisor/",
-      "description": "Krishnan is reportedly starting a new institution to continue shaping Trump's AI policy.",
-      "date": "Jun 06, 2026",
+      "title": "Apple just taught your iPhone to finish your sentences, your photos, and your workflows",
+      "link": "https://techcrunch.com/2026/06/08/apple-just-taught-your-iphone-to-finish-your-sentences-your-photos-and-your-workflows/",
+      "description": "Apple is adding new AI-powered features to Safari, Shortcuts, and Password apps.",
+      "date": "Jun 08, 2026",
       "source": "TechCrunch AI",
-      "trend": "Regulatory"
+      "trend": "Enterprise Adoption"
     },
     {
-      "title": "The Trump administration might take an equity stake in OpenAI",
-      "link": "https://techcrunch.com/2026/06/06/the-trump-administration-might-take-an-equity-stake-in-openai/",
-      "description": "President Donald Trump said he's discussing deals \"where the American people can benefit from the success of AI.\"",
-      "date": "Jun 06, 2026",
+      "title": "Apple will let you build workflows using AI in its new Shortcuts app",
+      "link": "https://techcrunch.com/2026/06/08/apple-will-let-you-build-workflows-using-ai-in-its-new-shortcuts-app/",
+      "description": "Shortcuts gets an AI upgrade, letting you describe the workflow you want in a prompt.",
+      "date": "Jun 08, 2026",
+      "source": "TechCrunch AI",
+      "trend": "Enterprise Adoption"
+    },
+    {
+      "title": "Apple’s Image Playground doesn’t suck anymore",
+      "link": "https://techcrunch.com/2026/06/08/apples-image-playground-doesnt-suck-anymore/",
+      "description": "Apple's AI image generator is getting a makeover that could make it more competitive.",
+      "date": "Jun 08, 2026",
       "source": "TechCrunch AI",
       "trend": "General AI"
     },
     {
-      "title": "Startup Battlefield 200 applications officially close in 3 days",
-      "link": "https://techcrunch.com/2026/06/05/startup-battlefield-200-applications-officially-close-in-3-days/",
-      "description": "Applications for Startup Battlefield 200 officially close on June 8, 11:59 p.m. PT. Don't wait any longer. Secure your shot at competing on the Disrupt Stage at TechCrunch Disrupt 2026 this October at San Francisco's Moscone West.",
-      "date": "Jun 05, 2026",
+      "title": "Apple’s Photos app is getting new AI editing features",
+      "link": "https://techcrunch.com/2026/06/08/apples-photos-app-is-getting-new-ai-editing-features/",
+      "description": "A new spatial \"Reframe\" feature will let users use AI to adjust perspectives.",
+      "date": "Jun 08, 2026",
       "source": "TechCrunch AI",
       "trend": "General AI"
     }
@@ -10919,11 +11024,11 @@ const DASHBOARD_DATA = {
   "sentiments": [
     {
       "company": "NVIDIA",
-      "score": 91,
+      "score": 94,
       "status": "Bullish",
-      "change": "▬ Stable",
-      "reason": "Consistent solid market indexing",
-      "mentions": 0
+      "change": "▼ -2",
+      "reason": "[Launched] Generally Available: Azure NC RTX PRO 6000 Blackw...",
+      "mentions": 1
     },
     {
       "company": "Anthropic",
@@ -10934,12 +11039,12 @@ const DASHBOARD_DATA = {
       "mentions": 0
     },
     {
-      "company": "OpenAI",
-      "score": 85,
+      "company": "Microsoft",
+      "score": 87,
       "status": "Bullish",
       "change": "▼ -1",
-      "reason": "OpenAI is still working on that ‘super app’",
-      "mentions": 3
+      "reason": "[Launched] Generally Available: Azure NC RTX PRO 6000 Blackw...",
+      "mentions": 4
     },
     {
       "company": "Groq",
@@ -10953,9 +11058,17 @@ const DASHBOARD_DATA = {
       "company": "Databricks",
       "score": 84,
       "status": "Mixed",
-      "change": "▬ Stable",
-      "reason": "Consistent solid market indexing",
-      "mentions": 0
+      "change": "▲ +2",
+      "reason": "Transforming solar and wind maintenance reports with Genie a...",
+      "mentions": 2
+    },
+    {
+      "company": "Google Cloud",
+      "score": 83,
+      "status": "Mixed",
+      "change": "▼ -2",
+      "reason": "June 08, 2026",
+      "mentions": 1
     },
     {
       "company": "Snowflake",
@@ -10966,12 +11079,12 @@ const DASHBOARD_DATA = {
       "mentions": 0
     },
     {
-      "company": "Google Cloud",
-      "score": 80,
+      "company": "OpenAI",
+      "score": 79,
       "status": "Mixed",
-      "change": "▬ Stable",
-      "reason": "June 07, 2026",
-      "mentions": 1
+      "change": "▼ -2",
+      "reason": "Built to benefit everyone: our plan",
+      "mentions": 2
     },
     {
       "company": "Meta",
@@ -10982,198 +11095,201 @@ const DASHBOARD_DATA = {
       "mentions": 0
     },
     {
-      "company": "Microsoft",
-      "score": 78,
-      "status": "Mixed",
-      "change": "▬ Stable",
-      "reason": "Consistent solid market indexing",
-      "mentions": 0
-    },
-    {
       "company": "Apple",
-      "score": 76,
+      "score": 70,
       "status": "Mixed",
-      "change": "▼ -1",
-      "reason": "What to expect from WWDC 2026: Siri’s highly anticipated rev...",
-      "mentions": 1
+      "change": "▼ -2",
+      "reason": "Apple bets cheaper AI will woo small developers",
+      "mentions": 6
     }
   ],
   "valuations": {
     "NVDA": {
       "name": "NVIDIA Corporation",
-      "price": 205.1,
-      "forwardPE": 16.17,
-      "trailingPE": 31.46,
-      "marketCap": 4967727366144,
+      "price": 208.64,
+      "forwardPE": 16.45,
+      "trailingPE": 32.0,
+      "marketCap": 5053469425664,
       "psRatio": null,
-      "dayChange": -6.2,
-      "rangePosition": 0.678,
-      "fetchedAt": "2026-06-07 05:48 PM"
+      "dayChange": 1.73,
+      "rangePosition": 0.714,
+      "fetchedAt": "2026-06-08 09:15 PM"
     },
     "GOOGL": {
       "name": "Alphabet Inc.",
-      "price": 368.53,
-      "forwardPE": 25.48,
-      "trailingPE": 28.09,
-      "marketCap": 4494199357440,
+      "price": 363.31,
+      "forwardPE": 25.12,
+      "trailingPE": 27.69,
+      "marketCap": 4430541881344,
       "psRatio": null,
-      "dayChange": -0.98,
-      "rangePosition": 0.837,
-      "fetchedAt": "2026-06-07 05:48 PM"
+      "dayChange": -1.42,
+      "rangePosition": 0.816,
+      "fetchedAt": "2026-06-08 09:15 PM"
     },
     "MSFT": {
       "name": "Microsoft Corporation",
-      "price": 416.67,
-      "forwardPE": 21.53,
-      "trailingPE": 24.82,
-      "marketCap": 3095206035456,
+      "price": 411.74,
+      "forwardPE": 21.28,
+      "trailingPE": 24.52,
+      "marketCap": 3058583732224,
       "psRatio": null,
-      "dayChange": -2.66,
-      "rangePosition": 0.303,
-      "fetchedAt": "2026-06-07 05:48 PM"
+      "dayChange": -1.18,
+      "rangePosition": 0.278,
+      "fetchedAt": "2026-06-08 09:15 PM"
     },
     "AMZN": {
       "name": "Amazon.com, Inc.",
-      "price": 246.03,
-      "forwardPE": 24.94,
-      "trailingPE": 31.66,
-      "marketCap": 2646571745280,
+      "price": 245.22,
+      "forwardPE": 24.86,
+      "trailingPE": 31.56,
+      "marketCap": 2637858340864,
       "psRatio": null,
-      "dayChange": -3.06,
-      "rangePosition": 0.606,
-      "fetchedAt": "2026-06-07 05:48 PM"
+      "dayChange": -0.33,
+      "rangePosition": 0.596,
+      "fetchedAt": "2026-06-08 09:15 PM"
     },
     "SNOW": {
       "name": "Snowflake Inc.",
-      "price": 238.26,
-      "forwardPE": 89.15,
+      "price": 240.45,
+      "forwardPE": 89.58,
       "trailingPE": null,
-      "marketCap": 82580914176,
+      "marketCap": 83339968512,
       "psRatio": null,
-      "dayChange": -2.42,
-      "rangePosition": 0.72,
-      "fetchedAt": "2026-06-07 05:48 PM"
+      "dayChange": 0.92,
+      "rangePosition": 0.733,
+      "fetchedAt": "2026-06-08 09:15 PM"
     },
     "TSM": {
       "name": "Taiwan Semiconductor Manufactur",
-      "price": 415.17,
-      "forwardPE": 21.26,
-      "trailingPE": 35.58,
-      "marketCap": 2153268510720,
+      "price": 426.8,
+      "forwardPE": 21.85,
+      "trailingPE": 36.57,
+      "marketCap": 2213586927616,
       "psRatio": null,
-      "dayChange": -6.69,
-      "rangePosition": 0.859,
-      "fetchedAt": "2026-06-07 05:48 PM"
+      "dayChange": 2.8,
+      "rangePosition": 0.906,
+      "fetchedAt": "2026-06-08 09:15 PM"
     },
     "AVGO": {
       "name": "Broadcom Inc.",
-      "price": 385.73,
-      "forwardPE": 19.96,
-      "trailingPE": 64.07,
-      "marketCap": 1826303639552,
+      "price": 396.6,
+      "forwardPE": 20.5,
+      "trailingPE": 65.88,
+      "marketCap": 1877769453568,
       "psRatio": null,
-      "dayChange": -7.92,
-      "rangePosition": 0.57,
-      "fetchedAt": "2026-06-07 05:48 PM"
+      "dayChange": 2.82,
+      "rangePosition": 0.612,
+      "fetchedAt": "2026-06-08 09:15 PM"
     },
     "ASML": {
       "name": "ASML Holding N.V. - New York Re",
-      "price": 1641.74,
-      "forwardPE": 34.38,
-      "trailingPE": 54.65,
-      "marketCap": 632755585024,
+      "price": 1749.04,
+      "forwardPE": 36.62,
+      "trailingPE": 58.22,
+      "marketCap": 674110898176,
       "psRatio": null,
-      "dayChange": -6.59,
-      "rangePosition": 0.904,
-      "fetchedAt": "2026-06-07 05:48 PM"
+      "dayChange": 6.54,
+      "rangePosition": 0.981,
+      "fetchedAt": "2026-06-08 09:15 PM"
     },
     "VRT": {
       "name": "Vertiv Holdings, LLC",
-      "price": 300.51,
+      "price": 300.57,
       "forwardPE": 34.01,
-      "trailingPE": 75.7,
-      "marketCap": 115428540416,
+      "trailingPE": 75.71,
+      "marketCap": 115451584512,
       "psRatio": null,
-      "dayChange": -7.23,
+      "dayChange": 0.02,
       "rangePosition": 0.709,
-      "fetchedAt": "2026-06-07 05:48 PM"
+      "fetchedAt": "2026-06-08 09:15 PM"
     },
     "ANET": {
       "name": "Arista Networks, Inc.",
-      "price": 154.27,
-      "forwardPE": 34.67,
-      "trailingPE": 52.83,
-      "marketCap": 194252062720,
+      "price": 156.4,
+      "forwardPE": 35.15,
+      "trailingPE": 53.56,
+      "marketCap": 196934090752,
       "psRatio": null,
-      "dayChange": -7.07,
-      "rangePosition": 0.729,
-      "fetchedAt": "2026-06-07 05:48 PM"
+      "dayChange": 1.38,
+      "rangePosition": 0.752,
+      "fetchedAt": "2026-06-08 09:15 PM"
     },
     "INTC": {
       "name": "Intel Corporation",
-      "price": 99.17,
-      "forwardPE": 64.18,
+      "price": 110.27,
+      "forwardPE": 71.63,
       "trailingPE": null,
-      "marketCap": 498428411904,
+      "marketCap": 554216980480,
       "psRatio": null,
-      "dayChange": -11.28,
-      "rangePosition": 0.705,
-      "fetchedAt": "2026-06-07 05:48 PM"
+      "dayChange": 11.19,
+      "rangePosition": 0.802,
+      "fetchedAt": "2026-06-08 09:15 PM"
     },
     "DELL": {
       "name": "Dell Technologies Inc.",
-      "price": 394.39,
-      "forwardPE": 18.65,
-      "trailingPE": 31.45,
-      "marketCap": 256183238656,
+      "price": 400.77,
+      "forwardPE": 18.95,
+      "trailingPE": 31.96,
+      "marketCap": 260327456768,
       "psRatio": null,
-      "dayChange": -6.55,
-      "rangePosition": 0.792,
-      "fetchedAt": "2026-06-07 05:48 PM"
+      "dayChange": 1.62,
+      "rangePosition": 0.809,
+      "fetchedAt": "2026-06-08 09:15 PM"
     },
     "HPE": {
       "name": "Hewlett Packard Enterprise Comp",
-      "price": 49.2,
-      "forwardPE": 12.25,
-      "trailingPE": 45.98,
-      "marketCap": 65150812160,
+      "price": 49.87,
+      "forwardPE": 12.42,
+      "trailingPE": 46.61,
+      "marketCap": 66038026240,
       "psRatio": null,
-      "dayChange": -8.36,
-      "rangePosition": 0.678,
-      "fetchedAt": "2026-06-07 05:48 PM"
+      "dayChange": 1.36,
+      "rangePosition": 0.692,
+      "fetchedAt": "2026-06-08 09:15 PM"
     },
     "META": {
       "name": "Meta Platforms, Inc.",
-      "price": 593.0,
-      "forwardPE": 16.4,
-      "trailingPE": 21.55,
-      "marketCap": 1505284980736,
+      "price": 585.39,
+      "forwardPE": 16.19,
+      "trailingPE": 21.27,
+      "marketCap": 1485967589376,
       "psRatio": null,
-      "dayChange": -5.51,
-      "rangePosition": 0.264,
-      "fetchedAt": "2026-06-07 05:48 PM"
+      "dayChange": -1.28,
+      "rangePosition": 0.236,
+      "fetchedAt": "2026-06-08 09:15 PM"
     },
     "IBM": {
       "name": "International Business Machines",
-      "price": 284.84,
-      "forwardPE": 21.22,
-      "trailingPE": 25.18,
-      "marketCap": 267716935680,
+      "price": 280.82,
+      "forwardPE": 20.92,
+      "trailingPE": 24.83,
+      "marketCap": 263938605056,
       "psRatio": null,
-      "dayChange": -5.61,
-      "rangePosition": 0.604,
-      "fetchedAt": "2026-06-07 05:48 PM"
+      "dayChange": -1.41,
+      "rangePosition": 0.57,
+      "fetchedAt": "2026-06-08 09:15 PM"
     },
     "DAVA": {
       "name": "Endava plc",
-      "price": 2.79,
-      "forwardPE": 3.24,
+      "price": 2.81,
+      "forwardPE": 3.28,
       "trailingPE": null,
-      "marketCap": 147431168,
+      "marketCap": 148488032,
       "psRatio": null,
-      "dayChange": -3.13,
-      "rangePosition": 0.003,
-      "fetchedAt": "2026-06-07 05:48 PM"
+      "dayChange": 0.72,
+      "rangePosition": 0.004,
+      "fetchedAt": "2026-06-08 09:15 PM"
+    },
+    "AAPL": {
+      "name": "Apple Inc.",
+      "price": 301.54,
+      "forwardPE": 31.38,
+      "trailingPE": 36.46,
+      "marketCap": 4428825362432,
+      "psRatio": null,
+      "dayChange": -1.89,
+      "rangePosition": 0.87,
+      "fetchedAt": "2026-06-08 09:15 PM"
     }
   },
   "stocks_universe": [
@@ -11346,6 +11462,16 @@ const DASHBOARD_DATA = {
       "tailwindScore": 8.0,
       "baseReason": "Specializes in integrating advanced AI agent technologies (like ChatGPT Enterprise) into complex enterprise software development and operational workflows, driving AI adoption and efficiency for clients.",
       "expertStrategy": "Endava benefits from the broad enterprise adoption of AI, particularly agentic AI, by providing the crucial consulting, integration, and development services needed to deploy these technologies at scale. As enterprises seek to operationalize AI, Endava's expertise in re-architecting software delivery around AI agents makes it a key enabler for enterprise AI transformation."
+    },
+    {
+      "name": "Apple Inc.",
+      "ticker": "AAPL",
+      "category": "direct",
+      "subCategory": "On-Device AI & AI Ecosystem",
+      "moatScore": 8.5,
+      "tailwindScore": 8.0,
+      "baseReason": "Apple's strategic AI moat lies in its unparalleled ecosystem integration of hardware, software, and services, combined with its brand loyalty and vast global user base. This allows for the delivery of highly personalized, private, and seamlessly integrated on-device AI experiences.",
+      "expertStrategy": "With the introduction of 'Apple Intelligence' and deep AI integration across iOS, Safari, Photos, and Shortcuts, Apple is positioned to leverage its massive install base to become a dominant player in consumer-facing AI. The waiving of cloud API costs for small developers indicates a strategic move to foster its AI ecosystem, potentially increasing its services revenue over the long term as developers build on its platform and eventually scale. Investors should watch for continued innovation in on-device AI and its impact on hardware upgrade cycles and services growth."
     }
   ]
 };

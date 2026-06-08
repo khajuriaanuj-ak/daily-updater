@@ -168,5 +168,15 @@
     "tailwindScore": 8.0,
     "baseReason": "Specializes in integrating advanced AI agent technologies (like ChatGPT Enterprise) into complex enterprise software development and operational workflows, driving AI adoption and efficiency for clients.",
     "expertStrategy": "Endava benefits from the broad enterprise adoption of AI, particularly agentic AI, by providing the crucial consulting, integration, and development services needed to deploy these technologies at scale. As enterprises seek to operationalize AI, Endava's expertise in re-architecting software delivery around AI agents makes it a key enabler for enterprise AI transformation."
+  },
+  {
+    "name": "Apple Inc.",
+    "ticker": "AAPL",
+    "category": "direct",
+    "subCategory": "On-Device AI & AI Ecosystem",
+    "moatScore": 8.5,
+    "tailwindScore": 8.0,
+    "baseReason": "Apple's strategic AI moat lies in its unparalleled ecosystem integration of hardware, software, and services, combined with its brand loyalty and vast global user base. This allows for the delivery of highly personalized, private, and seamlessly integrated on-device AI experiences.",
+    "expertStrategy": "With the introduction of 'Apple Intelligence' and deep AI integration across iOS, Safari, Photos, and Shortcuts, Apple is positioned to leverage its massive install base to become a dominant player in consumer-facing AI. The waiving of cloud API costs for small developers indicates a strategic move to foster its AI ecosystem, potentially increasing its services revenue over the long term as developers build on its platform and eventually scale. Investors should watch for continued innovation in on-device AI and its impact on hardware upgrade cycles and services growth."
   }
 ]
