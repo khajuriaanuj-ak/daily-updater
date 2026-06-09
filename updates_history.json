@@ -10967,5 +10967,145 @@
     "description": "OpenAI launches the Economic Research Exchange to study AI’s impact on jobs, productivity, and the economy. Applications are now open for selected research projects.",
     "provider": "OpenAI",
     "timestamp": "2026-06-08T00:00:00+00:00"
+  },
+  {
+    "title": "Anthropic Claude Fable 5 on AWS: Mythos-class capabilities with built-in safeguards now available",
+    "link": "https://aws.amazon.com/blogs/aws/anthropic-claude-fable-5-on-aws-mythos-class-capabilities-with-built-in-safeguards-now-available/",
+    "description": "AWS announces the availability of Claude Fable 5 on Amazon Bedrock and Claude Platform on AWS. Claude Fable 5 makes Mythos-level capabilities available to all customers, with strong safeguards designed to make it safe for broader use.",
+    "provider": "AWS",
+    "timestamp": "2026-06-09T17:40:31+00:00"
+  },
+  {
+    "title": "AWS Weekly Roundup: BYOM for Amazon RDS for SQL Server, AWS IoT Device SDK for Swift, and more (June 8, 2026)",
+    "link": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-byom-for-amazon-rds-for-sql-server-aws-iot-device-sdk-for-swift-and-more-june-8-2026/",
+    "description": "This week, the&nbsp;AWS IoT Device SDK for Swift&nbsp;reached general availability. As a member of the&nbsp;Swift Server Workgroup (SSWG), this one caught my attention. The SDK brings production-ready MQTT 5 connectivity, Device Shadow, Jobs, and fle...",
+    "provider": "AWS",
+    "timestamp": "2026-06-08T21:27:12+00:00"
+  },
+  {
+    "title": "AWS FinOps Agent is now available in preview",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-finops-agent-preview/",
+    "description": "Today, AWS announces the preview of AWS FinOps Agent, a frontier agent for FinOps practitioners and engineering teams that answers cost questions, surfaces optimization opportunities, automatically investigates cost anomalies, and runs recurring FinO...",
+    "provider": "AWS",
+    "timestamp": "2026-06-09T15:28:00+00:00"
+  },
+  {
+    "title": "AWS announces Claude Fable 5, the first generally available Mythos-class model",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/claude-fable-5-aws/",
+    "description": "Claude Fable 5 is generally available on AWS and makes Mythos-level capabilities available to all customers, with strong safeguards designed to make it safe for broader use. Fable 5 is state-of-the-art on nearly all tested benchmarks and delivers a s...",
+    "provider": "AWS",
+    "timestamp": "2026-06-09T14:15:00+00:00"
+  },
+  {
+    "title": "Run Interactive Workloads on Amazon EMR Serverless with Spark Connect",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/amazon-emr-serverless-spark-connect",
+    "description": "Amazon EMR Serverless now supports interactive sessions with Spark Connect, enabling you to develop and run Apache Spark applications from managed notebooks in Amazon SageMaker Unified Studio, as well as your favorite notebook environments and IDEs s...",
+    "provider": "AWS",
+    "timestamp": "2026-06-09T07:00:00+00:00"
+  },
+  {
+    "title": "AWS Cost Explorer launches intelligent cost explanations powered by Amazon Q",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-cost-explorer-intelligent-cost-explanations",
+    "description": "AWS Cost Explorer now supports 'Analyze with Amazon Q', a new capability that delivers comprehensive cost explanations for any report you configure in Cost Explorer. With a single button click you now can receive detailed analysis from Amazon Q Devel...",
+    "provider": "AWS",
+    "timestamp": "2026-06-09T03:00:00+00:00"
+  },
+  {
+    "title": "AWS Compute Optimizer now supports idle recommendations for six additional resource types",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-compute-optimizer-six-new-idle",
+    "description": "AWS Compute Optimizer now identifies idle resources for Amazon DynamoDB provisioned tables, Amazon ElastiCache (Redis and Valkey), Amazon MemoryDB, Amazon DocumentDB (provisioned and serverless), Amazon WorkSpaces, and Amazon SageMaker endpoints. Thi...",
+    "provider": "AWS",
+    "timestamp": "2026-06-08T21:00:00+00:00"
+  },
+  {
+    "title": "PostgreSQL 19 Beta 1 is now available in Amazon RDS Database Preview Environment",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/postgresql-19-beta-1-amazon-rds-database-preview-environment/",
+    "description": "Amazon RDS for PostgreSQL 19 Beta 1 is now available in the Amazon RDS Database Preview Environment, allowing you to evaluate the pre-release of PostgreSQL 19 on Amazon RDS for PostgreSQL. You can deploy PostgreSQL 19 Beta 1 in the Amazon RDS Databas...",
+    "provider": "AWS",
+    "timestamp": "2026-06-08T17:03:00+00:00"
+  },
+  {
+    "title": "AWS Lambda Managed Instances expands to additional AWS Regions",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-lambda-managed-instances-region-expansion/",
+    "description": "AWS Lambda Managed Instances (LMI) is now available in all commercial AWS Regions, except Israel (Tel Aviv), Middle East (Bahrain), Middle East (UAE), and Asia Pacific (Auckland). &nbsp; \nLMI lets you run Lambda functions on managed Amazon EC2 instan...",
+    "provider": "AWS",
+    "timestamp": "2026-06-08T17:00:00+00:00"
+  },
+  {
+    "title": "Amazon Connect Customer now offers AI agent trace details for self-service voice interactions",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-connect-ai-agent-traces/",
+    "description": "Amazon Connect Customer now provides AI agent traces for self-service voice interactions, enabling you to understand how AI agents reason, act, and respond during each customer conversation. With this launch, you have full visibility into how the AI ...",
+    "provider": "AWS",
+    "timestamp": "2026-06-08T16:17:00+00:00"
+  },
+  {
+    "title": "Amazon EC2 C8in instances are now available in additional regions",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-ec2-c8in-asia-pacific-europe/",
+    "description": "Starting today, Amazon Elastic Compute Cloud (Amazon EC2) C8in instances are available in the AWS&nbsp;Asia Pacific (Sydney, Singapore, Malaysia) and Europe (Frankfurt) regions. C8in instances are powered by custom, sixth generation Intel Xeon Scalab...",
+    "provider": "AWS",
+    "timestamp": "2026-06-05T15:00:00+00:00"
+  },
+  {
+    "title": "June 09, 2026",
+    "link": "https://docs.cloud.google.com/release-notes#June_09_2026",
+    "description": "Gemini\nOther\nBug fixes in VS Code\nVarious bug fixes and minor product enhancements.\nGemini Enterprise Agent Platform\nFeature\nAnthropic's Claude Fable 5\nClaude Fable 5\nis available in Model Garden.\nGoogle Cloud Contact Center as a Service\nFixed\nThis r...",
+    "provider": "Google Cloud",
+    "timestamp": "2026-06-09T00:00:00-07:00"
+  },
+  {
+    "title": "[Launched] Generally Available: PostgreSQL Hub for Azure Developers",
+    "link": "https://azure.microsoft.com/updates?id=562084",
+    "description": "PostgreSQL Hub for Azure Developers brings together key AI and application development resources for PostgreSQL on Azure. It includes curated sample apps and solution accelerators, tutorials, and structured learning pathways to help you build everyth...",
+    "provider": "Azure",
+    "timestamp": "2026-06-09T18:45:07+00:00"
+  },
+  {
+    "title": "Claude Fable 5 is now available on Databricks, fully governed through Unity AI Gateway",
+    "link": "https://www.databricks.com/blog/claude-fable-5-now-available-databricks-fully-governed-through-unity-ai-gateway",
+    "description": "Databricks and Anthropic share a conviction: the most powerful AI is the AI that...",
+    "provider": "Databricks",
+    "timestamp": "2026-06-09T18:09:16+00:00"
+  },
+  {
+    "title": "Announcing the winners of the 2026 Databricks Customer Awards",
+    "link": "https://www.databricks.com/blog/announcing-winners-2026-databricks-customer-awards",
+    "description": "The 2026 Databricks Customer Awards recognize organizations and leaders who are using...",
+    "provider": "Databricks",
+    "timestamp": "2026-06-09T17:30:24+00:00"
+  },
+  {
+    "title": "Announcing the 2026 Databricks Customer Awards Industry winners",
+    "link": "https://www.databricks.com/blog/announcing-2026-databricks-customer-awards-industry-winners",
+    "description": "Every industry has its own unique challenges. The Databricks Customer Awards Industry...",
+    "provider": "Databricks",
+    "timestamp": "2026-06-09T17:30:20+00:00"
+  },
+  {
+    "title": "Enterprise Data Strategy Roadmap for Business Outcomes",
+    "link": "https://www.databricks.com/blog/enterprise-data-strategy",
+    "description": "An enterprise data strategy is the organizational blueprint that connects data assets to specific business outcomes...",
+    "provider": "Databricks",
+    "timestamp": "2026-06-08T13:45:45+00:00"
+  },
+  {
+    "title": "How engineers at Nextdoor use Codex to build without limits",
+    "link": "https://openai.com/index/nextdoor",
+    "description": "How engineers at Nextdoor use Codex with GPT-5.5 to investigate hard-to-reproduce issues, build across platforms, and focus on product outcomes.",
+    "provider": "OpenAI",
+    "timestamp": "2026-06-09T12:00:00+00:00"
+  },
+  {
+    "title": "Confidential submission of draft S-1 to the SEC",
+    "link": "https://openai.com/index/openai-submits-confidential-s-1",
+    "description": "OpenAI confirms a confidential S-1 submission to the SEC and has not yet determined timing for further action.",
+    "provider": "OpenAI",
+    "timestamp": "2026-06-08T14:00:00+00:00"
+  },
+  {
+    "title": "Claude Fable 5 and Claude Mythos 5",
+    "link": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+    "description": "Today we’re launching Claude Fable 5: a Mythos-class1 model that we’ve made safe for general use.Fable 5’s capabilities exceed those of any model we’ve ever made generally available. It is state-of-the-art on nearly all tested benchmarks of AI capabi...",
+    "provider": "Anthropic",
+    "timestamp": "2026-06-08T16:00:00+00:00"
   }
 ]
