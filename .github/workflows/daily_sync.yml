@@ -4,7 +4,16 @@ on:
   schedule:
     # Run at 13:00 UTC (9:00 AM Eastern Daylight Time / 8:00 AM Eastern Standard Time) every morning
     - cron: '0 13 * * *'
-  workflow_dispatch: # Allows manual runs from the Actions tab in GitHub
+  workflow_dispatch: # Allows manual runs from the Actions tab or API
+    inputs:
+      receiver_email:
+        description: 'Receiver Email Address'
+        required: false
+        type: string
+      google_script_url:
+        description: 'Google Script Web App URL for Email Dispatch'
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -27,8 +36,8 @@ jobs:
     - name: Run Scraper & Aggregator
       env:
         SEND_EMAIL_ENABLED: "true"
-        GOOGLE_SCRIPT_URL: ${{ secrets.GOOGLE_SCRIPT_URL }}
-        RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
+        GOOGLE_SCRIPT_URL: ${{ github.event.inputs.google_script_url || secrets.GOOGLE_SCRIPT_URL }}
+        RECEIVER_EMAIL: ${{ github.event.inputs.receiver_email || secrets.RECEIVER_EMAIL }}
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       run: |
         python main.py

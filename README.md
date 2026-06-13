@@ -35,7 +35,7 @@ This method is fully secure and uses Google's native authorization so you **do n
        var htmlBody = data.htmlBody;
        
        MailApp.sendEmail({
-         to: "akanuj21@gmail.com",
+         to: "YOUR_RECEIVER_EMAIL@gmail.com",
          subject: subject,
          htmlBody: htmlBody
        });
@@ -65,7 +65,7 @@ Configure your SMTP credentials in `config.json`:
      - `smtp_port`: `587`
      - `smtp_username`: Your full Gmail address.
      - `smtp_password`: A Google App Password (generate one under Google Account > Security > 2-Step Verification > App Passwords).
-2. Set `receiver_email` to `akanuj21@gmail.com`.
+2. Set `receiver_email` to your recipient email address.
 
 ## Execution Flow
 

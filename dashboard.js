@@ -964,8 +964,14 @@ function initControls() {
     const clearKeyBtn = document.getElementById('clear-key-btn');
 
     const githubPatInput = document.getElementById('github-pat-input');
+    const githubRepoInput = document.getElementById('github-repo-input');
     const saveGithubBtn = document.getElementById('save-github-btn');
     const clearGithubBtn = document.getElementById('clear-github-btn');
+
+    const receiverEmailInput = document.getElementById('receiver-email-input');
+    const googleScriptUrlInput = document.getElementById('google-script-url-input');
+    const saveEmailBtn = document.getElementById('save-email-btn');
+    const clearEmailBtn = document.getElementById('clear-email-btn');
 
     const visitorNameInput = document.getElementById('visitor-name-input');
     const saveVisitorBtn = document.getElementById('save-visitor-btn');
@@ -978,6 +984,16 @@ function initControls() {
 
         if (githubPatInput) {
             githubPatInput.value = safeStorage.getItem('github_pat') || '';
+        }
+        if (githubRepoInput) {
+            githubRepoInput.value = safeStorage.getItem('github_repo') || '';
+        }
+
+        if (receiverEmailInput) {
+            receiverEmailInput.value = safeStorage.getItem('receiver_email') || '';
+        }
+        if (googleScriptUrlInput) {
+            googleScriptUrlInput.value = safeStorage.getItem('google_script_url') || '';
         }
 
         if (visitorNameInput) {
@@ -998,8 +1014,13 @@ function initControls() {
             if (saveKeyBtn) saveKeyBtn.disabled = true;
             if (clearKeyBtn) clearKeyBtn.disabled = true;
             if (githubPatInput) githubPatInput.disabled = true;
+            if (githubRepoInput) githubRepoInput.disabled = true;
             if (saveGithubBtn) saveGithubBtn.disabled = true;
             if (clearGithubBtn) clearGithubBtn.disabled = true;
+            if (receiverEmailInput) receiverEmailInput.disabled = true;
+            if (googleScriptUrlInput) googleScriptUrlInput.disabled = true;
+            if (saveEmailBtn) saveEmailBtn.disabled = true;
+            if (clearEmailBtn) clearEmailBtn.disabled = true;
             if (visitorNameInput) visitorNameInput.disabled = true;
             if (saveVisitorBtn) saveVisitorBtn.disabled = true;
             if (clearVisitorBtn) clearVisitorBtn.disabled = true;
@@ -1052,15 +1073,15 @@ function initControls() {
 
         if (saveGithubBtn && safeStorage.isAvailable) {
             saveGithubBtn.addEventListener('click', () => {
-                const pat = githubPatInput.value.trim();
-                if (pat) {
-                    // Save hardcoded repository path silently in the background
-                    safeStorage.setItem('github_repo', 'khajuriaanuj-ak/daily-updater');
+                const pat = githubPatInput ? githubPatInput.value.trim() : '';
+                const repo = githubRepoInput ? githubRepoInput.value.trim() : '';
+                if (pat && repo) {
+                    safeStorage.setItem('github_repo', repo);
                     safeStorage.setItem('github_pat', pat);
                     closeModal();
                     alert('GitHub credentials saved securely to your browser storage!');
                 } else {
-                    alert('Please enter a valid GitHub PAT Token.');
+                    alert('Please enter both your GitHub Repository Path and PAT Token.');
                 }
             });
         }
@@ -1070,8 +1091,31 @@ function initControls() {
                 safeStorage.removeItem('github_repo');
                 safeStorage.removeItem('github_pat');
                 if (githubPatInput) githubPatInput.value = '';
+                if (githubRepoInput) githubRepoInput.value = '';
                 closeModal();
                 alert('GitHub credentials cleared from browser storage.');
+            });
+        }
+
+        if (saveEmailBtn && safeStorage.isAvailable) {
+            saveEmailBtn.addEventListener('click', () => {
+                const email = receiverEmailInput ? receiverEmailInput.value.trim() : '';
+                const scriptUrl = googleScriptUrlInput ? googleScriptUrlInput.value.trim() : '';
+                safeStorage.setItem('receiver_email', email);
+                safeStorage.setItem('google_script_url', scriptUrl);
+                closeModal();
+                alert('Email Dispatch Settings saved securely to your browser storage!');
+            });
+        }
+
+        if (clearEmailBtn && safeStorage.isAvailable) {
+            clearEmailBtn.addEventListener('click', () => {
+                safeStorage.removeItem('receiver_email');
+                safeStorage.removeItem('google_script_url');
+                if (receiverEmailInput) receiverEmailInput.value = '';
+                if (googleScriptUrlInput) googleScriptUrlInput.value = '';
+                closeModal();
+                alert('Email Dispatch Settings cleared from browser storage.');
             });
         }
 
@@ -1846,7 +1890,15 @@ async function triggerSync() {
         }
     } else {
         const pat = safeStorage.getItem('github_pat') || '';
-        const repo = safeStorage.getItem('github_repo') || 'khajuriaanuj-ak/daily-updater';
+        
+        let defaultRepo = 'khajuriaanuj-ak/daily-updater';
+        if (window.location.hostname.endsWith('.github.io')) {
+            const owner = window.location.hostname.split('.')[0];
+            const pathParts = window.location.pathname.split('/').filter(Boolean);
+            const repoName = pathParts.length > 0 ? pathParts[0] : `${owner}.github.io`;
+            defaultRepo = `${owner}/${repoName}`;
+        }
+        const repo = safeStorage.getItem('github_repo') || defaultRepo;
         
         if (!pat) {
             clearInterval(spinInterval);
@@ -1866,6 +1918,9 @@ async function triggerSync() {
             return;
         }
 
+        const receiverEmail = safeStorage.getItem('receiver_email') || '';
+        const googleScriptUrl = safeStorage.getItem('google_script_url') || '';
+
         try {
             const url = `https://api.github.com/repos/${repo}/actions/workflows/daily_sync.yml/dispatches`;
             const response = await fetch(url, {
@@ -1876,7 +1931,11 @@ async function triggerSync() {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    ref: 'main'
+                    ref: 'main',
+                    inputs: {
+                        receiver_email: receiverEmail,
+                        google_script_url: googleScriptUrl
+                    }
                 })
             });
 

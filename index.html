@@ -37,7 +37,7 @@
             <div class="header-controls">
                 <div class="curator-badge" style="background: rgba(99, 102, 241, 0.12); color: #a5b4fc; border: 1px solid rgba(99, 102, 241, 0.25); border-radius: 8px; padding: 6px 12px; font-size: 11px; font-family: 'Outfit', sans-serif; display: flex; align-items: center; gap: 6px; font-weight: 600; box-shadow: 0 2px 10px rgba(99,102,241,0.05);">
                     <span>👤</span>
-                    <span>Curated by Anuj Khajuria</span>
+                    <span>Self-Hosted Radar</span>
                 </div>
                 <div class="status-badge">
                     <span class="pulse-dot"></span>
@@ -265,7 +265,7 @@
 
         <!-- Footer -->
         <footer class="app-footer">
-            <p>&copy; 2026 Release Radar • Curated by Anuj Khajuria</p>
+            <p>&copy; 2026 Release Radar • Self-Hosted Radar</p>
             <p class="credit">Powered by Antigravity Agentic Systems</p>
         </footer>
     </div>
@@ -292,18 +292,40 @@
                 </div>
                 
                 <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 16px;">
-                    <!-- GitHub PAT Section -->
-                    <label style="display: block; font-weight: 600; color: #10b981; margin-bottom: 6px; font-size: 12px;">GitHub PAT Token (with actions:write scope)</label>
-                    <div style="display: flex; gap: 8px;">
-                        <input type="password" id="github-pat-input" placeholder="GitHub Personal Access Token..." style="flex-grow: 1; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-primary); padding: 8px 12px; font-size: 12px; outline: none; transition: border-color 0.3s;">
-                        <button id="save-github-btn" style="background: #10b981; color: white; border: none; border-radius: 6px; padding: 0 16px; cursor: pointer; font-weight: 600; font-size: 12px; transition: background 0.2s;" onmouseover="this.style.background='#059669'" onmouseout="this.style.background='#10b981'">Save</button>
-                        <button id="clear-github-btn" style="background: rgba(220,38,38,0.2); color: #f87171; border: 1px solid rgba(220,38,38,0.4); border-radius: 6px; padding: 0 16px; cursor: pointer; font-size: 12px; transition: all 0.2s;" onmouseover="this.style.background='rgba(220,38,38,0.3)'" onmouseout="this.style.background='rgba(220,38,38,0.2)'">Clear</button>
+                    <!-- GitHub PAT & Repo Section -->
+                    <label style="display: block; font-weight: 600; color: #10b981; margin-bottom: 6px; font-size: 12px;">GitHub Actions Sync Settings (Optional)</label>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <div style="display: flex; gap: 8px;">
+                            <input type="text" id="github-repo-input" placeholder="owner/repository (e.g. username/daily-updater)" style="flex-grow: 1; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-primary); padding: 8px 12px; font-size: 12px; outline: none; transition: border-color 0.3s;">
+                        </div>
+                        <div style="display: flex; gap: 8px;">
+                            <input type="password" id="github-pat-input" placeholder="GitHub Personal Access Token (PAT) with actions:write scope..." style="flex-grow: 1; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-primary); padding: 8px 12px; font-size: 12px; outline: none; transition: border-color 0.3s;">
+                            <button id="save-github-btn" style="background: #10b981; color: white; border: none; border-radius: 6px; padding: 0 16px; cursor: pointer; font-weight: 600; font-size: 12px; transition: background 0.2s;" onmouseover="this.style.background='#059669'" onmouseout="this.style.background='#10b981'">Save</button>
+                            <button id="clear-github-btn" style="background: rgba(220,38,38,0.2); color: #f87171; border: 1px solid rgba(220,38,38,0.4); border-radius: 6px; padding: 0 16px; cursor: pointer; font-size: 12px; transition: all 0.2s;" onmouseover="this.style.background='rgba(220,38,38,0.3)'" onmouseout="this.style.background='rgba(220,38,38,0.2)'">Clear</button>
+                        </div>
                     </div>
                     <p style="margin: 8px 0 0 0; color: var(--text-muted); font-size: 11px; line-height: 1.4;">
-                        Required only if you want the "Sync Now" button to trigger the scraping run in the cloud when hosting on GitHub Pages. The repository name is hidden and managed automatically in the background.
+                        Required only if you want the "Sync Now" button to trigger the scraping run in the cloud when hosting on GitHub Pages. Specify your GitHub repository path and a PAT with actions write permissions.
                     </p>
                 </div>
-                
+                                <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 16px;">
+                    <!-- Email Dispatch Section -->
+                    <label style="display: block; font-weight: 600; color: #f59e0b; margin-bottom: 6px; font-size: 12px;">Email Dispatch Settings (Optional)</label>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <div style="display: flex; gap: 8px;">
+                            <input type="text" id="receiver-email-input" placeholder="Enter recipient email address..." style="flex-grow: 1; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-primary); padding: 8px 12px; font-size: 12px; outline: none; transition: border-color 0.3s;">
+                        </div>
+                        <div style="display: flex; gap: 8px;">
+                            <input type="text" id="google-script-url-input" placeholder="Google Script Web App URL..." style="flex-grow: 1; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: var(--text-primary); padding: 8px 12px; font-size: 12px; outline: none; transition: border-color 0.3s;">
+                            <button id="save-email-btn" style="background: #f59e0b; color: white; border: none; border-radius: 6px; padding: 0 16px; cursor: pointer; font-weight: 600; font-size: 12px; transition: background 0.2s;" onmouseover="this.style.background='#d97706'" onmouseout="this.style.background='#f59e0b'">Save</button>
+                            <button id="clear-email-btn" style="background: rgba(220,38,38,0.2); color: #f87171; border: 1px solid rgba(220,38,38,0.4); border-radius: 6px; padding: 0 16px; cursor: pointer; font-size: 12px; transition: all 0.2s;" onmouseover="this.style.background='rgba(220,38,38,0.3)'" onmouseout="this.style.background='rgba(220,38,38,0.2)'">Clear</button>
+                        </div>
+                    </div>
+                    <p style="margin: 8px 0 0 0; color: var(--text-muted); font-size: 11px; line-height: 1.4;">
+                        Configure these to receive daily summary emails of releases. Stored in your browser's local storage and passed during GitHub manual syncs.
+                    </p>
+                </div>
+
                 <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 16px;">
                     <!-- Visitor Personalization Section -->
                     <label style="display: block; font-weight: 600; color: #a5b4fc; margin-bottom: 6px; font-size: 12px;">Visitor Personalization (Optional)</label>

@@ -40,7 +40,7 @@ def main():
         print(" - smtp_server   : e.g., smtp.gmail.com")
         print(" - smtp_username : Your email address")
         print(" - smtp_password : Your App Password")
-        print(" - receiver_email: Your recipient email address (akanuj21@gmail.com)\n")
+        print(" - receiver_email: Your recipient email address (configured in config.json)\n")
         print("==================================================")
         return
         
