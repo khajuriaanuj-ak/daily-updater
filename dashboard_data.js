@@ -1,12 +1,26 @@
 const DASHBOARD_DATA = {
-  "last_updated": "2026-06-12T20:56:58.291448+00:00",
+  "last_updated": "2026-06-13T00:24:46.666116+00:00",
   "updates": [
+    {
+      "title": "Amazon Lightsail is now available in three additional AWS Regions",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-lightsail-aws-regions/",
+      "description": "Starting today, Amazon Lightsail is available in three additional AWS Regions: Asia Pacific (Hong Kong), South America (São Paulo), and Europe (Spain). This expansion brings the power and simplicity of Lightsail to customers across new geographies in...",
+      "provider": "AWS",
+      "timestamp": "2026-06-12T20:43:00+00:00"
+    },
     {
       "title": "Enabling Evolutionary Database Development: Database branching with Lakebase, the conclusion",
       "link": "https://www.databricks.com/blog/enabling-evolutionary-database-development-database-branching-lakebase-part-3",
       "description": "The methodology described in&nbsp;Evolutionary Database Design and operationalized in&nbsp;Refactoring Databases: ...",
       "provider": "Databricks",
       "timestamp": "2026-06-12T17:05:00+00:00"
+    },
+    {
+      "title": "SageMaker AI now supports serverless fine-tuning for NVIDIA Nemotron models",
+      "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/amazon-sagemaker-ft-nemotron-3/",
+      "description": "Amazon SageMaker AI now supports serverless model customization for NVIDIA Nemotron 3 Nano model using supervised fine-tuning (SFT) and reinforcement fine-tuning (RFT). This is a popular open-weight model from NVIDIA with 30B total parameters. In add...",
+      "provider": "AWS",
+      "timestamp": "2026-06-12T17:00:00+00:00"
     },
     {
       "title": "Amazon EC2 I7i instances now available in AWS Europe (Paris) Region",
@@ -11575,20 +11589,28 @@ const DASHBOARD_DATA = {
   ],
   "trends": [
     {
-      "title": "Chinese cybercrime operation that used AI to scam ‘hundreds of thousands of victims’ sued by Google",
-      "link": "https://techcrunch.com/2026/06/12/chinese-cybercrime-operation-that-used-ai-to-scam-hundreds-of-thousands-of-victims-sued-by-google/",
-      "description": "The tech giant said a group called \"Outsider Enterprise\" used AI to scam hundreds of thousands of victims, sending 2.5 million text messages over a span of two weeks.",
-      "date": "Jun 12, 2026",
-      "source": "TechCrunch AI",
-      "trend": "Enterprise Adoption"
-    },
-    {
       "title": "SpaceX IPO: Live updates on everything you need to know",
       "link": "https://techcrunch.com/2026/06/12/spacex-ipo-live-updates-on-everything-you-need-to-know/",
       "description": "TechCrunch has followed SpaceX's start, struggles, and successes from the early days. And we're here for what happens next too. This package of SpaceX IPO coverage includes who stands to win (and maybe some who won't), pre-IPO deals, and what's tucked inside its S-1 registration ...",
       "date": "Jun 12, 2026",
       "source": "TechCrunch AI",
       "trend": "Investment & Startup"
+    },
+    {
+      "title": "Meta’s months-old AI unit is a soul-crushing gulag, say the engineers stuck inside it",
+      "link": "https://techcrunch.com/2026/06/12/metas-months-old-ai-unit-is-a-soul-crushing-gulag-say-the-engineers-stuck-inside-it/",
+      "description": "A new report suggests the unit, which employs 6,500 people, is on the verge of revolt.",
+      "date": "Jun 12, 2026",
+      "source": "TechCrunch AI",
+      "trend": "General AI"
+    },
+    {
+      "title": "Chinese cybercrime operation that used AI to scam ‘hundreds of thousands of victims’ sued by Google",
+      "link": "https://techcrunch.com/2026/06/12/chinese-cybercrime-operation-that-used-ai-to-scam-hundreds-of-thousands-of-victims-sued-by-google/",
+      "description": "The tech giant said a group called \"Outsider Enterprise\" used AI to scam hundreds of thousands of victims, sending 2.5 million text messages over a span of two weeks.",
+      "date": "Jun 12, 2026",
+      "source": "TechCrunch AI",
+      "trend": "Enterprise Adoption"
     },
     {
       "title": "Mistral is rumored to be raising €3B at €20B valuation",
@@ -11613,40 +11635,24 @@ const DASHBOARD_DATA = {
       "date": "Jun 12, 2026",
       "source": "TechCrunch AI",
       "trend": "Hardware & Chips"
-    },
-    {
-      "title": "Cheaper, faster, and culturally aware, Avataar’s video AI is built for India’s scale",
-      "link": "https://techcrunch.com/2026/06/11/cheaper-faster-and-culturally-aware-avataars-video-ai-is-built-for-indias-scale/",
-      "description": "Avataar AI's distilled video model is priced at $0.005 for every second of generation.",
-      "date": "Jun 12, 2026",
-      "source": "TechCrunch AI",
-      "trend": "General AI"
     }
   ],
   "sentiments": [
-    {
-      "company": "Anthropic",
-      "score": 91,
-      "status": "Bullish",
-      "change": "▼ -2",
-      "reason": "Results from the first Anthropic Public Record",
-      "mentions": 4
-    },
     {
       "company": "NVIDIA",
       "score": 91,
       "status": "Bullish",
       "change": "▬ Stable",
-      "reason": "Amazon EC2 Capacity Blocks for ML is now available in AWS Go...",
+      "reason": "SageMaker AI now supports serverless fine-tuning for NVIDIA ...",
       "mentions": 3
     },
     {
-      "company": "OpenAI",
-      "score": 85,
+      "company": "Anthropic",
+      "score": 88,
       "status": "Bullish",
-      "change": "▼ -1",
-      "reason": "New OpenAI Academy courses for the next era of work",
-      "mentions": 4
+      "change": "▬ Stable",
+      "reason": "SpaceX, Anthropic, and OpenAI’s hot IPO summer",
+      "mentions": 2
     },
     {
       "company": "Groq",
@@ -11660,25 +11666,33 @@ const DASHBOARD_DATA = {
       "company": "Databricks",
       "score": 84,
       "status": "Mixed",
-      "change": "▲ +2",
-      "reason": "Enabling Evolutionary Database Development: Database branchi...",
-      "mentions": 3
+      "change": "▬ Stable",
+      "reason": "Consistent solid market indexing",
+      "mentions": 0
+    },
+    {
+      "company": "OpenAI",
+      "score": 82,
+      "status": "Mixed",
+      "change": "▲ +1",
+      "reason": "SpaceX, Anthropic, and OpenAI’s hot IPO summer",
+      "mentions": 2
     },
     {
       "company": "Snowflake",
       "score": 81,
       "status": "Mixed",
-      "change": "▼ -2",
-      "reason": "Amazon Quick now integrates with Snowflake Cortex AI",
-      "mentions": 1
+      "change": "▬ Stable",
+      "reason": "Consistent solid market indexing",
+      "mentions": 0
     },
     {
       "company": "Meta",
       "score": 79,
       "status": "Mixed",
       "change": "▲ +1",
-      "reason": "SpaceX, Anthropic, and OpenAI’s hot IPO summer",
-      "mentions": 2
+      "reason": "Meta’s months-old AI unit is a soul-crushing gulag, say the ...",
+      "mentions": 3
     },
     {
       "company": "Microsoft",
@@ -11689,20 +11703,20 @@ const DASHBOARD_DATA = {
       "mentions": 2
     },
     {
-      "company": "Google Cloud",
-      "score": 77,
-      "status": "Mixed",
-      "change": "▲ +2",
-      "reason": "June 12, 2026",
-      "mentions": 4
-    },
-    {
       "company": "Apple",
       "score": 76,
       "status": "Mixed",
       "change": "▬ Stable",
       "reason": "Consistent solid market indexing",
       "mentions": 0
+    },
+    {
+      "company": "Google Cloud",
+      "score": 74,
+      "status": "Mixed",
+      "change": "▼ -1",
+      "reason": "Chinese cybercrime operation that used AI to scam ‘hundreds ...",
+      "mentions": 3
     }
   ],
   "valuations": {
@@ -11715,7 +11729,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 0.16,
       "rangePosition": 0.672,
-      "fetchedAt": "2026-06-12 08:56 PM"
+      "fetchedAt": "2026-06-13 12:24 AM"
     },
     "GOOGL": {
       "name": "Alphabet Inc.",
@@ -11726,7 +11740,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 0.53,
       "rangePosition": 0.802,
-      "fetchedAt": "2026-06-12 08:56 PM"
+      "fetchedAt": "2026-06-13 12:24 AM"
     },
     "MSFT": {
       "name": "Microsoft Corporation",
@@ -11737,7 +11751,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 0.1,
       "rangePosition": 0.173,
-      "fetchedAt": "2026-06-12 08:56 PM"
+      "fetchedAt": "2026-06-13 12:24 AM"
     },
     "AMZN": {
       "name": "Amazon.com, Inc.",
@@ -11748,7 +11762,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -1.23,
       "rangePosition": 0.515,
-      "fetchedAt": "2026-06-12 08:56 PM"
+      "fetchedAt": "2026-06-13 12:24 AM"
     },
     "SNOW": {
       "name": "Snowflake Inc.",
@@ -11759,7 +11773,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -3.17,
       "rangePosition": 0.687,
-      "fetchedAt": "2026-06-12 08:56 PM"
+      "fetchedAt": "2026-06-13 12:24 AM"
     },
     "TSM": {
       "name": "Taiwan Semiconductor Manufactur",
@@ -11770,7 +11784,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 0.68,
       "rangePosition": 0.892,
-      "fetchedAt": "2026-06-12 08:56 PM"
+      "fetchedAt": "2026-06-13 12:24 AM"
     },
     "AVGO": {
       "name": "Broadcom Inc.",
@@ -11781,7 +11795,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -0.91,
       "rangePosition": 0.55,
-      "fetchedAt": "2026-06-12 08:56 PM"
+      "fetchedAt": "2026-06-13 12:24 AM"
     },
     "ASML": {
       "name": "ASML Holding N.V. - New York Re",
@@ -11792,7 +11806,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -1.89,
       "rangePosition": 0.967,
-      "fetchedAt": "2026-06-12 08:56 PM"
+      "fetchedAt": "2026-06-13 12:24 AM"
     },
     "VRT": {
       "name": "Vertiv Holdings, LLC",
@@ -11803,7 +11817,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 1.68,
       "rangePosition": 0.714,
-      "fetchedAt": "2026-06-12 08:56 PM"
+      "fetchedAt": "2026-06-13 12:24 AM"
     },
     "ANET": {
       "name": "Arista Networks, Inc.",
@@ -11814,18 +11828,18 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 4.37,
       "rangePosition": 0.824,
-      "fetchedAt": "2026-06-12 08:56 PM"
+      "fetchedAt": "2026-06-13 12:24 AM"
     },
     "INTC": {
       "name": "Intel Corporation",
       "price": 124.57,
-      "forwardPE": 80.81,
+      "forwardPE": 80.8,
       "trailingPE": null,
       "marketCap": 626088804352,
       "psRatio": null,
       "dayChange": 6.51,
       "rangePosition": 0.928,
-      "fetchedAt": "2026-06-12 08:56 PM"
+      "fetchedAt": "2026-06-13 12:24 AM"
     },
     "DELL": {
       "name": "Dell Technologies Inc.",
@@ -11836,7 +11850,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 1.05,
       "rangePosition": 0.795,
-      "fetchedAt": "2026-06-12 08:56 PM"
+      "fetchedAt": "2026-06-13 12:24 AM"
     },
     "HPE": {
       "name": "Hewlett Packard Enterprise Comp",
@@ -11847,7 +11861,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 2.93,
       "rangePosition": 0.656,
-      "fetchedAt": "2026-06-12 08:56 PM"
+      "fetchedAt": "2026-06-13 12:24 AM"
     },
     "META": {
       "name": "Meta Platforms, Inc.",
@@ -11858,7 +11872,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -0.26,
       "rangePosition": 0.169,
-      "fetchedAt": "2026-06-12 08:56 PM"
+      "fetchedAt": "2026-06-13 12:24 AM"
     },
     "IBM": {
       "name": "International Business Machines",
@@ -11869,7 +11883,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -0.95,
       "rangePosition": 0.499,
-      "fetchedAt": "2026-06-12 08:56 PM"
+      "fetchedAt": "2026-06-13 12:24 AM"
     },
     "DAVA": {
       "name": "Endava plc",
@@ -11880,7 +11894,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 4.32,
       "rangePosition": 0.017,
-      "fetchedAt": "2026-06-12 08:56 PM"
+      "fetchedAt": "2026-06-13 12:24 AM"
     },
     "AAPL": {
       "name": "Apple Inc.",
@@ -11891,7 +11905,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -1.52,
       "rangePosition": 0.785,
-      "fetchedAt": "2026-06-12 08:56 PM"
+      "fetchedAt": "2026-06-13 12:24 AM"
     }
   },
   "stocks_universe": [
