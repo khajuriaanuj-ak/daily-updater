@@ -1,6 +1,13 @@
 const DASHBOARD_DATA = {
-  "last_updated": "2026-06-13T00:24:46.666116+00:00",
+  "last_updated": "2026-06-13T04:05:07.191114+00:00",
   "updates": [
+    {
+      "title": "From Wall Street to Data Platforms",
+      "link": "https://www.databricks.com/blog/wall-street-data-platforms",
+      "description": "Brickster Voices is a series that spotlights the people who make our work possible. Through personal career journeys...",
+      "provider": "Databricks",
+      "timestamp": "2026-06-13T00:30:00+00:00"
+    },
     {
       "title": "Amazon Lightsail is now available in three additional AWS Regions",
       "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-lightsail-aws-regions/",
@@ -355,6 +362,13 @@ const DASHBOARD_DATA = {
       "title": "Introducing Claude Corps",
       "link": "https://www.anthropic.com/news/claude-corps",
       "description": "We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.We’ll teach 1,000 fellows how to use Claude well, match them with nonpro...",
+      "provider": "Anthropic",
+      "timestamp": "2026-06-10T16:00:00+00:00"
+    },
+    {
+      "title": "Statement on the US government directive to suspend access to Fable 5 and Mythos 5",
+      "link": "https://www.anthropic.com/news/fable-mythos-access",
+      "description": "The US government, citing national security authorities, has issued an export control directive to suspend all access to Fable 5 and Mythos 5 by any foreign national, whether inside or outside the United States, including foreign national Anthropic e...",
       "provider": "Anthropic",
       "timestamp": "2026-06-10T16:00:00+00:00"
     },
@@ -11589,6 +11603,14 @@ const DASHBOARD_DATA = {
   ],
   "trends": [
     {
+      "title": "Anthropic’s safety warnings may have just backfired — the government has pulled the plug on its most powerful AI",
+      "link": "https://techcrunch.com/2026/06/12/anthropics-safety-warnings-may-have-just-backfired-the-government-has-pulled-the-plug-on-its-most-powerful-ai/",
+      "description": "Anthropic isn't hiding its frustration. \"We disagree that the finding of a narrow potential jailbreak should be cause for recalling a commercial model deployed to hundreds of millions of people,\" the company wrote in a blog post.",
+      "date": "Jun 13, 2026",
+      "source": "TechCrunch AI",
+      "trend": "AI Security"
+    },
+    {
       "title": "SpaceX IPO: Live updates on everything you need to know",
       "link": "https://techcrunch.com/2026/06/12/spacex-ipo-live-updates-on-everything-you-need-to-know/",
       "description": "TechCrunch has followed SpaceX's start, struggles, and successes from the early days. And we're here for what happens next too. This package of SpaceX IPO coverage includes who stands to win (and maybe some who won't), pre-IPO deals, and what's tucked inside its S-1 registration ...",
@@ -11627,14 +11649,6 @@ const DASHBOARD_DATA = {
       "date": "Jun 12, 2026",
       "source": "TechCrunch AI",
       "trend": "Hardware & Chips"
-    },
-    {
-      "title": "It’s hot IPO summer, and the MANGOS are ripe",
-      "link": "https://techcrunch.com/podcast/its-hot-ipo-summer-and-the-mangos-are-ripe/",
-      "description": "The IPO market is back, and&#160;it&#8217;s&#160;not the same&#160;companies&#160;leading the charge. FAANG had a good run, but a&#160;new acronym is taking over: MANGOS&#160;— Meta (or Microsoft, depending on who you ask), Anthropic, Nvidia, Google, OpenAI, and SpaceX. Half&#160...",
-      "date": "Jun 12, 2026",
-      "source": "TechCrunch AI",
-      "trend": "Hardware & Chips"
     }
   ],
   "sentiments": [
@@ -11643,16 +11657,8 @@ const DASHBOARD_DATA = {
       "score": 91,
       "status": "Bullish",
       "change": "▬ Stable",
-      "reason": "SageMaker AI now supports serverless fine-tuning for NVIDIA ...",
-      "mentions": 3
-    },
-    {
-      "company": "Anthropic",
-      "score": 88,
-      "status": "Bullish",
-      "change": "▬ Stable",
       "reason": "SpaceX, Anthropic, and OpenAI’s hot IPO summer",
-      "mentions": 2
+      "mentions": 1
     },
     {
       "company": "Groq",
@@ -11666,9 +11672,9 @@ const DASHBOARD_DATA = {
       "company": "Databricks",
       "score": 84,
       "status": "Mixed",
-      "change": "▬ Stable",
-      "reason": "Consistent solid market indexing",
-      "mentions": 0
+      "change": "▲ +2",
+      "reason": "From Wall Street to Data Platforms",
+      "mentions": 1
     },
     {
       "company": "OpenAI",
@@ -11676,7 +11682,7 @@ const DASHBOARD_DATA = {
       "status": "Mixed",
       "change": "▲ +1",
       "reason": "SpaceX, Anthropic, and OpenAI’s hot IPO summer",
-      "mentions": 2
+      "mentions": 1
     },
     {
       "company": "Snowflake",
@@ -11692,7 +11698,7 @@ const DASHBOARD_DATA = {
       "status": "Mixed",
       "change": "▲ +1",
       "reason": "Meta’s months-old AI unit is a soul-crushing gulag, say the ...",
-      "mentions": 3
+      "mentions": 2
     },
     {
       "company": "Microsoft",
@@ -11700,7 +11706,7 @@ const DASHBOARD_DATA = {
       "status": "Mixed",
       "change": "▬ Stable",
       "reason": "SpaceX, Anthropic, and OpenAI’s hot IPO summer",
-      "mentions": 2
+      "mentions": 1
     },
     {
       "company": "Apple",
@@ -11716,6 +11722,14 @@ const DASHBOARD_DATA = {
       "status": "Mixed",
       "change": "▼ -1",
       "reason": "Chinese cybercrime operation that used AI to scam ‘hundreds ...",
+      "mentions": 2
+    },
+    {
+      "company": "Anthropic",
+      "score": 73,
+      "status": "Mixed",
+      "change": "▬ Stable",
+      "reason": "Statement on the US government directive to suspend access t...",
       "mentions": 3
     }
   ],
@@ -11724,12 +11738,12 @@ const DASHBOARD_DATA = {
       "name": "NVIDIA Corporation",
       "price": 205.19,
       "forwardPE": 16.12,
-      "trailingPE": 31.37,
+      "trailingPE": 31.42,
       "marketCap": 4969906831360,
       "psRatio": null,
       "dayChange": 0.16,
-      "rangePosition": 0.672,
-      "fetchedAt": "2026-06-13 12:24 AM"
+      "rangePosition": 0.668,
+      "fetchedAt": "2026-06-13 04:05 AM"
     },
     "GOOGL": {
       "name": "Alphabet Inc.",
@@ -11740,7 +11754,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 0.53,
       "rangePosition": 0.802,
-      "fetchedAt": "2026-06-13 12:24 AM"
+      "fetchedAt": "2026-06-13 04:05 AM"
     },
     "MSFT": {
       "name": "Microsoft Corporation",
@@ -11751,18 +11765,18 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 0.1,
       "rangePosition": 0.173,
-      "fetchedAt": "2026-06-13 12:24 AM"
+      "fetchedAt": "2026-06-13 04:05 AM"
     },
     "AMZN": {
       "name": "Amazon.com, Inc.",
       "price": 238.55,
       "forwardPE": 24.19,
-      "trailingPE": 31.26,
+      "trailingPE": 31.64,
       "marketCap": 2566108479488,
       "psRatio": null,
       "dayChange": -1.23,
       "rangePosition": 0.515,
-      "fetchedAt": "2026-06-13 12:24 AM"
+      "fetchedAt": "2026-06-13 04:05 AM"
     },
     "SNOW": {
       "name": "Snowflake Inc.",
@@ -11773,7 +11787,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -3.17,
       "rangePosition": 0.687,
-      "fetchedAt": "2026-06-13 12:24 AM"
+      "fetchedAt": "2026-06-13 04:05 AM"
     },
     "TSM": {
       "name": "Taiwan Semiconductor Manufactur",
@@ -11784,18 +11798,18 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 0.68,
       "rangePosition": 0.892,
-      "fetchedAt": "2026-06-13 12:24 AM"
+      "fetchedAt": "2026-06-13 04:05 AM"
     },
     "AVGO": {
       "name": "Broadcom Inc.",
       "price": 382.07,
       "forwardPE": 19.74,
-      "trailingPE": 63.57,
+      "trailingPE": 63.68,
       "marketCap": 1817728778240,
       "psRatio": null,
       "dayChange": -0.91,
       "rangePosition": 0.55,
-      "fetchedAt": "2026-06-13 12:24 AM"
+      "fetchedAt": "2026-06-13 04:05 AM"
     },
     "ASML": {
       "name": "ASML Holding N.V. - New York Re",
@@ -11806,18 +11820,18 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -1.89,
       "rangePosition": 0.967,
-      "fetchedAt": "2026-06-13 12:24 AM"
+      "fetchedAt": "2026-06-13 04:05 AM"
     },
     "VRT": {
       "name": "Vertiv Holdings, LLC",
       "price": 302.87,
       "forwardPE": 34.22,
-      "trailingPE": 75.91,
+      "trailingPE": 76.29,
       "marketCap": 116335034368,
       "psRatio": null,
       "dayChange": 1.68,
       "rangePosition": 0.714,
-      "fetchedAt": "2026-06-13 12:24 AM"
+      "fetchedAt": "2026-06-13 04:05 AM"
     },
     "ANET": {
       "name": "Arista Networks, Inc.",
@@ -11828,7 +11842,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 4.37,
       "rangePosition": 0.824,
-      "fetchedAt": "2026-06-13 12:24 AM"
+      "fetchedAt": "2026-06-13 04:05 AM"
     },
     "INTC": {
       "name": "Intel Corporation",
@@ -11839,18 +11853,18 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 6.51,
       "rangePosition": 0.928,
-      "fetchedAt": "2026-06-13 12:24 AM"
+      "fetchedAt": "2026-06-13 04:05 AM"
     },
     "DELL": {
       "name": "Dell Technologies Inc.",
       "price": 395.57,
       "forwardPE": 18.7,
-      "trailingPE": 31.47,
+      "trailingPE": 31.54,
       "marketCap": 256372080640,
       "psRatio": null,
       "dayChange": 1.05,
-      "rangePosition": 0.795,
-      "fetchedAt": "2026-06-13 12:24 AM"
+      "rangePosition": 0.794,
+      "fetchedAt": "2026-06-13 04:05 AM"
     },
     "HPE": {
       "name": "Hewlett Packard Enterprise Comp",
@@ -11861,18 +11875,18 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 2.93,
       "rangePosition": 0.656,
-      "fetchedAt": "2026-06-13 12:24 AM"
+      "fetchedAt": "2026-06-13 04:05 AM"
     },
     "META": {
       "name": "Meta Platforms, Inc.",
       "price": 566.98,
       "forwardPE": 15.68,
-      "trailingPE": 20.61,
+      "trailingPE": 20.62,
       "marketCap": 1439235178496,
       "psRatio": null,
       "dayChange": -0.26,
       "rangePosition": 0.169,
-      "fetchedAt": "2026-06-13 12:24 AM"
+      "fetchedAt": "2026-06-13 04:05 AM"
     },
     "IBM": {
       "name": "International Business Machines",
@@ -11883,7 +11897,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -0.95,
       "rangePosition": 0.499,
-      "fetchedAt": "2026-06-13 12:24 AM"
+      "fetchedAt": "2026-06-13 04:05 AM"
     },
     "DAVA": {
       "name": "Endava plc",
@@ -11894,18 +11908,18 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 4.32,
       "rangePosition": 0.017,
-      "fetchedAt": "2026-06-13 12:24 AM"
+      "fetchedAt": "2026-06-13 04:05 AM"
     },
     "AAPL": {
       "name": "Apple Inc.",
       "price": 291.13,
       "forwardPE": 30.34,
-      "trailingPE": 35.29,
+      "trailingPE": 35.2,
       "marketCap": 4275929874432,
       "psRatio": null,
       "dayChange": -1.52,
       "rangePosition": 0.785,
-      "fetchedAt": "2026-06-13 12:24 AM"
+      "fetchedAt": "2026-06-13 04:05 AM"
     }
   },
   "stocks_universe": [
