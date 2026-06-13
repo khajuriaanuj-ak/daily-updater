@@ -1,5 +1,5 @@
 const DASHBOARD_DATA = {
-  "last_updated": "2026-06-13T04:05:07.191114+00:00",
+  "last_updated": "2026-06-13T04:41:42.714931+00:00",
   "updates": [
     {
       "title": "From Wall Street to Data Platforms",
@@ -49,6 +49,13 @@ const DASHBOARD_DATA = {
       "description": "OpenAI introduces three Academy courses that help people build practical AI skills, create repeatable workflows, and apply agents in everyday work.",
       "provider": "OpenAI",
       "timestamp": "2026-06-12T10:00:00+00:00"
+    },
+    {
+      "title": "Talk to all your data, wherever it lives",
+      "link": "https://www.databricks.com/blog/talk-all-your-data-wherever-it-lives",
+      "description": "Agentic AI has created demand for cross-source reasoning that didn't exist 12 months ago...",
+      "provider": "Databricks",
+      "timestamp": "2026-06-12T09:51:30+00:00"
     },
     {
       "title": "What is customer segmentation?",
@@ -11603,6 +11610,14 @@ const DASHBOARD_DATA = {
   ],
   "trends": [
     {
+      "title": "Andrew Yang thinks the next big startup opportunity is lowering the cost of living",
+      "link": "https://techcrunch.com/2026/06/12/andrew-yang-thinks-the-next-big-startup-opportunity-is-lowering-the-cost-of-living/",
+      "description": "Andrew Yang made a list of everything Americans overpay for — housing, food, wireless — and thinks the next startup gold rush is giving that money back.",
+      "date": "Jun 13, 2026",
+      "source": "TechCrunch AI",
+      "trend": "General AI"
+    },
+    {
       "title": "Anthropic’s safety warnings may have just backfired — the government has pulled the plug on its most powerful AI",
       "link": "https://techcrunch.com/2026/06/12/anthropics-safety-warnings-may-have-just-backfired-the-government-has-pulled-the-plug-on-its-most-powerful-ai/",
       "description": "Anthropic isn't hiding its frustration. \"We disagree that the finding of a narrow potential jailbreak should be cause for recalling a commercial model deployed to hundreds of millions of people,\" the company wrote in a blog post.",
@@ -11641,14 +11656,6 @@ const DASHBOARD_DATA = {
       "date": "Jun 12, 2026",
       "source": "TechCrunch AI",
       "trend": "Investment & Startup"
-    },
-    {
-      "title": "SpaceX, Anthropic, and OpenAI’s hot IPO summer",
-      "link": "https://techcrunch.com/video/spacex-anthropic-and-openais-hot-ipo-summer/",
-      "description": "The IPO market is back, and&#160;it&#8217;s&#160;not the same&#160;companies&#160;leading the charge. FAANG had a good run, but a&#160;new acronym is taking over: MANGOS&#160;— Meta (or Microsoft, depending on who you ask), Anthropic, Nvidia, Google, OpenAI, and SpaceX. Half&#160...",
-      "date": "Jun 12, 2026",
-      "source": "TechCrunch AI",
-      "trend": "Hardware & Chips"
     }
   ],
   "sentiments": [
@@ -11657,8 +11664,8 @@ const DASHBOARD_DATA = {
       "score": 91,
       "status": "Bullish",
       "change": "▬ Stable",
-      "reason": "SpaceX, Anthropic, and OpenAI’s hot IPO summer",
-      "mentions": 1
+      "reason": "Consistent solid market indexing",
+      "mentions": 0
     },
     {
       "company": "Groq",
@@ -11673,16 +11680,16 @@ const DASHBOARD_DATA = {
       "score": 84,
       "status": "Mixed",
       "change": "▲ +2",
-      "reason": "From Wall Street to Data Platforms",
+      "reason": "Talk to all your data, wherever it lives",
       "mentions": 1
     },
     {
       "company": "OpenAI",
       "score": 82,
       "status": "Mixed",
-      "change": "▲ +1",
-      "reason": "SpaceX, Anthropic, and OpenAI’s hot IPO summer",
-      "mentions": 1
+      "change": "▬ Stable",
+      "reason": "Consistent solid market indexing",
+      "mentions": 0
     },
     {
       "company": "Snowflake",
@@ -11693,20 +11700,28 @@ const DASHBOARD_DATA = {
       "mentions": 0
     },
     {
+      "company": "Anthropic",
+      "score": 79,
+      "status": "Mixed",
+      "change": "▲ +1",
+      "reason": "Anthropic’s safety warnings may have just backfired — the go...",
+      "mentions": 1
+    },
+    {
       "company": "Meta",
       "score": 79,
       "status": "Mixed",
       "change": "▲ +1",
       "reason": "Meta’s months-old AI unit is a soul-crushing gulag, say the ...",
-      "mentions": 2
+      "mentions": 1
     },
     {
       "company": "Microsoft",
       "score": 78,
       "status": "Mixed",
       "change": "▬ Stable",
-      "reason": "SpaceX, Anthropic, and OpenAI’s hot IPO summer",
-      "mentions": 1
+      "reason": "Consistent solid market indexing",
+      "mentions": 0
     },
     {
       "company": "Apple",
@@ -11722,15 +11737,7 @@ const DASHBOARD_DATA = {
       "status": "Mixed",
       "change": "▼ -1",
       "reason": "Chinese cybercrime operation that used AI to scam ‘hundreds ...",
-      "mentions": 2
-    },
-    {
-      "company": "Anthropic",
-      "score": 73,
-      "status": "Mixed",
-      "change": "▬ Stable",
-      "reason": "Statement on the US government directive to suspend access t...",
-      "mentions": 3
+      "mentions": 1
     }
   ],
   "valuations": {
@@ -11743,7 +11750,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 0.16,
       "rangePosition": 0.668,
-      "fetchedAt": "2026-06-13 04:05 AM"
+      "fetchedAt": "2026-06-13 04:41 AM"
     },
     "GOOGL": {
       "name": "Alphabet Inc.",
@@ -11754,7 +11761,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 0.53,
       "rangePosition": 0.802,
-      "fetchedAt": "2026-06-13 04:05 AM"
+      "fetchedAt": "2026-06-13 04:41 AM"
     },
     "MSFT": {
       "name": "Microsoft Corporation",
@@ -11765,7 +11772,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 0.1,
       "rangePosition": 0.173,
-      "fetchedAt": "2026-06-13 04:05 AM"
+      "fetchedAt": "2026-06-13 04:41 AM"
     },
     "AMZN": {
       "name": "Amazon.com, Inc.",
@@ -11776,7 +11783,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -1.23,
       "rangePosition": 0.515,
-      "fetchedAt": "2026-06-13 04:05 AM"
+      "fetchedAt": "2026-06-13 04:41 AM"
     },
     "SNOW": {
       "name": "Snowflake Inc.",
@@ -11787,7 +11794,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -3.17,
       "rangePosition": 0.687,
-      "fetchedAt": "2026-06-13 04:05 AM"
+      "fetchedAt": "2026-06-13 04:41 AM"
     },
     "TSM": {
       "name": "Taiwan Semiconductor Manufactur",
@@ -11798,7 +11805,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 0.68,
       "rangePosition": 0.892,
-      "fetchedAt": "2026-06-13 04:05 AM"
+      "fetchedAt": "2026-06-13 04:41 AM"
     },
     "AVGO": {
       "name": "Broadcom Inc.",
@@ -11809,7 +11816,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -0.91,
       "rangePosition": 0.55,
-      "fetchedAt": "2026-06-13 04:05 AM"
+      "fetchedAt": "2026-06-13 04:41 AM"
     },
     "ASML": {
       "name": "ASML Holding N.V. - New York Re",
@@ -11820,7 +11827,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -1.89,
       "rangePosition": 0.967,
-      "fetchedAt": "2026-06-13 04:05 AM"
+      "fetchedAt": "2026-06-13 04:41 AM"
     },
     "VRT": {
       "name": "Vertiv Holdings, LLC",
@@ -11831,7 +11838,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 1.68,
       "rangePosition": 0.714,
-      "fetchedAt": "2026-06-13 04:05 AM"
+      "fetchedAt": "2026-06-13 04:41 AM"
     },
     "ANET": {
       "name": "Arista Networks, Inc.",
@@ -11842,7 +11849,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 4.37,
       "rangePosition": 0.824,
-      "fetchedAt": "2026-06-13 04:05 AM"
+      "fetchedAt": "2026-06-13 04:41 AM"
     },
     "INTC": {
       "name": "Intel Corporation",
@@ -11853,7 +11860,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 6.51,
       "rangePosition": 0.928,
-      "fetchedAt": "2026-06-13 04:05 AM"
+      "fetchedAt": "2026-06-13 04:41 AM"
     },
     "DELL": {
       "name": "Dell Technologies Inc.",
@@ -11864,7 +11871,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 1.05,
       "rangePosition": 0.794,
-      "fetchedAt": "2026-06-13 04:05 AM"
+      "fetchedAt": "2026-06-13 04:41 AM"
     },
     "HPE": {
       "name": "Hewlett Packard Enterprise Comp",
@@ -11875,7 +11882,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": 2.93,
       "rangePosition": 0.656,
-      "fetchedAt": "2026-06-13 04:05 AM"
+      "fetchedAt": "2026-06-13 04:41 AM"
     },
     "META": {
       "name": "Meta Platforms, Inc.",
@@ -11886,7 +11893,7 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -0.26,
       "rangePosition": 0.169,
-      "fetchedAt": "2026-06-13 04:05 AM"
+      "fetchedAt": "2026-06-13 04:41 AM"
     },
     "IBM": {
       "name": "International Business Machines",
@@ -11897,18 +11904,18 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -0.95,
       "rangePosition": 0.499,
-      "fetchedAt": "2026-06-13 04:05 AM"
+      "fetchedAt": "2026-06-13 04:41 AM"
     },
     "DAVA": {
       "name": "Endava plc",
       "price": 2.9,
-      "forwardPE": 3.38,
+      "forwardPE": 3.37,
       "trailingPE": null,
       "marketCap": 153243888,
       "psRatio": null,
       "dayChange": 4.32,
       "rangePosition": 0.017,
-      "fetchedAt": "2026-06-13 04:05 AM"
+      "fetchedAt": "2026-06-13 04:41 AM"
     },
     "AAPL": {
       "name": "Apple Inc.",
@@ -11919,7 +11926,18 @@ const DASHBOARD_DATA = {
       "psRatio": null,
       "dayChange": -1.52,
       "rangePosition": 0.785,
-      "fetchedAt": "2026-06-13 04:05 AM"
+      "fetchedAt": "2026-06-13 04:41 AM"
+    },
+    "PLTR": {
+      "name": "Palantir Technologies Inc.",
+      "price": 127.99,
+      "forwardPE": 61.7,
+      "trailingPE": 143.81,
+      "marketCap": 306831949824,
+      "psRatio": null,
+      "dayChange": -2.36,
+      "rangePosition": 0.063,
+      "fetchedAt": "2026-06-13 04:41 AM"
     }
   },
   "stocks_universe": [
@@ -12102,6 +12120,16 @@ const DASHBOARD_DATA = {
       "tailwindScore": 8.0,
       "baseReason": "Apple's strategic AI moat lies in its unparalleled ecosystem integration of hardware, software, and services, combined with its brand loyalty and vast global user base. This allows for the delivery of highly personalized, private, and seamlessly integrated on-device AI experiences.",
       "expertStrategy": "With the introduction of 'Apple Intelligence' and deep AI integration across iOS, Safari, Photos, and Shortcuts, Apple is positioned to leverage its massive install base to become a dominant player in consumer-facing AI. The waiving of cloud API costs for small developers indicates a strategic move to foster its AI ecosystem, potentially increasing its services revenue over the long term as developers build on its platform and eventually scale. Investors should watch for continued innovation in on-device AI and its impact on hardware upgrade cycles and services growth."
+    },
+    {
+      "name": "Palantir Technologies Inc.",
+      "ticker": "PLTR",
+      "category": "direct",
+      "subCategory": "Enterprise AI Data Integration & Operating Platform",
+      "moatScore": 7.8,
+      "tailwindScore": 8.5,
+      "baseReason": "Palantir provides proprietary software platforms specializing in integrating vast, disparate, and often sensitive datasets from various sources, enabling sophisticated analytics and AI-driven decision-making, which is crucial for cross-source reasoning for agentic AI.",
+      "expertStrategy": "Palantir is exceptionally positioned to capitalize on the demand for operationalizing agentic AI within large enterprises and governments. Its Foundry and Gotham platforms provide the unique capability to unify and reason over complex, multi-source data landscapes, empowering AI agents with comprehensive intelligence for critical decision-making, thereby enabling large-scale, secure AI adoption."
     }
   ]
 };

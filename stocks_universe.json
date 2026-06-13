@@ -178,5 +178,15 @@
     "tailwindScore": 8.0,
     "baseReason": "Apple's strategic AI moat lies in its unparalleled ecosystem integration of hardware, software, and services, combined with its brand loyalty and vast global user base. This allows for the delivery of highly personalized, private, and seamlessly integrated on-device AI experiences.",
     "expertStrategy": "With the introduction of 'Apple Intelligence' and deep AI integration across iOS, Safari, Photos, and Shortcuts, Apple is positioned to leverage its massive install base to become a dominant player in consumer-facing AI. The waiving of cloud API costs for small developers indicates a strategic move to foster its AI ecosystem, potentially increasing its services revenue over the long term as developers build on its platform and eventually scale. Investors should watch for continued innovation in on-device AI and its impact on hardware upgrade cycles and services growth."
+  },
+  {
+    "name": "Palantir Technologies Inc.",
+    "ticker": "PLTR",
+    "category": "direct",
+    "subCategory": "Enterprise AI Data Integration & Operating Platform",
+    "moatScore": 7.8,
+    "tailwindScore": 8.5,
+    "baseReason": "Palantir provides proprietary software platforms specializing in integrating vast, disparate, and often sensitive datasets from various sources, enabling sophisticated analytics and AI-driven decision-making, which is crucial for cross-source reasoning for agentic AI.",
+    "expertStrategy": "Palantir is exceptionally positioned to capitalize on the demand for operationalizing agentic AI within large enterprises and governments. Its Foundry and Gotham platforms provide the unique capability to unify and reason over complex, multi-source data landscapes, empowering AI agents with comprehensive intelligence for critical decision-making, thereby enabling large-scale, secure AI adoption."
   }
 ]
