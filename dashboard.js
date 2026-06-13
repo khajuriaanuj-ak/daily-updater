@@ -969,7 +969,6 @@ function initControls() {
     const clearGithubBtn = document.getElementById('clear-github-btn');
 
     const receiverEmailInput = document.getElementById('receiver-email-input');
-    const googleScriptUrlInput = document.getElementById('google-script-url-input');
     const saveEmailBtn = document.getElementById('save-email-btn');
     const clearEmailBtn = document.getElementById('clear-email-btn');
 
@@ -991,9 +990,6 @@ function initControls() {
 
         if (receiverEmailInput) {
             receiverEmailInput.value = safeStorage.getItem('receiver_email') || '';
-        }
-        if (googleScriptUrlInput) {
-            googleScriptUrlInput.value = safeStorage.getItem('google_script_url') || '';
         }
 
         if (visitorNameInput) {
@@ -1018,7 +1014,6 @@ function initControls() {
             if (saveGithubBtn) saveGithubBtn.disabled = true;
             if (clearGithubBtn) clearGithubBtn.disabled = true;
             if (receiverEmailInput) receiverEmailInput.disabled = true;
-            if (googleScriptUrlInput) googleScriptUrlInput.disabled = true;
             if (saveEmailBtn) saveEmailBtn.disabled = true;
             if (clearEmailBtn) clearEmailBtn.disabled = true;
             if (visitorNameInput) visitorNameInput.disabled = true;
@@ -1100,9 +1095,7 @@ function initControls() {
         if (saveEmailBtn && safeStorage.isAvailable) {
             saveEmailBtn.addEventListener('click', () => {
                 const email = receiverEmailInput ? receiverEmailInput.value.trim() : '';
-                const scriptUrl = googleScriptUrlInput ? googleScriptUrlInput.value.trim() : '';
                 safeStorage.setItem('receiver_email', email);
-                safeStorage.setItem('google_script_url', scriptUrl);
                 closeModal();
                 alert('Email Dispatch Settings saved securely to your browser storage!');
             });
@@ -1111,9 +1104,7 @@ function initControls() {
         if (clearEmailBtn && safeStorage.isAvailable) {
             clearEmailBtn.addEventListener('click', () => {
                 safeStorage.removeItem('receiver_email');
-                safeStorage.removeItem('google_script_url');
                 if (receiverEmailInput) receiverEmailInput.value = '';
-                if (googleScriptUrlInput) googleScriptUrlInput.value = '';
                 closeModal();
                 alert('Email Dispatch Settings cleared from browser storage.');
             });
@@ -1919,7 +1910,6 @@ async function triggerSync() {
         }
 
         const receiverEmail = safeStorage.getItem('receiver_email') || '';
-        const googleScriptUrl = safeStorage.getItem('google_script_url') || '';
 
         try {
             const url = `https://api.github.com/repos/${repo}/actions/workflows/daily_sync.yml/dispatches`;
@@ -1933,8 +1923,7 @@ async function triggerSync() {
                 body: JSON.stringify({
                     ref: 'main',
                     inputs: {
-                        receiver_email: receiverEmail,
-                        google_script_url: googleScriptUrl
+                        receiver_email: receiverEmail
                     }
                 })
             });

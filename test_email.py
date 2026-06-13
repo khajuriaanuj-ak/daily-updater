@@ -22,6 +22,27 @@ def main():
     with open(CONFIG_FILE, 'r', encoding='utf-8') as f:
         config = json.load(f)
         
+    # Overwrite/supplement with environment variables for local testing
+    env_mappings = {
+        "google_script_url": "GOOGLE_SCRIPT_URL",
+        "receiver_email": "RECEIVER_EMAIL",
+        "smtp_server": "SMTP_SERVER",
+        "smtp_port": "SMTP_PORT",
+        "smtp_username": "SMTP_USERNAME",
+        "smtp_password": "SMTP_PASSWORD",
+        "sender_email": "SENDER_EMAIL"
+    }
+    for config_key, env_key in env_mappings.items():
+        env_val = os.environ.get(env_key)
+        if env_val is not None:
+            if config_key == "smtp_port":
+                try:
+                    config[config_key] = int(env_val)
+                except ValueError:
+                    pass
+            else:
+                config[config_key] = env_val
+
     # Check which method is configured
     script_url = config.get("google_script_url", "")
     has_script = script_url and "YOUR_GOOGLE_APPS_SCRIPT" not in script_url and script_url.strip()
@@ -32,15 +53,15 @@ def main():
                 
     if not has_script and not has_smtp:
         print("[-] CONFIGURATION REQUIRED:")
-        print("Please edit the 'config.json' file with either a Google Apps Script Web App URL")
-        print("or your standard SMTP credentials.\n")
+        print("Please edit the 'config.json' file (or set local environment variables)")
+        print("with either a Google Apps Script Web App URL or standard SMTP credentials.\n")
         print("Option A (Recommended & Passwordless):")
-        print(" - google_script_url: Paste your Google Apps Script Web App URL\n")
+        print(" - google_script_url (or GOOGLE_SCRIPT_URL env var): Paste your Google Apps Script Web App URL\n")
         print("Option B (Standard SMTP):")
-        print(" - smtp_server   : e.g., smtp.gmail.com")
-        print(" - smtp_username : Your email address")
-        print(" - smtp_password : Your App Password")
-        print(" - receiver_email: Your recipient email address (configured in config.json)\n")
+        print(" - smtp_server   (or SMTP_SERVER env var)   : e.g., smtp.gmail.com")
+        print(" - smtp_username (or SMTP_USERNAME env var) : Your email address")
+        print(" - smtp_password (or SMTP_PASSWORD env var) : Your App Password")
+        print(" - receiver_email(or RECEIVER_EMAIL env var): Your recipient email address\n")
         print("==================================================")
         return
         

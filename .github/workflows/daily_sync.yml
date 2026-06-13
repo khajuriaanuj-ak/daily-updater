@@ -10,10 +10,6 @@ on:
         description: 'Receiver Email Address'
         required: false
         type: string
-      google_script_url:
-        description: 'Google Script Web App URL for Email Dispatch'
-        required: false
-        type: string
 
 permissions:
   contents: write
@@ -36,7 +32,7 @@ jobs:
     - name: Run Scraper & Aggregator
       env:
         SEND_EMAIL_ENABLED: "true"
-        GOOGLE_SCRIPT_URL: ${{ github.event.inputs.google_script_url || secrets.GOOGLE_SCRIPT_URL }}
+        GOOGLE_SCRIPT_URL: ${{ secrets.GOOGLE_SCRIPT_URL }}
         RECEIVER_EMAIL: ${{ github.event.inputs.receiver_email || secrets.RECEIVER_EMAIL }}
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       run: |
